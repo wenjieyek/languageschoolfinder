@@ -1,21 +1,22 @@
 @import "materialize";
 
+
+
 body {
 
-background-color: #fafafa;
-
-
-
-
-
-
-
+	background-color: #fafafa;
 	color: black;
 
-		
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
 
 
-}
 
 nav ul li a{
   color: black;
@@ -25,4 +26,6 @@ nav ul li a{
 .form-card {
 	margin-top:5%;
 }
+
+
 
