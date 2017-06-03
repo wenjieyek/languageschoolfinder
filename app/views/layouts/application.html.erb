@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project</title>
+    <title> Language School Finder <%="| #{@page_title}" if @page_title %></title>
+    <%= favicon_link_tag 'icon2.png' %>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,6 +13,8 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
 
      
   </head>
@@ -37,10 +41,26 @@
     </div>
   </nav>
 
+  <main>
+
+  <div class="container">
+
+  <%if !flash[:notice].blank? %>
+
+  <%= javascript_tag "Materialize.toast('#{notice}', 4000)" %>
+
+  <% end %>
+
 
 
 
     <%= yield %>
+
+
+  </div>  
+
+
+    </main>
 
 
     <footer class="page-footer grey darken-4 z-depth-4" >

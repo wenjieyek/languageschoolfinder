@@ -1,0 +1,60 @@
+<% @page_title="School Login" %>
+
+<div class="form-card">
+
+  <div class="card center-align white z-depth-4" >
+
+    <span class="card-title">Login Your School</span>
+
+    <div class="card-content">
+
+      
+
+       <%=form_tag(access_attempt_login_path,:method=>:post, :class=>"col s12") do %>
+
+          <div class="row">
+
+            <div class="input-field col s12 m12">
+              <%=text_field_tag(:email,params[:email]) %>
+              <label for="email">E-mail</label>
+            </div>
+            
+
+            <div class="input-field col s12 m12">
+              <%=password_field_tag(:password) %>
+              <label for="password">Password</label>
+            </div>
+
+
+  			</div>
+
+  <div class="card-action">
+
+
+
+
+  	
+
+    <%= link_to("Register",new_school_user_url,:class=>"waves-effect waves-light btn red darken-4") %>
+
+  	
+   
+
+    <%=submit_tag("Log In ",:class=>"waves-effect waves-light btn grey darken-4") %>
+
+    
+  </div>
+
+  <% end %>
+
+
+
+</div><!-- card center-align white -->    
+
+</div><!-- form-card -->
+
+
+
+
+
+

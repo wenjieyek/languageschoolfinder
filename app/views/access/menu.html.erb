@@ -1,0 +1,15 @@
+<% @page_title="School Menu" %>
+
+<h2>School Menu</h2>
+<div class="identity">Logged in as: <%=session[:schools_name] %></div>
+
+<ul>
+	<li><%=link_to("Edit Data",school_users_path) %></li>
+	<li><%=link_to("Manage Courses") %></li>
+	<li><%=link_to("Manage Teachers") %></li>
+	<li><%=link_to("Manage Promotions") %></li>
+	<li><%=link_to("Manage Applications") %></li>
+	<li><%=link_to("Manage Inquiry") %></li>
+	<li><%=link_to("Logout",access_logout_path) %></li>
+	
+</ul>
