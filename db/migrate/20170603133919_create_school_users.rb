@@ -1,6 +1,6 @@
-class CreateSchools < ActiveRecord::Migration[5.1]
+class CreateSchoolUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :schools do |t|
+    create_table :school_users do |t|
 
     	t.string "name",:limit=>255
     	t.string "password_digest",:limit=>255
@@ -12,8 +12,6 @@ class CreateSchools < ActiveRecord::Migration[5.1]
     	t.text "transportation"
     	t.text "profilepicture"
     	t.integer "status",:default=>1
-
-
 
       t.timestamps
     end

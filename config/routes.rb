@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post 'access/attempt_login'
   get 'access/logout'
 
+
+
   resources :school_users do
 
 

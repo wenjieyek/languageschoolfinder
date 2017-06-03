@@ -1,5 +1,0 @@
-class School < ApplicationRecord
-
-	has_secure_password
-
-end

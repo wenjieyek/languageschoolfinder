@@ -11,7 +11,7 @@ class AccessController < ApplicationController
 
   def attempt_login
   	if params[:email].present? && params[:password].present?
-  		found_user=School.where(:email=>params[:email]).first
+  		found_user=SchoolUser.where(:email=>params[:email]).first
   		if found_user
   			authorized_user=found_user.authenticate(params[:password])
   		end
