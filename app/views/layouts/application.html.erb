@@ -1,69 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Language School Finder <%="| #{@page_title}" if @page_title %></title>
-    <%= favicon_link_tag 'icon2.png' %>
+<head>
+<title> Language School Finder <%="| #{@page_title}" if @page_title %></title>
+<%= favicon_link_tag 'icon2.png' %>
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
 
 
-
-     
-  </head>
-
-  <body>
-
-
-  <!--Navigation Bar-->
-
-  <nav class="white z-depth-4">
-    <div class="nav-wrapper">
+<body>
+<!--Navigation Bar-->
+<nav class="white z-depth-4">
+<div class="nav-wrapper">
       <a href="#" class="brand-logo black-text">
-      
       <%= image_tag('icon2', :size=>'110x110',:alt=>'Language School Finder') %>
-
-      
-
       </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Login</a></li>
-        <li><a href="SchoolRegister.html">Register as School</a></li>
-        <li><a href="#">Bookmark</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <main>
+<ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to("Login",access_login_path) %></li>
+      <li><%= link_to("Register",new_school_user_path) %></li>
+      <li><a href="#">Bookmark</a></li>
+</ul>
+</div>
+</nav>
 
-  <div class="container">
+<main>
+<div class="container">
+      <%if !flash[:notice].blank? %>
+      <%= javascript_tag "Materialize.toast('#{notice}', 4000)" %>
+      <% end %>
 
-  <%if !flash[:notice].blank? %>
+<%= yield %>
 
-  <%= javascript_tag "Materialize.toast('#{notice}', 4000)" %>
-
-  <% end %>
-
-
-
-
-    <%= yield %>
+</div>  
+</main>
 
 
-  </div>  
-
-
-    </main>
-
-
-    <footer class="page-footer grey darken-4 z-depth-4" >
+<footer class="page-footer grey darken-4 z-depth-4" >
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -87,10 +64,11 @@
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
           </div>
-        </footer>
+</footer>
 
 
 
    
-  </body>
+</body>
 </html>
+
