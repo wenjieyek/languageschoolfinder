@@ -43,7 +43,15 @@ class SchoolUsersController < ApplicationController
 
   def school_user_params
 
-    params.require(:school_user).permit(:name,:phonenumber,:password,:email,:website,:address,:description,:transportation)
+    params.require(:school_user).permit(:name,
+                                        :phonenumber,
+                                        :password,
+                                        :email,
+                                        :website,
+                                        :address,
+                                        :description,
+                                        :transportation,
+                                        :profilepicture)
 
   end
 
