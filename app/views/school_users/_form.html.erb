@@ -2,11 +2,11 @@
 
 <div class="row">
 <div class="input-field col s12 m6">
-    <%=f.label(:name)%>
-    <%=f.text_field(:name,:placeholder=>"Write Your Name")%>
+    <%=f.label("School's Name")%>
+    <%=f.text_field(:name)%>
 </div>
 <div class="input-field col s12 m6">
-    <%=f.label(:phonenumber)%>
+    <%=f.label("School's Phonenumber")%>
     <%=f.text_field(:phonenumber)%>
 </div>
 </div>
@@ -20,7 +20,7 @@
 </div>
 <div class="input-field col s12 m6">
     <%=f.label(:password)%>
-    <%=f.password_field(:password)%>
+    <%=f.password_field(:password_confirmation)%>
 </div>
 </div>
 
@@ -33,7 +33,7 @@
 </div>
 
 <div class="input-field col s12 m6">
-    <%=f.label(:website)%>
+    <%=f.label("School's Website")%>
     <%=f.text_field(:website)%>
 </div>
 </div>
@@ -42,9 +42,9 @@
 
 <div class="row">
 <div class="input-field col s12">
-    <%=f.label(:address)%>
+    <%=f.label("School's Address")%>
     <%=f.text_area(:address,:area=>'40x10',:class=>"materialize-textarea")%>
-<label for="address">Address</label>
+
 </div>
 </div>
 
@@ -52,7 +52,7 @@
 
 <div class="row">
 <div class="input-field col s12">
-    <%=f.label(:description)%>
+    <%=f.label("School's Description")%>
     <%=f.text_area(:description,:area=>'40x10',:class=>"materialize-textarea")%>
 </div>
 </div>
@@ -61,7 +61,7 @@
 
 <div class="row">
 <div class="input-field col s12">
-    <%=f.label(:transportation)%>
+    <%=f.label("Transportation Area")%>
     <%=f.text_area(:transportation,:area=>'40x10',:class=>"materialize-textarea")%>
 </div>
 </div>

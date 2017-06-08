@@ -21,9 +21,14 @@
       </a>
 
 <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to("Login",access_login_path) %></li>
-      <li><%= link_to("Register",new_school_user_path) %></li>
-      <li><a href="#">Bookmark</a></li>
+      <li><%=link_to("Login",access_login_path) %></li>
+      <li><%=link_to("Edit Data",school_users_path) %></li>
+      <li><%=link_to("Manage Courses") %></li>
+      <li><%=link_to("Manage Teachers") %></li>
+      <li><%=link_to("Manage Promotions") %></li>
+      <li><%=link_to("Manage Applications") %></li>
+      <li><%=link_to("Manage Inquiry") %></li>
+      <li><%=link_to("Logout",access_logout_path) %></li>
 </ul>
 </div>
 </nav>

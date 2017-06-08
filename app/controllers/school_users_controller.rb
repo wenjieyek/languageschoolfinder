@@ -46,6 +46,7 @@ class SchoolUsersController < ApplicationController
     params.require(:school_user).permit(:name,
                                         :phonenumber,
                                         :password,
+                                        :password_confirmation,
                                         :email,
                                         :website,
                                         :address,
