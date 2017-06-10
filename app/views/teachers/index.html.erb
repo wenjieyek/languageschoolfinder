@@ -1,0 +1,69 @@
+<% @page_title="Teachers List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Teachers List </h5>
+<p><%=link_to("Add Teacher",new_teacher_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Language</td>
+			<td>School ID</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @teachers.each do |teacher| %>
+			<tr>
+			<td><%= teacher.name %></td>
+			<td><%= teacher.languagetype %></td>
+			<td><%= teacher.school_user_id %></td>
+			<td><%= link_to("Show", teacher_path(teacher.id)) %></td>
+			<td><%= link_to("Edit", edit_teacher_path(teacher.id)) %></td>
+			<td><%= link_to("Delete", delete_teacher_path(teacher.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

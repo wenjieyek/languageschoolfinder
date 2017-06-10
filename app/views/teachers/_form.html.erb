@@ -1,0 +1,73 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Teacher's Name")%>
+    <%=f.text_field(:name)%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    
+    <%=f.text_field(:languagetype)%>
+
+
+    <%=f.label("Language's Type")%>                   
+
+
+
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Teacher's Details")%>
+    <%=f.text_area(:details,:area=>'40x10',:class=>"materialize-textarea")%>
+</div>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="file-field input-field s12" >
+<div class="waves-effect waves-light btn grey darken-4">
+      <span>Upload Profile Picture</span>
+      <%=f.file_field(:profilepicture)%>
+</div>
+<div class="file-path-wrapper">
+      <input class="file-path validater" type="text" placeholder="Upload Profile Picture" disabled>
+</div>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="file-field input-field s12" >
+<div class="waves-effect waves-light btn grey darken-4">
+      <span>Upload Resume</span>
+      <%=f.file_field(:resumes)%>
+</div>
+<div class="file-path-wrapper">
+      <input class="file-path validater" type="text" placeholder="Upload Resume" disabled>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
