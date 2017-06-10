@@ -20,24 +20,13 @@
       <%= image_tag('icon2', :size=>'110x110',:alt=>'Language School Finder') %>
       </a>
 
-<!-- Dropdown Structure -->
-<ul id="manageschooldropdown" class="dropdown-content">
-      <li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
-      <li><%=link_to("Manage Courses") %></li>
-      <li><%=link_to("Manage Teachers") %></li>
-      <li><%=link_to("Manage Promotions") %></li>
-</ul>
-<ul id="manageschoolreceivedropdown" class="dropdown-content">
-      <li><%=link_to("Manage Applications") %></li>
-      <li><%=link_to("Manage Inquiry") %></li>
-</ul>     
+
 
 
 <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><%=link_to(session[:schools_name],access_menu_path) %></li>
       <li><%=link_to("Login",access_login_path) %></li>
-      <li><a class="dropdown-button" data-activates="manageschooldropdown">Manage School<i class="material-icons right">arrow_drop_down</i></a></li>
-       <li><a class="dropdown-button" data-activates="manageschoolreceivedropdown">Manage Received Message<i class="material-icons right">arrow_drop_down</i></a></li>
+      
      
       <li><%=link_to("Logout",access_logout_path) %></li>
 </ul>
