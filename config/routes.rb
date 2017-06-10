@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   root 'school_users#index'
   #get 'school_users', :to=>'access#menu'
   get 'access/menu'
@@ -28,6 +29,17 @@ Rails.application.routes.draw do
 
 
     resources :teachers do
+
+    member do
+
+      get :delete
+
+    end
+
+  end
+
+
+    resources :promotions do
 
     member do
 

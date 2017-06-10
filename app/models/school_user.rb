@@ -3,6 +3,7 @@ class SchoolUser < ApplicationRecord
 	has_secure_password
 	has_many :courses
 	has_many :teachers
+	has_many :promotions
 
 
 	# Tells rails to use this uploader for this model.

@@ -1,0 +1,68 @@
+<% @page_title="Promotion List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Promotions List </h5>
+<p><%=link_to("Add Promotion",new_promotion_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Period</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @promotions.each do |promotion| %>
+			<tr>
+			<td><%= promotion.name %></td>
+			<td><%= promotion.period %></td>
+			<td><%= promotion.school_user_id %></td>
+			<td><%= link_to("Show", promotion_path(promotion.id)) %></td>
+			<td><%= link_to("Edit", edit_promotion_path(promotion.id)) %></td>
+			<td><%= link_to("Delete", delete_promotion_path(promotion.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
