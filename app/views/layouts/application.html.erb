@@ -34,6 +34,7 @@
 
 
 <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%=link_to(session[:schools_name],access_menu_path) %></li>
       <li><%=link_to("Login",access_login_path) %></li>
       <li><a class="dropdown-button" data-activates="manageschooldropdown">Manage School<i class="material-icons right">arrow_drop_down</i></a></li>
        <li><a class="dropdown-button" data-activates="manageschoolreceivedropdown">Manage Received Message<i class="material-icons right">arrow_drop_down</i></a></li>

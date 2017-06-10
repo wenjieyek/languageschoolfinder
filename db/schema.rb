@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603133919) do
+ActiveRecord::Schema.define(version: 20170610073847) do
+
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "languagetype"
+    t.text "details", limit: 255
+    t.string "price"
+    t.string "attachments"
+    t.string "time"
+    t.integer "school_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_user_id"], name: "index_courses_on_school_user_id"
+  end
 
   create_table "school_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"

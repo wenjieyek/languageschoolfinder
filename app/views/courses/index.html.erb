@@ -1,0 +1,69 @@
+<% @page_title="Course List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Courses List </h5>
+<p><%=link_to("Add Course",new_course_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Language</td>
+			<td>School ID</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @courses.each do |course| %>
+			<tr>
+			<td><%= course.name %></td>
+			<td><%= course.languagetype %></td>
+			<td><%= course.school_user_id %></td>
+			<td><%= link_to("Show", course_path(course.id)) %></td>
+			<td><%= link_to("Edit", edit_course_path(course.id)) %></td>
+			<td><%= link_to("Delete", delete_course_path(course.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

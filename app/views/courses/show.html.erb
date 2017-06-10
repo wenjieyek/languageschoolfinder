@@ -1,0 +1,62 @@
+<% @page_title="Course Details" %>
+
+
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+
+	<h5>Courses Details </h5>
+		
+			
+			<p>Course Name: <%= @course.name %></p>
+
+			<p>Language: <%= @course.languagetype %></p>
+
+			<p>Details: <%= @course.details %></p>
+
+			<p>Price: <%= @course.price %></p>
+
+			<p>Attachment: <%= link_to 'Download',@course.attachments_url %></p>
+
+			<p>Time: <%= @course.time %></p>
+
+			
+			
+
+
+		
+
+
+	</div>
+
+	<div class="card-action">
+
+		<%= link_to("Delete", delete_course_path(@course.id),:class=>"waves-effect waves-light btn red darken-4") %>
+		
+		<%= link_to("Edit", edit_course_path(@course.id),:class=>"waves-effect waves-light btn grey darken-4") %>
+		
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

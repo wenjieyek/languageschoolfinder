@@ -1,0 +1,73 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Course's Name")%>
+    <%=f.text_field(:name)%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    
+    <%= f.select(:languagetype,[
+                        ["English"],
+                        ["Mandarin"],
+                        ["Bahasa Melayu"],
+                        ["English"],
+                        ["Korean"]
+                       ]) %>
+
+
+    <%=f.label("Course's Type")%>                   
+
+
+
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Course's Details")%>
+    <%=f.text_area(:details,:area=>'40x10',:class=>"materialize-textarea")%>
+</div>
+</div>
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Course's Price")%>
+    <%=f.text_field(:price)%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Course's Time")%>
+    <%=f.text_field(:time)%>
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="file-field input-field s12" >
+<div class="waves-effect waves-light btn grey darken-4">
+      <span>Upload Course Attachment</span>
+      <%=f.file_field(:attachments)%>
+</div>
+<div class="file-path-wrapper">
+      <input class="file-path validater" type="text" placeholder="Upload Course's Attachment" disabled>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+

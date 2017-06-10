@@ -48,7 +48,7 @@ class SchoolUsersController < ApplicationController
   end
 
 
-   private
+  private
 
   def school_user_params
 

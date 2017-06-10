@@ -1,6 +1,7 @@
 class SchoolUser < ApplicationRecord
 
 	has_secure_password
+	has_many :courses
 
 
 	# Tells rails to use this uploader for this model.
