@@ -6,6 +6,7 @@ class SchoolUsersController < ApplicationController
 
 
   def index
+    
 
   end
 
@@ -31,11 +32,19 @@ class SchoolUsersController < ApplicationController
 
   end
 
-  def edit
+   def edit
+    @school_user=SchoolUser.find(params[:id])
   end
 
   def update
-  	
+    @school_user=SchoolUser.find(params[:id])
+      if @school_user.update_attributes(school_user_params)
+        flash[:notice]='School user updated successfully'
+        redirect_to(school_users_path)
+      else
+        render('edit')
+
+      end
   end
 
 

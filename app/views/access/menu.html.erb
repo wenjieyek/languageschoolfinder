@@ -1,15 +1,73 @@
 <% @page_title="School Menu" %>
 
-<h2>School Menu</h2>
-<div class="identity">Logged in as: <%=session[:schools_name] %></div>
 
-<ul>
-	<li><%=link_to("Edit Data",school_users_path) %></li>
-	<li><%=link_to("Manage Courses") %></li>
-	<li><%=link_to("Manage Teachers") %></li>
-	<li><%=link_to("Manage Promotions") %></li>
-	<li><%=link_to("Manage Applications") %></li>
-	<li><%=link_to("Manage Inquiry") %></li>
-	<li><%=link_to("Logout",access_logout_path) %></li>
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+<div class="col s12 m3 l3"><!-- Grey navigation panel -->
+
+
+<div class="card ">
+<div class="card-image ">
+		<%=image_tag(@school_user.profilepicture.url())%>
+		<a class="btn-floating halfway-fab waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a>
+		
+</div>
+
+
+<div class="card-content">
+		<p>Logged in as: <%=session[:schools_name] %></p>
 	
-</ul>
+</div>
+
+
+<div class="card-action black-text">
+	<ul>
+		<li><%=link_to("Edit Data",school_users_path) %></li>
+		<li><%=link_to("Manage Courses") %></li>
+		<li><%=link_to("Manage Teachers") %></li>
+		<li><%=link_to("Manage Promotions") %></li>
+		<li><%=link_to("Manage Applications") %></li>
+		<li><%=link_to("Manage Inquiry") %></li>
+	</ul>
+
+    	<div class="center-align">
+    	<%=link_to("Logout",access_logout_path, :class=>"waves-effect waves-light btn red darken-4") %> 
+    	</div> 
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+		<%=form_for(@school_user,:class=>"col s12") do |f| %>
+		
+		<%= render(:partial=>'school_users/form', :locals=>{:f=>f}) %>
+		
+		<% end %>
+
+
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,7 @@ class AccessController < ApplicationController
 	before_action :confirm_logged_in,:except=>[:login,:attempt_login,:logout]
   def menu
   	#display text and links
+     @school_user=SchoolUser.find(session[:schools_id])
   end
 
   def login
@@ -21,7 +22,7 @@ class AccessController < ApplicationController
   		session[:schools_id]=authorized_user.id
   		session[:schools_name]=authorized_user.name
   		flash[:notice]="You are now logged in."
-  		redirect_to(school_users_path)
+  		redirect_to(access_menu_path)
   	else
   		flash.now[:notice]="Invalid email/password combination."
   		render("login")
@@ -30,7 +31,8 @@ class AccessController < ApplicationController
   end
 
   def logout
-  	session[:schools_id]=nil
+  	session[:schools_id]=0
+    session[:schools_name]=nil
   	flash[:notice]="Logged out"
   	redirect_to(access_login_path)
 

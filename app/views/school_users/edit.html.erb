@@ -1,2 +1,23 @@
-<h1>SchoolUsers#edit</h1>
-<p>Find me in app/views/school_users/edit.html.erb</p>
+<% @page_title="School Edit Profile" %>
+
+<div class="form-card">
+<div class="card center-align white z-depth-4" >
+<span class="card-title">Register Your School</span>
+
+<div class="card-content">
+	<%=form_for(@school_user,:class=>"col s12") do |f| %>
+	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+</div>	
+
+
+<div class="card-action">
+   	<%= f.submit("Update Profile",:class=>"waves-effect waves-light btn grey darken-4") %>
+</div>
+	<% end %>
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+
+

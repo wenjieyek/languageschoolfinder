@@ -5,7 +5,7 @@ end
  private
 
   def confirm_logged_in
-  	unless session[:schools_id]
+  	if session[:schools_id]==0
   		flash[:notice]="Please log in"
   		redirect_to(access_login_path)
   	end
