@@ -1,0 +1,56 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12 m12">
+    <%=f.label("Username")%>
+    <%=f.text_field(:username)%>
+</div>
+
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12 m6">
+    <%=f.label(:password)%>
+    <%=f.password_field(:password)%>
+</div>
+<div class="input-field col s12 m6">
+    <%=f.label(:password)%>
+    <%=f.password_field(:password_confirmation)%>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12 m12">
+    <%=f.label(:email)%>
+    <%=f.text_field(:email)%>
+</div>
+
+
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Address")%>
+    <%=f.text_area(:address,:area=>'40x10',:class=>"materialize-textarea")%>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

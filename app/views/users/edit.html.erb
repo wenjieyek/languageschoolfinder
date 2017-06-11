@@ -1,0 +1,23 @@
+<% @page_title="User Profile Edit" %>
+
+<div class="form-card">
+<div class="card center-align white z-depth-4" >
+<span class="card-title">User Profile Edit</span>
+
+<div class="card-content">
+	<%=form_for(@user,:class=>"col s12") do |f| %>
+	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+</div>	
+
+
+<div class="card-action">
+   	<%= f.submit("Edit Profile",:class=>"waves-effect waves-light btn grey darken-4") %>
+</div>
+	<% end %>
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+
+

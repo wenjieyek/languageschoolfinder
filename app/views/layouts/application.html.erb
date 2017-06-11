@@ -24,11 +24,14 @@
 
 
 <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%=link_to(session[:user_name],users_menu_path) %></li>
       <li><%=link_to(session[:schools_name],access_menu_path) %></li>
-      <li><%=link_to("Login",access_login_path) %></li>
+
+      <li><%=link_to("User Login",users_login_path) %></li>
+      <li><%=link_to("User Logout",users_logout_path) %></li>
       
-     
-      <li><%=link_to("Logout",access_logout_path) %></li>
+      <li><%=link_to("School Login",access_login_path) %></li>
+      <li><%=link_to("School Logout",access_logout_path) %></li>
 </ul>
 </div>
 </nav>

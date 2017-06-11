@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
-  
+
+  before_action :confirm_logged_in
   def index
     @teachers=Teacher.where(:school_user_id=>session[:schools_id])
 

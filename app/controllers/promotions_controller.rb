@@ -1,4 +1,6 @@
 class PromotionsController < ApplicationController
+
+  before_action :confirm_logged_in
    
    def index
     @promotions=Promotion.where(:school_user_id=>session[:schools_id])

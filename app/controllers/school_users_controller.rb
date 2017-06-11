@@ -40,6 +40,8 @@ class SchoolUsersController < ApplicationController
     @school_user=SchoolUser.find(params[:id])
       if @school_user.update_attributes(school_user_params)
         flash[:notice]='School user updated successfully'
+        session[:schools_id]=@school_user.id
+        session[:schools_name]=@school_user.name
         redirect_to(school_users_path)
       else
         render('edit')

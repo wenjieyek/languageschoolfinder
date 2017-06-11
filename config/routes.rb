@@ -2,12 +2,19 @@ Rails.application.routes.draw do
 
 
 
-  root 'school_users#index'
+ 
+
+  root 'users#index'
   #get 'school_users', :to=>'access#menu'
   get 'access/menu'
   get 'access/login'
   post 'access/attempt_login'
   get 'access/logout'
+
+  get 'users/menu'
+  get 'users/login'
+  post 'users/attempt_login'
+  get 'users/logout'
 
 
 
@@ -48,6 +55,10 @@ Rails.application.routes.draw do
     end
 
   end
+
+  resources :users,:except=>[:show] do
+  
+end
 
   	
 
