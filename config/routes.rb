@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+
+
   get 'admins/login'
   get 'admins/menu'
 
@@ -76,6 +78,14 @@ resources :admins do
     end
 
   end
+
+
+  resources :feedbacks do
+
+   
+
+  end
+
 
   	
 

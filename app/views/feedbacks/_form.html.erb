@@ -1,0 +1,41 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Name")%>
+    <%=f.text_field(:name)%>
+</div>
+</div>
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Email")%>
+    <%=f.text_field(:email)%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Phonenumber")%>
+    <%=f.text_field(:phonenumber)%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Feedback's Title")%>
+    <%=f.text_field(:title)%>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Feedback's Details")%>
+    <%=f.text_area(:details,:area=>'40x10',:class=>"materialize-textarea")%>
+</div>
+
+
+

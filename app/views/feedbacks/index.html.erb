@@ -1,0 +1,71 @@
+<% @page_title="Feedbacks List" %>
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Feedbacks List </h5>
+
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Email</td>
+			<td>Title</td>
+			
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @feedbacks.each do |feedback| %>
+			<tr>
+			<td><%= feedback.name %></td>
+			<td><%= feedback.email %></td>
+			<td><%= feedback.title %></td>
+	
+			<td><%= link_to("Show", feedback_path(feedback.id)) %></td>
+			
+			
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

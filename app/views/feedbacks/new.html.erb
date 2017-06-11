@@ -1,0 +1,24 @@
+<% @page_title="Leave Feedback" %>
+
+<div class="form-card">
+<div class="card center-align white z-depth-4" >
+<span class="card-title">Leave Feedback</span>
+
+<div class="card-content">
+	<%=form_for(@feedback,:class=>"col s12") do |f| %>
+	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+</div>	
+
+
+<div class="card-action">
+   	<%= f.submit("Leave Feedback",:class=>"waves-effect waves-light btn grey darken-4") %>
+   	<% end %>
+</div>
+	
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+
+
