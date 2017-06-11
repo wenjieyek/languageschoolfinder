@@ -3,7 +3,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
     create_table :courses do |t|
     	t.string "name",:limit=>255
     	t.string "languagetype",:limit=>255
-      t.text "details",:limit=>255
+      t.text "details"
     	t.string "price",:limit=>255
     	t.string "attachments",:limit=>255
     	t.string "time",:limit=>255

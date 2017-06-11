@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170611125625) do
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "languagetype"
-    t.text "details", limit: 255
+    t.text "details"
     t.string "price"
     t.string "attachments"
     t.string "time"
@@ -37,14 +37,14 @@ ActiveRecord::Schema.define(version: 20170611125625) do
     t.string "email"
     t.string "phonenumber"
     t.string "title"
-    t.text "details", limit: 255
+    t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "promotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.text "details", limit: 255
+    t.text "details"
     t.string "attachments"
     t.string "period"
     t.integer "school_user_id"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20170611125625) do
   create_table "teachers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "languagetype"
-    t.text "details", limit: 255
+    t.text "details"
     t.string "profilepicture"
     t.string "resumes"
     t.integer "school_user_id"

@@ -4,7 +4,7 @@ class CreateTeachers < ActiveRecord::Migration[5.1]
 
     	t.string "name",:limit=>255
     	t.string "languagetype",:limit=>255
-      	t.text "details",:limit=>255
+      	t.text "details"
     	t.string "profilepicture",:limit=>255
     	t.string "resumes",:limit=>255
     	
