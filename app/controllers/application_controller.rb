@@ -22,4 +22,13 @@ end
     
   end
 
+
+  def admin_confirm_logged_in
+      if session[:admin_id]==0
+      flash[:notice]="Please log in"
+      redirect_to(admins_login_path)
+    end
+    
+  end
+
   

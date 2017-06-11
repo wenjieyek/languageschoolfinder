@@ -1,0 +1,67 @@
+<% @page_title="Admin List" %>
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Admin List </h5>
+<p><%=link_to("Add Admin",new_admin_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Name</td>
+			
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @admins.each do |admin| %>
+			<tr>
+			<td><%= admin.username %></td>
+	
+			<td><%= link_to("Show", admin_path(admin.id)) %></td>
+			<td><%= link_to("Edit", edit_admin_path(admin.id)) %></td>
+			<td><%= link_to("Delete", delete_admin_path(admin.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

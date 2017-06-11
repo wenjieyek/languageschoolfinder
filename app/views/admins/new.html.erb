@@ -1,0 +1,61 @@
+<%@page_title="Add Admin" %>
+
+
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Add Course</h5>
+
+
+		<%=form_for(@admin,:class=>"col s12") do |f| %>
+	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+</div>	
+
+
+<div class="card-action">
+   	<%= f.submit("Add Admin",:class=>"waves-effect waves-light btn grey darken-4") %>
+</div>
+	<% end %>
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+

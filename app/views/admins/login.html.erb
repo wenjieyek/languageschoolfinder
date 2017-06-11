@@ -1,0 +1,36 @@
+<% @page_title="Admin Login" %>
+
+<div class="form-card">
+<div class="card center-align white z-depth-4" >
+<span class="card-title">Admin Login</span>
+
+<div class="card-content">      
+      <%=form_tag(admins_attempt_login_path,:method=>:post, :class=>"col s12") do %>
+<div class="row">
+<div class="input-field col s12 m12">
+      <%=text_field_tag(:username) %>
+      <label for="username">Username</label>
+</div>
+            
+<div class="input-field col s12 m12">
+      <%=password_field_tag(:password) %>
+      <label for="password">Password</label>
+</div>
+</div>
+
+
+
+<div class="card-action">
+      
+      <%=submit_tag("Log In ",:class=>"waves-effect waves-light btn grey darken-4") %>
+</div>
+      <% end %>
+
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+
+
+

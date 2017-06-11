@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'admins/login'
+  get 'admins/menu'
 
- 
-
+  
   root 'users#index'
   #get 'school_users', :to=>'access#menu'
   get 'access/menu'
@@ -15,6 +16,11 @@ Rails.application.routes.draw do
   get 'users/login'
   post 'users/attempt_login'
   get 'users/logout'
+
+  get 'admins/login'
+  get 'admins/menu'
+  post 'admins/attempt_login'
+  get 'admins/logout'
 
 
 
@@ -59,6 +65,17 @@ Rails.application.routes.draw do
   resources :users,:except=>[:show] do
   
 end
+
+
+resources :admins do
+
+    member do
+
+      get :delete
+
+    end
+
+  end
 
   	
 
