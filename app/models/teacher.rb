@@ -4,4 +4,10 @@ class Teacher < ApplicationRecord
 
 	mount_uploader :profilepicture, TeacherUploader
 	mount_uploader :resumes, TeacherUploader
+
+	validates :name,:presence=>true
+	validates :languagetype,:presence=>true
+	validates :details,:presence=>true
+	validates :profilepicture,:presence=>true
+	validates :resumes,:presence=>true
 end

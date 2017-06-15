@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
     if @course.save
     
     flash[:notice] = "Course Successfully Added"
-    redirect_to(courses_index_path)
+    redirect_to(courses_path)
 
     else
     render('new')
