@@ -18,6 +18,7 @@
 <ul id="userdropdown" class="dropdown-content">
   <li><%=link_to("Manage Account",users_menu_path) %></li>
   <li><%=link_to("View Bookmarks") %></li>
+  <li><%=link_to("Logout",users_logout_path) %></li>
  
 </ul>
 
@@ -43,14 +44,15 @@
 <!--Navigation Bar-->
 <nav class="white z-depth-4">
 <div class="nav-wrapper">
-      <a href="./" class="brand-logo black-text">
+      <a href="../" class="brand-logo black-text">
       <%= image_tag('icon2', :size=>'110x110',:alt=>'Language School Finder') %>
       </a>
 
+   
 
 
 
-<ul id="nav-mobile" class="right hide-on-med-and-down">
+<ul id="nav-mobile" class="right ">
 
 <% if controller_name=="users" %>
         <% if session[:user_name]==nil %>
@@ -99,7 +101,10 @@
       
       
 </ul>
-</div>
+
+
+
+
 </nav>
 
 <main>
@@ -109,7 +114,7 @@
       <% end %>
 
 <%= yield %>
-<li><%= controller_name %></li>
+
 
 </div>  
 </main>
