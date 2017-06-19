@@ -42,7 +42,7 @@ class SchoolUsersController < ApplicationController
         flash[:notice]='School user updated successfully'
         session[:schools_id]=@school_user.id
         session[:schools_name]=@school_user.name
-        redirect_to(school_users_path)
+        redirect_to(edit_school_user_path)
       else
         render('edit')
 

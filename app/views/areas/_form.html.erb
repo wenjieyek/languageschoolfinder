@@ -1,0 +1,39 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Area Name")%>
+    <%=f.text_field(:areaname)%>
+</div>
+</div>
+
+
+<div class="row">
+<div class="input-field col s12">
+    
+    <%= f.select(:subregion,[
+                        ["Johor"],
+                        ["Kedah"],
+                        ["Kelatan"],
+                        ["Melaka"],
+                        ["Sembilan"],
+                        ["Pahang"],
+                        ["Perak"],
+                        ["Pelis"],
+                        ["Kelatan Melaka"],
+                        ["Sabah"],
+                        ["Sarawak"],
+                        ["Selangor"],
+                        ["Terengganu"],
+                        ["Kuala Lumpur"],
+                        
+                       ]) %>
+
+    <%=f.label("Subregion")%>
+</div>
+
+
+
+
+
+

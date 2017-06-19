@@ -17,3 +17,11 @@
 //= require jquery
 //= require materialize-sprockets
 
+
+document.addEventListener("turbolinks:load", function() {
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+})
+
+

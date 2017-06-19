@@ -1,6 +1,12 @@
 class CoursesController < ApplicationController
   before_action :confirm_logged_in
 
+  @school_user=SchoolUser.find(1)
+
+  
+
+
+
   
   def index
     @courses=Course.where(:school_user_id=>session[:schools_id])

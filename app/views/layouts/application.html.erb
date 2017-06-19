@@ -9,6 +9,13 @@
 
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+  
+  
+
+
+</script>
 </head>
 
 
@@ -69,7 +76,7 @@
 
   
 
-<% if controller_name=="school_users" || controller_name== "access" %>
+<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" %>
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>
@@ -80,7 +87,7 @@
 
 
 
-<% if controller_name=="admins" %>
+<% if controller_name=="admins" || controller_name=="areas"%>
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>
@@ -146,7 +153,8 @@
 
   
 
-<% if controller_name=="school_users" || controller_name== "access" %>
+<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" %>
+
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>
@@ -163,7 +171,7 @@
 
 
 
-<% if controller_name=="admins" %>
+<% if controller_name=="admins" || controller_name=="areas"%>
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>

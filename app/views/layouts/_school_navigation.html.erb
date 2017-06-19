@@ -5,8 +5,10 @@
 
 <div class="card ">
 <div class="card-image ">
+
+
 		
-		<a class="btn-floating halfway-fab waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a>
+		
 		
 </div>
 
@@ -20,7 +22,7 @@
 
 <div class="card-action black-text">
 	<ul>
-		<li><%=link_to("Edit Data",school_users_path) %></li>
+		<li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
 		<li><%=link_to("Manage Courses",courses_path) %></li>
 		<li><%=link_to("Manage Teachers",teachers_path) %></li>
 		<li><%=link_to("Manage Promotions",promotions_path) %></li>

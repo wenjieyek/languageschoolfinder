@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
 
 
+  
+
   get 'admins/login'
   get 'admins/menu'
 
@@ -81,6 +83,19 @@ resources :admins do
 
 
   resources :feedbacks do
+
+   
+
+  end
+
+
+   resources :areas ,:except=>[:show] do
+
+    member do
+
+      get :delete
+
+    end
 
    
 

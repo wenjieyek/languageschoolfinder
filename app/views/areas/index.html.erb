@@ -1,0 +1,73 @@
+<% @page_title="Areas List" %>
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Areas List </h5>
+<p><%=link_to("Add Area",new_area_path) %></p>
+
+
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Area Name</td>
+			<td>Subregion</td>
+			<td>Action</td>
+			
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @areas.each do |areas| %>
+			<tr>
+			<td><%= areas.areaname %></td>
+			<td><%= areas.subregion %></td>
+			<td><%= link_to("Edit", edit_area_path(areas.id)) %></td>
+			<td><%= link_to("Delete", delete_area_path(areas.id)) %></td>
+			
+	
+			
+			
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
