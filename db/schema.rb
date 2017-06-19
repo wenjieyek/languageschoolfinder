@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170619120448) do
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "areaname"
-    t.string "subregion"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(version: 20170619120448) do
     t.string "phonenumber"
     t.string "website"
     t.text "address"
+    t.text "city"
+    t.text "state"
+    t.text "postcode"
     t.text "description"
     t.text "transportation"
     t.text "profilepicture"

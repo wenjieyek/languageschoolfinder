@@ -48,6 +48,60 @@
 </div>
 </div>
 
+<div class="row">
+<div class="input-field col s12 m4">
+    <%= f.select(:state,[
+                        ["Johor"],
+                        ["Kedah"],
+                        ["Kelatan"],
+                        ["Melaka"],
+                        ["Sembilan"],
+                        ["Pahang"],
+                        ["Perak"],
+                        ["Pelis"],
+                        ["Kelatan Melaka"],
+                        ["Sabah"],
+                        ["Sarawak"],
+                        ["Selangor"],
+                        ["Terengganu"],
+                        ["Kuala Lumpur"],
+                        
+                       ]) %>
+
+    <%=f.label("State")%>
+
+</div>
+
+<div class="input-field col s12 m4">
+    <%= f.select(:city,[
+                        ["Johor"],
+                        ["Kedah"],
+                        ["Kelatan"],
+                        ["Melaka"],
+                        ["Sembilan"],
+                        ["Pahang"],
+                        ["Perak"],
+                        ["Pelis"],
+                        ["Kelatan Melaka"],
+                        ["Sabah"],
+                        ["Sarawak"],
+                        ["Selangor"],
+                        ["Terengganu"],
+                        ["Kuala Lumpur"],
+                        
+                       ]) %>
+
+    <%=f.label("City")%>
+
+</div>
+
+<div class="input-field col s12 m4">
+    <%=f.label("Postcode")%>
+    <%=f.text_field(:postcode)%>
+
+</div>
+</div>
+
 
 
 <div class="row">

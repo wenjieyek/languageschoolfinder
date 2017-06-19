@@ -16,7 +16,7 @@
 		<thead>
 			<tr>
 			<td>Area Name</td>
-			<td>Subregion</td>
+			<td>State</td>
 			<td>Action</td>
 			
 			</tr>
@@ -27,7 +27,7 @@
 		<% @areas.each do |areas| %>
 			<tr>
 			<td><%= areas.areaname %></td>
-			<td><%= areas.subregion %></td>
+			<td><%= areas.state %></td>
 			<td><%= link_to("Edit", edit_area_path(areas.id)) %></td>
 			<td><%= link_to("Delete", delete_area_path(areas.id)) %></td>
 			

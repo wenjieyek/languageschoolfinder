@@ -8,6 +8,9 @@ class CreateSchoolUsers < ActiveRecord::Migration[5.1]
     	t.string "phonenumber",:limit=>255
     	t.string "website",:limit=>255
     	t.text "address"
+        t.text "city"
+        t.text "state"
+        t.text "postcode"
     	t.text "description"
     	t.text "transportation"
     	t.text "profilepicture"

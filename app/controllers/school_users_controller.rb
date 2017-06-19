@@ -61,6 +61,9 @@ class SchoolUsersController < ApplicationController
                                         :email,
                                         :website,
                                         :address,
+                                        :city,
+                                        :state,
+                                        :postcode,
                                         :description,
                                         :transportation,
                                         :profilepicture)
