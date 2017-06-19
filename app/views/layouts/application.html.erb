@@ -17,7 +17,8 @@
 <!-- Dropdown Structure -->
 <ul id="userdropdown" class="dropdown-content">
   <li><%=link_to("Manage Account",users_menu_path) %></li>
-  <li><%=link_to("Logout",users_logout_path) %></li>
+  <li><%=link_to("View Bookmarks") %></li>
+ 
 </ul>
 
 <!-- Dropdown Structure -->
@@ -42,7 +43,7 @@
 <!--Navigation Bar-->
 <nav class="white z-depth-4">
 <div class="nav-wrapper">
-      <a href="#" class="brand-logo black-text">
+      <a href="./" class="brand-logo black-text">
       <%= image_tag('icon2', :size=>'110x110',:alt=>'Language School Finder') %>
       </a>
 
@@ -118,16 +119,53 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Language School Finder</h5>
+                <p class="grey-text text-lighten-4">Find Your Perfect Language School</p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <% if controller_name=="users" %>
+        <% if session[:user_name]==nil %>
+        <li><%=link_to("User Login",users_login_path) %></li>
+
+        <% else %>
+
+       <li><%=link_to("Manage Account",users_menu_path) %></li>
+      <li><%=link_to("Logout",users_logout_path) %></li>
+        <% end %>
+<% end %>
+
+
+
+
+  
+
+<% if controller_name=="school_users" || controller_name== "access" %>
+        <% if session[:schools_name]==nil %>
+        <li><%=link_to("School Login",access_login_path) %></li>
+        <% else %>
+         <li><%=link_to("Manage Account",access_menu_path) %></li>
+    <li><%=link_to("Manage Courses",courses_path) %></li>
+    <li><%=link_to("Manage Teachers",teachers_path) %></li>
+    <li><%=link_to("Manage Promotions",promotions_path) %></li>
+    <li><%=link_to("Manage Applications") %></li>
+    <li><%=link_to("Manage Inquiry") %></li>
+    <li><%=link_to("Logout",access_logout_path) %></li>
+        <% end %>
+<% end %>
+
+
+
+
+<% if controller_name=="admins" %>
+        <% if session[:admin_name]==nil %>
+        <li><%=link_to("Admin Login",admins_login_path) %></li>
+        <% else %>
+        <li><%=link_to("Manage Account",admins_menu_path) %></li>
+        <li><%=link_to("Logout",admins_logout_path) %></li>
+        <% end %>
+<% end %>
                 </ul>
               </div>
             </div>

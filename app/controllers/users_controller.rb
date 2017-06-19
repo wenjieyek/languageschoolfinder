@@ -60,11 +60,11 @@ class UsersController < ApplicationController
   end
 
    def edit
-    @user=User.find(params[:id])
+    @user=User.find(session[:user_id])
   end
 
   def update
-    @user=User.find(params[:id])
+    @user=User.find(session[:user_id])
       if @user.update_attributes(user_params)
         flash[:notice]='User profile updated successfully'
         session[:user_id]=@user.id

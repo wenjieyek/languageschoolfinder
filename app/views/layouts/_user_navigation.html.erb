@@ -1,0 +1,32 @@
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+<div class="col s12 m3 l3"><!-- Grey navigation panel -->
+
+
+<div class="card ">
+
+
+
+<div class="card-content">
+		<h5>User Control Panel</h5>
+		<p>Logged in as: <%=session[:user_name] %></p>
+	
+</div>
+
+
+<div class="card-action black-text">
+	<ul>
+		<li><%=link_to("Edit Data", edit_user_path(session[:user_id])) %></li>
+		<li><%=link_to("View Bookmarks") %></li>
+		<li><%=link_to("Give Feedback",new_feedback_path) %></li>
+		
+	</ul>
+
+    	<div class="center-align">
+    	<%=link_to("Logout",users_logout_path, :class=>"waves-effect waves-light btn red darken-4") %> 
+    	</div> 
+</div>
+
+</div>
+
+</div>
