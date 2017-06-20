@@ -15,7 +15,9 @@
 	<h5>Teacher Details </h5>
 
 
-			<%= image_tag (@teacher.profilepicture_url() ) %>
+			
+
+			<img class="responsive-img" style="height:200px;" src=<%= @teacher.profilepicture %> >
 		
 			
 			<p>Course Name: <%= @teacher.name %></p>

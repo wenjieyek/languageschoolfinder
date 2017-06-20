@@ -1,0 +1,65 @@
+<% @page_title="Attachments List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Attachments List </h5>
+<p><%=link_to("Add Attachments",new_school_attachment_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Media</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @school_attachments.each do |school_attachment| %>
+			<tr>
+			<td><img class="responsive-img" style="height:100px;" src=<%= school_attachment.directory %> ></td>
+			<td><%= link_to("Show", school_attachment_path(school_attachment.id)) %></td>
+			<td><%= link_to("Edit", edit_school_attachment_path(school_attachment.id)) %></td>
+			<td><%= link_to("Delete", delete_school_attachment_path(school_attachment.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

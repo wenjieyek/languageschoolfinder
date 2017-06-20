@@ -32,6 +32,7 @@
 <!-- Dropdown Structure -->
 <ul id="schooldropdown" class="dropdown-content">
     <li><%=link_to("Manage Account",access_menu_path) %></li>
+    <li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
     <li><%=link_to("Manage Courses",courses_path) %></li>
     <li><%=link_to("Manage Teachers",teachers_path) %></li>
     <li><%=link_to("Manage Promotions",promotions_path) %></li>
@@ -76,7 +77,7 @@
 
   
 
-<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" %>
+<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments" %>
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>

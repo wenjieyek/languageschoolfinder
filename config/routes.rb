@@ -5,6 +5,16 @@ Rails.application.routes.draw do
 
   
 
+  get 'school_attachments/index'
+
+  get 'school_attachments/show'
+
+  get 'school_attachments/new'
+
+  get 'school_attachments/edit'
+
+  get 'school_attachments/delete'
+
   get 'admins/login'
   get 'admins/menu'
 
@@ -90,6 +100,19 @@ resources :admins do
 
 
    resources :areas ,:except=>[:show] do
+
+    member do
+
+      get :delete
+
+    end
+
+   
+
+  end
+
+
+     resources :school_attachments do
 
     member do
 
