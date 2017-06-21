@@ -43,13 +43,13 @@
 
 <!-- Dropdown Structure -->
 <ul id="admindropdown" class="dropdown-content">
-    <li><%=link_to("Manage Account",admins_menu_path) %></li>
+    <li><%=link_to("Edit Data",admins_menu_path) %></li>
     <li><%=link_to("Manage Admins",admins_path) %></li>
     <li><%=link_to("Manage States",states_path) %></li>
     <li><%=link_to("Manage Areas",areas_path) %></li>
     <li><%=link_to("Manage Languages",languages_path) %></li>
-    <li><%=link_to("Manage Schools") %></li>
-    <li><%=link_to("Manage Users") %></li>
+    <li><%=link_to("Manage Schools",manage_schools_path) %></li>
+    <li><%=link_to("Manage Users",manage_users_path) %></li>
     <li><%=link_to("Manage Feedback",feedbacks_path) %></li>
     <li><%=link_to("Logout",admins_logout_path) %></li>
 </ul>
@@ -95,7 +95,7 @@
 
 
 
-<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages"%>
+<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages" || controller_name=="manage_schools" || controller_name=="manage_users"%>
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>
@@ -180,19 +180,18 @@
 
 
 
-<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages"%>
+<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages" || controller_name=="manage_schools" || controller_name=="manage_users"%>
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>
-        <li><%=link_to("Manage Account",admins_menu_path) %></li>
-        <li><%=link_to("Manage Admins",admins_path) %></li>
-        <li><%=link_to("Manage States",states_path) %></li>
-        <li><%=link_to("Manage Areas",areas_path) %></li>
-        <li><%=link_to("Manage Languages",languages_path) %></li>
-        <li><%=link_to("Manage Schools") %></li>
-        <li><%=link_to("Manage Users") %></li>
-        <li><%=link_to("Manage Feedback",feedbacks_path) %></li>
-        <li><%=link_to("Logout",admins_logout_path) %></li>
+        <li><%=link_to("Edit Data",admins_menu_path) %></li>
+    <li><%=link_to("Manage Admins",admins_path) %></li>
+    <li><%=link_to("Manage States",states_path) %></li>
+    <li><%=link_to("Manage Areas",areas_path) %></li>
+    <li><%=link_to("Manage Languages",languages_path) %></li>
+    <li><%=link_to("Manage Schools",manage_schools_path) %></li>
+    <li><%=link_to("Manage Users",manage_users_path) %></li>
+    <li><%=link_to("Manage Feedback",feedbacks_path) %></li>
         <% end %>
 <% end %>
                 </ul>

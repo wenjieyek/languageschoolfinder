@@ -1,6 +1,6 @@
 class SchoolUser < ApplicationRecord
 
-	has_secure_password
+	has_secure_password 
 	has_many :courses
 	has_many :teachers
 	has_many :promotions
@@ -16,7 +16,7 @@ class SchoolUser < ApplicationRecord
 	validates :name,:presence=>true,:length=>{:maximum=>50}
 	validates :phonenumber,:presence=>true,:length=>{:maximum=>50}
 
-	validates :password,:presence=>true,:length=>{:within=>8..25},:confirmation=>true
+	validates :password,:presence=>true,:length=>{:within=>8..25},:confirmation=>true,on: :create
 	
 	validates :email,:presence=>true,:length=>{:maximum=>100},:format=>EMAIL_REGEX,:uniqueness=>true
 	validates :website,:length=>{:maximum=>100}

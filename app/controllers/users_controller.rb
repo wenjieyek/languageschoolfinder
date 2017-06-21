@@ -15,10 +15,23 @@ class UsersController < ApplicationController
     end
 
     if authorized_user
+
+      if authorized_user.status==0
+
+        flash.now[:notice]="User account has been deactived, please contect admin"
+        render("login")
+
+      else
+
+
       session[:user_id]=authorized_user.id
       session[:user_name]=authorized_user.username
       flash[:notice]="You are now logged in."
       redirect_to(users_menu_path)
+
+    end
+
+    
     else
       flash.now[:notice]="Invalid email/password combination."
       render("login")

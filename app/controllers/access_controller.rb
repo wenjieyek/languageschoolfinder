@@ -19,10 +19,22 @@ class AccessController < ApplicationController
   	end
 
   	if authorized_user
-  		session[:schools_id]=authorized_user.id
-  		session[:schools_name]=authorized_user.name
-  		flash[:notice]="You are now logged in."
-  		redirect_to(access_menu_path)
+
+      if authorized_user.status==0
+
+        flash.now[:notice]="User account has been deactived, please contect admin"
+        render("login")
+
+      else
+
+      session[:schools_id]=authorized_user.id
+      session[:schools_name]=authorized_user.name
+      flash[:notice]="You are now logged in."
+      redirect_to(access_menu_path)
+
+        
+      end
+  		
   	else
   		flash.now[:notice]="Invalid email/password combination."
   		render("login")

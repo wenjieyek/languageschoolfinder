@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 
 	validates :username,:presence=>true,:length=>{:maximum=>50}
-	validates :password,:presence=>true,:length=>{:within=>8..25},:confirmation=>true
+	validates :password,:presence=>true,:length=>{:within=>8..25},:confirmation=>true,on: :create
 	validates :email,:presence=>true,:length=>{:maximum=>100},:format=>EMAIL_REGEX,:uniqueness=>true
 	validates :address,:presence=>true
 

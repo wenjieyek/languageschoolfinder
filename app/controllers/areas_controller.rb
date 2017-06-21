@@ -1,6 +1,6 @@
 class AreasController < ApplicationController
 
-	before_action :admin_confirm_logged_in,:except=>[:new,:create]
+	before_action :admin_confirm_logged_in
 
 
   def index

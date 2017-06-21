@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   
 
  
+  
+
+ 
+
+  
   get 'admins/login'
   get 'admins/menu'
 
@@ -27,7 +32,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :school_users do
+  resources :school_users  do
 
 
       
@@ -81,11 +86,7 @@ resources :admins do
   end
 
 
-  resources :feedbacks do
-
-   
-
-  end
+  resources :feedbacks 
 
 
    resources :areas ,:except=>[:show] do
@@ -138,6 +139,23 @@ resources :admins do
    
 
   end
+
+
+  resources :manage_schools do
+
+
+  end
+
+  resources :manage_users do
+
+
+  end
+
+
+  
+   
+
+
 
   	
 

@@ -1,0 +1,67 @@
+<% @page_title="User Details" %>
+
+
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+
+	<h5>User Details </h5>
+		
+			
+			
+			
+
+			<p>Username: <%= @manage_user.username %></p>
+			<p>Email: <%= @manage_user.email %></p>
+			<p>Address: <%= @manage_user.address %></p>
+			
+			<% if @manage_user.status==1%>
+
+			<p>Status: <%= "Active" %></p>
+
+			<% else %>
+
+			<p>Status: <%= "Deactive" %></p>
+				
+			<% end %>
+
+
+			
+
+
+		
+
+
+	</div>
+
+	<div class="card-action">
+
+		
+		
+		<%= link_to("Edit", edit_manage_user_path(@manage_user.id),:class=>"waves-effect waves-light btn grey darken-4") %>
+		
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

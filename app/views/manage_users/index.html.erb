@@ -1,0 +1,73 @@
+<% @page_title="User List" %>
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Users List </h5>
+
+
+
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Userame</td>
+			<td>E-mail</td>
+			<td>Action</td>
+			
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @manage_users.each do |manage_users| %>
+			<tr>
+			<td><%= manage_users.username %></td>
+			<td><%= manage_users.email %></td>
+			<td><%= link_to("Show", manage_user_path(manage_users.id)) %></td>
+			
+			
+	
+			
+			
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

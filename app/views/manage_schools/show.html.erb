@@ -1,0 +1,74 @@
+<% @page_title="School Details" %>
+
+
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+
+<%= render(:partial=>'layouts/admin_navigation') %>
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+
+	<h5>School Details </h5>
+		
+			
+			<img class="responsive-img" style="height:200px;" src=<%= @manage_school.profilepicture %> >
+
+			
+
+			<p>Name: <%= @manage_school.name %></p>
+			<p>Email: <%= @manage_school.email %></p>
+			<p>Phonenumber: <%= @manage_school.phonenumber %></p>
+			<p>Website: <%= @manage_school.website %></p>
+			<p>Address: <%= @manage_school.address %></p>
+			<p>City: <%= @manage_school.city %></p>
+			<p>State: <%= @manage_school.state %></p>
+			<p>Postcode: <%= @manage_school.postcode %></p>
+			<p>Description: <%= @manage_school.description %></p>
+			<p>Transportation: <%= @manage_school.transportation %></p>
+			<% if @manage_school.status==1%>
+
+			<p>Status: <%= "Active" %></p>
+
+			<% else %>
+
+			<p>Status: <%= "Deactive" %></p>
+				
+			<% end %>
+
+
+			
+
+
+		
+
+
+	</div>
+
+	<div class="card-action">
+
+		
+		
+		<%= link_to("Edit", edit_manage_school_path(@manage_school.id),:class=>"waves-effect waves-light btn grey darken-4") %>
+		
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
