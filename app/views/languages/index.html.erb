@@ -1,4 +1,4 @@
-<% @page_title="Areas List" %>
+<% @page_title="Languages List" %>
 
 <%= render(:partial=>'layouts/admin_navigation') %>
 
@@ -7,16 +7,16 @@
 <!-- Teal page content  -->
 <div class="card">
 <div class="card-content">
-<h5>Areas List </h5>
-<p><%=link_to("Add Area",new_area_path) %></p>
+<h5>Languages List </h5>
+<p><%=link_to("Add Language",new_language_path) %></p>
 
 
 
 	<table class="responsive-table">
 		<thead>
 			<tr>
-			<td>Area Name</td>
-			<td>State</td>
+			<td>Language</td>
+			
 			<td>Action</td>
 			
 			</tr>
@@ -24,12 +24,12 @@
 
 		<tbody>
 	
-		<% @areas.each do |areas| %>
+		<% @languages.each do |languages| %>
 			<tr>
-			<td><%= areas.areaname %></td>
-			<td><%= areas.state.state %></td>
-			<td><%= link_to("Edit", edit_area_path(areas.id)) %></td>
-			<td><%= link_to("Delete", delete_area_path(areas.id)) %></td>
+			<td><%= languages.language %></td>
+			
+			<td><%= link_to("Edit", edit_language_path(languages.id)) %></td>
+			<td><%= link_to("Delete", delete_language_path(languages.id)) %></td>
 			
 	
 			

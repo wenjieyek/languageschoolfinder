@@ -50,46 +50,22 @@
 
 <div class="row">
 <div class="input-field col s12 m4">
-    <%= f.select(:state,[
-                        ["Johor"],
-                        ["Kedah"],
-                        ["Kelatan"],
-                        ["Melaka"],
-                        ["Sembilan"],
-                        ["Pahang"],
-                        ["Perak"],
-                        ["Pelis"],
-                        ["Kelatan Melaka"],
-                        ["Sabah"],
-                        ["Sarawak"],
-                        ["Selangor"],
-                        ["Terengganu"],
-                        ["Kuala Lumpur"],
-                        
-                       ]) %>
+    <%= f.collection_select(:state, State.all,:id,:state,:prompt => "Select a State")        %>
 
     <%=f.label("State")%>
 
 </div>
 
 <div class="input-field col s12 m4">
-    <%= f.select(:city,[
-                        ["Johor"],
-                        ["Kedah"],
-                        ["Kelatan"],
-                        ["Melaka"],
-                        ["Sembilan"],
-                        ["Pahang"],
-                        ["Perak"],
-                        ["Pelis"],
-                        ["Kelatan Melaka"],
-                        ["Sabah"],
-                        ["Sarawak"],
-                        ["Selangor"],
-                        ["Terengganu"],
-                        ["Kuala Lumpur"],
-                        
-                       ]) %>
+    <%= f.grouped_collection_select(:city, 
+                                    State.all,
+                                    :areas,
+                                    :state,
+                                    :id,
+                                    :areaname,       
+                                    :prompt => "Select a Area"
+                                    ) 
+                                    %>
 
     <%=f.label("City")%>
 

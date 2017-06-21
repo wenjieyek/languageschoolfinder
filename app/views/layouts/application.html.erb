@@ -43,8 +43,15 @@
 
 <!-- Dropdown Structure -->
 <ul id="admindropdown" class="dropdown-content">
-  <li><%=link_to("Manage Account",admins_menu_path) %></li>
-  <li><%=link_to("Logout",admins_logout_path) %></li>
+    <li><%=link_to("Manage Account",admins_menu_path) %></li>
+    <li><%=link_to("Manage Admins",admins_path) %></li>
+    <li><%=link_to("Manage States",states_path) %></li>
+    <li><%=link_to("Manage Areas",areas_path) %></li>
+    <li><%=link_to("Manage Languages",languages_path) %></li>
+    <li><%=link_to("Manage Schools") %></li>
+    <li><%=link_to("Manage Users") %></li>
+    <li><%=link_to("Manage Feedback",feedbacks_path) %></li>
+    <li><%=link_to("Logout",admins_logout_path) %></li>
 </ul>
 
 
@@ -88,7 +95,7 @@
 
 
 
-<% if controller_name=="admins" || controller_name=="areas"%>
+<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages"%>
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>
@@ -154,29 +161,37 @@
 
   
 
-<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" %>
+<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments"%>
 
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>
-         <li><%=link_to("Manage Account",access_menu_path) %></li>
+    <li><%=link_to("Manage Account",access_menu_path) %></li>
+    <li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
     <li><%=link_to("Manage Courses",courses_path) %></li>
     <li><%=link_to("Manage Teachers",teachers_path) %></li>
     <li><%=link_to("Manage Promotions",promotions_path) %></li>
     <li><%=link_to("Manage Applications") %></li>
     <li><%=link_to("Manage Inquiry") %></li>
-    <li><%=link_to("Logout",access_logout_path) %></li>
+    
         <% end %>
 <% end %>
 
 
 
 
-<% if controller_name=="admins" || controller_name=="areas"%>
+<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages"%>
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>
         <li><%=link_to("Manage Account",admins_menu_path) %></li>
+        <li><%=link_to("Manage Admins",admins_path) %></li>
+        <li><%=link_to("Manage States",states_path) %></li>
+        <li><%=link_to("Manage Areas",areas_path) %></li>
+        <li><%=link_to("Manage Languages",languages_path) %></li>
+        <li><%=link_to("Manage Schools") %></li>
+        <li><%=link_to("Manage Users") %></li>
+        <li><%=link_to("Manage Feedback",feedbacks_path) %></li>
         <li><%=link_to("Logout",admins_logout_path) %></li>
         <% end %>
 <% end %>

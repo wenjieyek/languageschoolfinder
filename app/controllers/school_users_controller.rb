@@ -16,6 +16,8 @@ class SchoolUsersController < ApplicationController
 
    def new
       @school_user=SchoolUser.new
+      
+
   end
 
   def create

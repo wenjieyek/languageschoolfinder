@@ -1,20 +1,9 @@
 Rails.application.routes.draw do
 
 
-
-
   
 
-  get 'school_attachments/index'
-
-  get 'school_attachments/show'
-
-  get 'school_attachments/new'
-
-  get 'school_attachments/edit'
-
-  get 'school_attachments/delete'
-
+ 
   get 'admins/login'
   get 'admins/menu'
 
@@ -124,6 +113,31 @@ resources :admins do
 
   end
 
+
+  resources :languages ,:except=>[:show] do
+
+    member do
+
+      get :delete
+
+    end
+
+   
+
+  end
+
+
+    resources :states ,:except=>[:show] do
+
+    member do
+
+      get :delete
+
+    end
+
+   
+
+  end
 
   	
 

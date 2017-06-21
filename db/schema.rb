@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620071859) do
+ActiveRecord::Schema.define(version: 20170621044851) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "username"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 20170620071859) do
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "areaname"
-    t.string "state"
+    t.integer "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_areas_on_state_id"
   end
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -45,6 +46,12 @@ ActiveRecord::Schema.define(version: 20170620071859) do
     t.string "phonenumber"
     t.string "title"
     t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "languages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,6 +91,12 @@ ActiveRecord::Schema.define(version: 20170620071859) do
     t.text "transportation"
     t.text "profilepicture"
     t.integer "status", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

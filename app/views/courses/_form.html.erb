@@ -10,13 +10,7 @@
 <div class="row">
 <div class="input-field col s12">
     
-    <%= f.select(:languagetype,[
-                        ["English"],
-                        ["Mandarin"],
-                        ["Bahasa Melayu"],
-                        ["English"],
-                        ["Korean"]
-                       ]) %>
+    <%= f.collection_select(:languagetype, Language.all,:id,:language,:prompt => "Select a Language")        %>
 
 
     <%=f.label("Course's Type")%>                   

@@ -1,4 +1,4 @@
-<% @page_title="Areas List" %>
+<% @page_title="States List" %>
 
 <%= render(:partial=>'layouts/admin_navigation') %>
 
@@ -7,16 +7,16 @@
 <!-- Teal page content  -->
 <div class="card">
 <div class="card-content">
-<h5>Areas List </h5>
-<p><%=link_to("Add Area",new_area_path) %></p>
+<h5>States List </h5>
+<p><%=link_to("Add State",new_state_path) %></p>
 
 
 
 	<table class="responsive-table">
 		<thead>
 			<tr>
-			<td>Area Name</td>
 			<td>State</td>
+			
 			<td>Action</td>
 			
 			</tr>
@@ -24,12 +24,12 @@
 
 		<tbody>
 	
-		<% @areas.each do |areas| %>
+		<% @states.each do |states| %>
 			<tr>
-			<td><%= areas.areaname %></td>
-			<td><%= areas.state.state %></td>
-			<td><%= link_to("Edit", edit_area_path(areas.id)) %></td>
-			<td><%= link_to("Delete", delete_area_path(areas.id)) %></td>
+			<td><%= states.state %></td>
+			
+			<td><%= link_to("Edit", edit_state_path(states.id)) %></td>
+			<td><%= link_to("Delete", delete_state_path(states.id)) %></td>
 			
 	
 			
