@@ -1,0 +1,66 @@
+<% @page_title="Certificate Details" %>
+
+
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+
+	<h5>Certificate Details </h5>
+
+
+			<p><img class="responsive-img" style="height:400px;" src=<%= @certificate.attachment %> ></p>
+		
+			
+			<p>Certificate Name: <%= @certificate.title %></p>
+
+			
+
+			<p>Details: <%= @certificate.details %></p>
+
+		
+
+			
+
+			
+			
+
+			
+			
+
+
+		
+
+
+	</div>
+
+	<div class="card-action">
+
+		<%= link_to("Delete", delete_certificate_path(@certificate.id),:class=>"waves-effect waves-light btn red darken-4") %>
+		
+		<%= link_to("Edit", edit_certificate_path(@certificate.id),:class=>"waves-effect waves-light btn grey darken-4") %>
+		
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

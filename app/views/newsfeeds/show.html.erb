@@ -1,0 +1,53 @@
+<% @page_title="Newsfeed Details" %>
+
+
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+
+	<h5>Newsfeed Details </h5>
+		
+			<p>Title: <%= @newsfeed.title %></p>
+			
+			
+			<p>Details: <%= @newsfeed.details %></p>
+
+			
+
+
+		
+
+
+	</div>
+
+	<div class="card-action">
+
+		<%= link_to("Delete", delete_newsfeed_path(@newsfeed.id),:class=>"waves-effect waves-light btn red darken-4") %>
+		
+		<%= link_to("Edit", edit_newsfeed_path(@newsfeed.id),:class=>"waves-effect waves-light btn grey darken-4") %>
+		
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,26 @@ Rails.application.routes.draw do
  
 
   
+  get 'certificates/index'
+
+  get 'certificates/new'
+
+  get 'certificates/show'
+
+  get 'certificates/edit'
+
+  get 'certificates/delete'
+
+  get 'newsfeeds/index'
+
+  get 'newsfeeds/new'
+
+  get 'newsfeeds/show'
+
+  get 'newsfeeds/edit'
+
+  get 'newsfeeds/delete'
+
   get 'admins/login'
   get 'admins/menu'
 
@@ -150,6 +170,31 @@ resources :admins do
 
 
   end
+
+
+
+
+   resources :newsfeeds do
+
+    member do
+
+      get :delete
+
+    end
+
+  end
+
+   resources :certificates do
+
+    member do
+
+      get :delete
+
+    end
+
+  end
+
+
 
 
   

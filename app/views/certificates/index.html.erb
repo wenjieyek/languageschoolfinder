@@ -1,0 +1,65 @@
+<% @page_title="Certificates List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Certificates List </h5>
+<p><%=link_to("Add Certificate",new_certificate_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Certificate Name</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @certificates.each do |certificates| %>
+			<tr>
+			<td><%= certificates.title %></td>
+			<td><%= link_to("Show", certificate_path(certificates.id)) %></td>
+			<td><%= link_to("Edit", edit_certificate_path(certificates.id)) %></td>
+			<td><%= link_to("Delete", delete_certificate_path(certificates.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

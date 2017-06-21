@@ -1,0 +1,65 @@
+<% @page_title="Newsfeed List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Newsfeeds List </h5>
+<p><%=link_to("Add Newsfeed",new_newsfeed_path) %></p>
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Title</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @newsfeeds.each do |newsfeeds| %>
+			<tr>
+			<td><%= newsfeeds.title %></td>
+			<td><%= link_to("Show", newsfeed_path(newsfeeds.id)) %></td>
+			<td><%= link_to("Edit", edit_newsfeed_path(newsfeeds.id)) %></td>
+			<td><%= link_to("Delete", delete_newsfeed_path(newsfeeds.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

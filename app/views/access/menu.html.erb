@@ -25,12 +25,15 @@
 	<ul>
 		<li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
 		
-    <li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
-    <li><%=link_to("Manage Courses",courses_path) %></li>
-    <li><%=link_to("Manage Teachers",teachers_path) %></li>
-    <li><%=link_to("Manage Promotions",promotions_path) %></li>
-    <li><%=link_to("Manage Applications") %></li>
-    <li><%=link_to("Manage Inquiry") %></li>
+  
+		<li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
+		<li><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
+		<li><%=link_to("Manage Certificate",certificates_path) %></li>
+		<li><%=link_to("Manage Courses",courses_path) %></li>
+		<li><%=link_to("Manage Teachers",teachers_path) %></li>
+		<li><%=link_to("Manage Promotions",promotions_path) %></li>
+		<li><%=link_to("Manage Applications") %></li>
+		<li><%=link_to("Manage Inquiry") %></li>
 	</ul>
 
     	<div class="center-align">
