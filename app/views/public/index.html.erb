@@ -1,0 +1,45 @@
+<% @page_title="Index" %>
+
+<div class="form-card">
+<div class="card center-align white z-depth-4" >
+<span class="card-title">Search Your Language School</span>
+
+
+<div class="card-content">
+	 <%=form_tag(public_result_path,:method=>:get, :class=>"col s12") do %>
+
+<div class="row">
+<div class="input-field col s12 m6">
+
+	
+
+     <%=select_tag(:city,options_from_collection_for_select(Area.all, :areaname, :areaname),:prompt=>"Select Your Area") %>
+
+    <%=label_tag ("Area ")%>
+</div>
+            
+<div class="input-field col s12 m6">
+       <%=select_tag(:languagetype,options_from_collection_for_select(Language.all, :language, :language),:prompt=>"Select Your Language") %>
+
+
+    <%=label_tag("Language")%>             
+</div>
+</div>
+
+
+
+
+      
+      <%=submit_tag("Search!",:class=>"waves-effect waves-light btn grey darken-4") %>
+
+      <% end %>
+
+
+</div>
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+
+

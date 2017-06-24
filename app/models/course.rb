@@ -7,8 +7,8 @@ class Course < ApplicationRecord
 	validates :name,:presence=>true
 	validates :languagetype,:presence=>true
 	validates :details,:presence=>true
-	validates :price,:presence=>true
+	#validates :price,:presence=>true
 	#validates :attachments,:presence=>true
-	validates :time,:presence=>true
+	#validates :time,:presence=>true
 	
 end

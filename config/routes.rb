@@ -2,38 +2,21 @@ Rails.application.routes.draw do
 
 
   
-
+ root 'public#index'
  
   
 
  
 
   
-  get 'certificates/index'
-
-  get 'certificates/new'
-
-  get 'certificates/show'
-
-  get 'certificates/edit'
-
-  get 'certificates/delete'
-
-  get 'newsfeeds/index'
-
-  get 'newsfeeds/new'
-
-  get 'newsfeeds/show'
-
-  get 'newsfeeds/edit'
-
-  get 'newsfeeds/delete'
+  get 'public/index'
+  get 'public/result'
+  
+ 
 
   get 'admins/login'
   get 'admins/menu'
-
-  
-  root 'users#index'
+ 
   #get 'school_users', :to=>'access#menu'
   get 'access/menu'
   get 'access/login'
@@ -193,6 +176,7 @@ resources :admins do
     end
 
   end
+
 
 
 

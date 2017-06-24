@@ -51,7 +51,11 @@ class UsersController < ApplicationController
   def menu
   end
 
+
+  ##############################################################################
+
   def index
+    
   end
 
   def new
@@ -68,11 +72,10 @@ class UsersController < ApplicationController
       else
           render('new')
       end
+    end
 
-
-  end
-
-   def edit
+  
+  def edit
     @user=User.find(session[:user_id])
   end
 

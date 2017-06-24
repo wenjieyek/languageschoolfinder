@@ -6,6 +6,13 @@ module ApplicationHelper
 	end
 
 
+	def user_function_list (user) 
+
+		
+		
+	end
+
+
 	
 
 

@@ -23,7 +23,18 @@
 
 			<p>Price: <%= @course.price %></p>
 
-			<p>Attachment: <%= link_to 'Download',@course.attachments_url %></p>
+			<% if @course.attachments.url == nil %>
+
+			<p>Attachment: <%= "None" %></p>
+
+
+			<% else %>
+
+			<p>Attachment: <%= link_to 'Download',@course.attachments.url %></p>
+
+			<% end %>
+
+			
 
 			<p>Time: <%= @course.time %></p>
 

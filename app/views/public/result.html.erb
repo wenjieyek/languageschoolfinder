@@ -1,0 +1,29 @@
+<h1>Public#result</h1>
+<p>Find me in app/views/public/result.html.erb</p>
+
+
+<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>School Name</td>
+			<td>Address</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @results.each do |results| %>
+			<tr>
+			<td><%= results.name %></td>
+			<td><%= results.address %></td>
+			<td><%= link_to("Show",school_user_path(results.id)) %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>

@@ -56,6 +56,14 @@ nav ul li a{
     color: white;
 }
 
+.tabs .indicator {
+    background-color:black !important; 
+}
+
+.tabs li a {
+    color:black !important; 
+}
+
 ul.dropdown-content.select-dropdown li span {
     color: black; /* no need for !important :) */
 }
