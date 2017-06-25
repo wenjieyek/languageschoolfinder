@@ -1,58 +1,32 @@
 <% @page_title="School Details" %>
 
-<div class="form-card">
-<div class="card center-align white z-depth-4" >
 
 
+<img class="responsive-img circle" style="height: 200px; " src=<%= @school_user.profilepicture %> >
+<h1><%= @school_user.name %> </h1>
 
-	
+<label>Description: </label>
+<p><%= @school_user.description %> </p>
+
+<label>Email: </label>
+<p>Email: <%=@school_user.email %></p>
+
+<label>Phonenumber: </label>
+<p>Phonenumber: <%=@school_user.phonenumber %></p>
+
+<label>Website: </label>
+<p>Website: <%=@school_user.website %></p>
+
+<label>Address: </label>
+<p>Address: <%=@school_user.address %></p>
+
+<label>Transportation Area: </label>         		
+<p>Transportation: <%=@school_user.transportation %></p>
 
 
-
-     
-
-
-      
-      
-        <div class="card-content">
-
-
-
-
-       <img class="responsive-img circle" style="height: 200px; " src=<%= @school_user.profilepicture %> >
-        <span class="card-title"><%=@school_user.name %></span>
-
-         <p><%= @school_user.description %> </p>
-
-          
-       
-         
         
-         	
-         		<p>Email: <%=@school_user.email %></p>
-         		<p>Phonenumber: <%=@school_user.phonenumber %></p>
-         		<p>Website: <%=@school_user.website %></p>
-         
-
-         
-         		<p>Address: <%=@school_user.address %></p>
-         		
-         	
-
-         	
-         		<p>Transportation: <%=@school_user.transportation %></p>
-
-         	
-         		
-         
-        </div>
-        
-      
-
-
-
-<div class="card-tabs">
-      <ul class="tabs tabs-fixed-width">
+<div class="tabs">
+<ul class="tabs tabs-fixed-width">
         <li class="tab"><a href="#newsfeed">Newsfeed</a></li>
         <li class="tab"><a href="#picturesandvideos">Pictures and Videos</a></li>
         <li class="tab"><a href="#courses">Courses</a></li>
@@ -60,63 +34,82 @@
         <li class="tab"><a href="#promotions">Promotions</a></li>
         <li class="tab"><a href="#certificates">Certificates</a></li>
         <li class="tab"><a href="#inquiry">Inquiry</a></li>
-        
-      </ul>
-    </div>
-    <div class="card-content">
-      <div id="newsfeed"><h5>Newsfeed</h5>
+</ul>
+</div>
+
+
+    
+      <div id="newsfeed">
       </div>
 
      
-      <div id="picturesandvideos"><h5>Pictures and Videos</h5>
-
-               <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
-  </div>
-
+      <div id="picturesandvideos">
       </div>
 
-      <div id="courses"><h5>Courses</h5>
+      <div id="courses">
 
-     <% @courses.each do |courses| %>
-      <p><%= courses.name %></p>
+      <% @courses.each do |courses| %>
+
+      <ul class="collapsible" data-collapsible="accordion">
+      <li>
+      <div class="collapsible-header"><%= courses.name %></div>
+
+      <div class="collapsible-body">
+
+      <label>Language: </label>
       <p><%= courses.languagetype %></p>
+
+      <label>Details: </label>
       <p><%= courses.details %></p>
+
+      <label>Price: </label>
       <p><%= courses.price %></p>
-      <p><%= courses.attachments %></p>
+
+      <label>Attachments: </label>
+      <p><a href=<%= courses.attachments %>>View</a></p>
+      
+
+      <label>Time: </label>
       <p><%= courses.time %></p>
 
-      <p></p>
+
+
+      </div>
+      </li>
+    
+      </ul>
+
+
+    
+      
+
+    
 
     <% end %>
 
       </div>
 
-      <div id="teachers"><h5>Teachers</h5>
+      <div id="teachers">
 
       </div>
 
-      <div id="promotions"><h5>Promotions</h5>
+      <div id="promotions">
 
       </div>
 
-      <div id="certificates"><h5>Certificates</h5>
+      <div id="certificates">
 
       </div>
 
-      <div id="inquiry"><h5>Inquiry</h5>
+      <div id="inquiry">
 
       </div>
-    </div>
+   
 
 
 
 
-</div><!-- card center-align white -->    
-</div><!-- form-card -->
+
 
 
 
