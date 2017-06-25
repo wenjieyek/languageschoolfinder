@@ -10,11 +10,7 @@ class SchoolUsersController < ApplicationController
 
   end
 
-  def show
 
-    @school_user=SchoolUser.find(params[:id])
-    
-  end
 
    def new
       @school_user=SchoolUser.new

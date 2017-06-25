@@ -178,6 +178,13 @@ resources :admins do
   end
 
 
+     resources :public do
+
+
+
+  end
+
+
 
 
 
