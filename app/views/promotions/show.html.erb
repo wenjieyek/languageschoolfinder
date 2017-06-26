@@ -14,21 +14,35 @@
 
 	<h5>Promotion Details </h5>
 
+	<label>Promotion Name: </label>
+
 
 			
 		
 			
-			<p>Promotion Name: <%= @promotion.name %></p>
+			<p><%= @promotion.name %></p>
+
+			<label>Details: </label>
+
+			<p><%= @promotion.details %></p>
+
+			<label>Period: </label>
+
+			<p><%= @promotion.period %></p>
 
 			
+			<label>Attachment: </label>
 
-			<p>Details: <%= @promotion.details %></p>
+			<% if @promotion.attachments.url == nil %>
 
-			<p>Period: <%= @promotion.period %></p>
+			<p><%= "None" %> </p>
 
+			<% else %>
+
+			<p><%= link_to 'Download',@promotion.attachments.url %></p>
+				
+			<% end %>
 			
-
-			<p>Attachment: <%= link_to 'Download',@promotion.attachments_url %></p>
 
 			
 

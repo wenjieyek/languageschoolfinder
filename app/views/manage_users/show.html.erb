@@ -13,22 +13,33 @@
 	<div class="card-content">
 
 	<h5>User Details </h5>
+
+	<label>Username</label>
+	<p><%= @manage_user.username %></p>
+
+	<label>Email</label>
+	<p><%= @manage_user.email %></p>
+
+	<label>Address</label>
+	<p><%= @manage_user.address %></p>
+
+	<label>Status</label>
 		
 			
 			
 			
 
-			<p>Username: <%= @manage_user.username %></p>
-			<p>Email: <%= @manage_user.email %></p>
-			<p>Address: <%= @manage_user.address %></p>
+			
+			
+			
 			
 			<% if @manage_user.status==1%>
 
-			<p>Status: <%= "Active" %></p>
+			<p><%= "Active" %></p>
 
 			<% else %>
 
-			<p>Status: <%= "Deactive" %></p>
+			<p><%= "Deactive" %></p>
 				
 			<% end %>
 

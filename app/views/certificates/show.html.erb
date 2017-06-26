@@ -14,15 +14,18 @@
 
 	<h5>Certificate Details </h5>
 
+	<label>Picture</label>
+
 
 			<p><img class="responsive-img" style="height:400px;" src=<%= @certificate.attachment %> ></p>
 		
+		<label>Certificate Name</label>
 			
-			<p>Certificate Name: <%= @certificate.title %></p>
+			<p><%= @certificate.title %></p>
 
-			
+			<label>Details</label>
 
-			<p>Details: <%= @certificate.details %></p>
+			<p><%= @certificate.details %></p>
 
 		
 

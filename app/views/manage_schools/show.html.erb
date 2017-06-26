@@ -15,27 +15,48 @@
 	<h5>School Details </h5>
 		
 			
-			<img class="responsive-img" style="height:200px;" src=<%= @manage_school.profilepicture %> >
+			<p><img class="responsive-img" style="height:200px;" src=<%= @manage_school.profilepicture %> ></p>
 
 			
+			<label>Name</label>
+			<p><%= @manage_school.name %></p>
 
-			<p>Name: <%= @manage_school.name %></p>
-			<p>Email: <%= @manage_school.email %></p>
-			<p>Phonenumber: <%= @manage_school.phonenumber %></p>
-			<p>Website: <%= @manage_school.website %></p>
-			<p>Address: <%= @manage_school.address %></p>
-			<p>City: <%= @manage_school.city %></p>
-			<p>State: <%= @manage_school.state %></p>
-			<p>Postcode: <%= @manage_school.postcode %></p>
-			<p>Description: <%= @manage_school.description %></p>
-			<p>Transportation: <%= @manage_school.transportation %></p>
+			<label>Email</label>
+			<p><%= @manage_school.email %></p>
+
+			<label>Phonenumber</label>
+			<p><%= @manage_school.phonenumber %></p>
+
+			<label>Website</label>
+			<p><%= @manage_school.website %></p>
+
+			<label>Address</label>
+			<p><%= @manage_school.address %></p>
+
+			<label>City</label>
+			<p><%= @manage_school.city %></p>
+
+			<label>State</label>
+			<p><%= @manage_school.state %></p>
+
+			<label>Postcode</label>
+			<p><%= @manage_school.postcode %></p>
+
+			<label>Description</label>
+			<p><%= @manage_school.description %></p>
+
+			<label>Transportation</label>
+			<p><%= @manage_school.transportation %></p>
+
+			<label>Status</label>
+
 			<% if @manage_school.status==1%>
 
-			<p>Status: <%= "Active" %></p>
+			<p><%= "Active" %></p>
 
 			<% else %>
 
-			<p>Status: <%= "Deactive" %></p>
+			<p><%= "Deactive" %></p>
 				
 			<% end %>
 

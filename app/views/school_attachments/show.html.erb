@@ -16,14 +16,17 @@
 
 
 			
-		
+		<label>Attachment</label>
 			
-			<td><img class="responsive-img" style="height:400px;" src=<%= @school_attachment.directory %> ></td>
+			<p><img class="responsive-img" style="height:400px;" src=<%= @school_attachment.directory %> ></p>
 
+		<label>Attachment Type</label>
 			
-			<p>Attachment Type: <%= @school_attachment.attachmenttype %></p>
+			<p><%= @school_attachment.attachmenttype %></p>
 
-			<p>Description: <%= @school_attachment.description %></p>
+			<label>Description</label>
+
+			<p><%= @school_attachment.description %></p>
 
 			
 

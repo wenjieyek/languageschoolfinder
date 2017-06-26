@@ -1,27 +1,39 @@
 <% @page_title="School Details" %>
 
-
-
+<div class="center">
 <img class="responsive-img circle" style="height: 200px; " src=<%= @school_user.profilepicture %> >
-<h1><%= @school_user.name %> </h1>
+</div>
+
+<h1 class="center"><%= @school_user.name %> </h1>
+
+<div class="card">
+<div class="card-content">
 
 <label>Description: </label>
 <p><%= @school_user.description %> </p>
 
 <label>Email: </label>
-<p>Email: <%=@school_user.email %></p>
+<p><%=@school_user.email %></p>
 
 <label>Phonenumber: </label>
-<p>Phonenumber: <%=@school_user.phonenumber %></p>
+<p><%=@school_user.phonenumber %></p>
 
 <label>Website: </label>
-<p>Website: <%=@school_user.website %></p>
+<p><%=@school_user.website %></p>
 
 <label>Address: </label>
-<p>Address: <%=@school_user.address %></p>
+<p><%=@school_user.address %></p>
 
-<label>Transportation Area: </label>         		
-<p>Transportation: <%=@school_user.transportation %></p>
+<label>Transportation Area: </label>            
+<p><%=@school_user.transportation %></p>
+
+</div>
+
+
+  
+
+
+
 
 
         
@@ -36,6 +48,10 @@
         <li class="tab"><a href="#inquiry">Inquiry</a></li>
 </ul>
 </div>
+
+<div class="card-content">
+  
+
 
 
     
@@ -109,6 +125,9 @@
 
 
 
+</div>
+
+</div>
 
 
 

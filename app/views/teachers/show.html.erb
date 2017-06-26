@@ -15,20 +15,28 @@
 	<h5>Teacher Details </h5>
 
 
+	<label>Picture:</label>
+
+
 			
 
-			<img class="responsive-img" style="height:200px;" src=<%= @teacher.profilepicture %> >
+			<p><img class="responsive-img" style="height:200px;" src=<%= @teacher.profilepicture %> ></p>
 		
 			
-			<p>Course Name: <%= @teacher.name %></p>
+			<label>Course Name: </label>
+			<p><%= @teacher.name %></p>
 
-			<p>Language: <%= @teacher.languagetype %></p>
+			<label>Language: </label>
 
-			<p>Details: <%= @teacher.details %></p>
+			<p><%= @teacher.languagetype %></p>
 
-			
+			<label>Details: </label>
 
-			<p>Resume: <%= link_to 'Download',@teacher.resumes_url %></p>
+			<p><%= @teacher.details %></p>
+
+			<label>Resume: </label>
+
+			<p><%= link_to 'Download',@teacher.resumes_url %></p>
 
 			
 

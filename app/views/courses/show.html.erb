@@ -13,30 +13,40 @@
 	<div class="card-content">
 
 	<h5>Courses Details </h5>
+
+	<label>Course Name: </label>
 		
 			
-			<p>Course Name: <%= @course.name %></p>
+			<p><%= @course.name %></p>
 
-			<p>Language: <%= @course.languagetype %></p>
+			<label>Language: </label>
 
-			<p>Details: <%= @course.details %></p>
+			<p><%= @course.languagetype %></p>
 
-			<p>Price: <%= @course.price %></p>
+			<label>Details: </label>
+
+			<p><%= @course.details %></p>
+
+			<label>Price: </label>
+
+			<p><%= @course.price %></p>
+
+			<label>Attachments: </label>
 
 			<% if @course.attachments.url == nil %>
 
-			<p>Attachment: <%= "None" %></p>
+			<p><%= "None" %></p>
 
 
 			<% else %>
 
-			<p>Attachment: <%= link_to 'Download',@course.attachments.url %></p>
+			<p><%= link_to 'Download',@course.attachments.url %></p>
 
 			<% end %>
 
-			
+			<label>Time:</label>
 
-			<p>Time: <%= @course.time %></p>
+			<p><%= @course.time %></p>
 
 			
 			
