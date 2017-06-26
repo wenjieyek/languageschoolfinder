@@ -1,7 +1,7 @@
 <% @page_title="User Login" %>
 
 <div class="form-card">
-<div class="card center-align white z-depth-4" >
+<div class="card center-align white " >
 <span class="card-title">Please Log In</span>
 
 <div class="card-content">      
@@ -16,11 +16,9 @@
       <%=password_field_tag(:password) %>
       <label for="password">Password</label>
 </div>
+
 </div>
 
-
-
-<div class="card-action">
       <%= link_to("Register",new_user_path,:class=>"waves-effect waves-light btn red darken-4") %>
       <%=submit_tag("Log In ",:class=>"waves-effect waves-light btn grey darken-4") %>
 </div>

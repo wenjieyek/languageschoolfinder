@@ -14,13 +14,16 @@
 
 		<%=form_for(@certificate,:class=>"col s12") do |f| %>
 	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
-</div>	
+	
 
 
-<div class="card-action">
+<div class="center">
    	<%= f.submit("Add Certificate",:class=>"waves-effect waves-light btn grey darken-4") %>
 </div>
 	<% end %>
+
+	
+	</div>
 		
 
 

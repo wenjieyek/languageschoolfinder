@@ -19,12 +19,8 @@
 
 <div class="card-content">
 		<p>Logged in as: <%=session[:schools_name] %></p>
-	
-</div>
 
-
-<div class="card-action black-text">
-	<ul>
+		<ul>
 		<li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
 		<li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
 		<li><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
@@ -39,7 +35,11 @@
     	<div class="center-align">
     	<%=link_to("Logout",access_logout_path, :class=>"waves-effect waves-light btn red darken-4") %> 
     	</div> 
+	
 </div>
+
+
+	
 
 </div>
 
@@ -55,13 +55,16 @@
 <div class="card-content">
 	<%=form_for(@school_user,:class=>"col s12") do |f| %>
 	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+
+
+	<%= f.submit("Update Profile",:class=>"waves-effect waves-light btn grey darken-4") %>
+
+	<% end %>
 </div>	
 
 
-<div class="card-action">
-   	<%= f.submit("Update Profile",:class=>"waves-effect waves-light btn grey darken-4") %>
-</div>
-	<% end %>
+
+   	
 </div><!-- card center-align white -->    
 </div><!-- form-card -->
 

@@ -10,12 +10,8 @@
 <div class="card-content">
 		<h5>Admin Control Panel</h5>
 		<p>Logged in as: <%=session[:admin_name] %></p>
-	
-</div>
 
-
-<div class="card-action">
-	<ul>
+		<ul>
 		<li><%=link_to("Edit Data",admins_menu_path) %></li>
 		<li><%=link_to("Manage Admins",admins_path) %></li>
 		<li><%=link_to("Manage States",states_path) %></li>
@@ -25,12 +21,20 @@
 		<li><%=link_to("Manage Users",manage_users_path) %></li>
 		<li><%=link_to("Manage Feedback",feedbacks_path) %></li>
 		
-	</ul>
+		</ul>
 
-    	<div class="center-align">
+		<div class="center">
     	<%=link_to("Logout",admins_logout_path, :class=>"waves-effect waves-light btn red darken-4") %> 
     	</div> 
+	
 </div>
+
+
+
+	
+
+    	
+
 
 </div>
 

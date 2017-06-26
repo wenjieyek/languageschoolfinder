@@ -1,19 +1,21 @@
 <% @page_title="School Register" %>
 
 <div class="form-card">
-<div class="card center-align white z-depth-4" >
+<div class="card center-align white " >
 <span class="card-title">Register Your School</span>
 
 <div class="card-content">
 	<%=form_for(@school_user,:class=>"col s12") do |f| %>
 	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+
+	<%= f.submit("Register",:class=>"waves-effect waves-light btn grey darken-4") %>
+
+	<% end %>
 </div>	
 
 
-<div class="card-action">
-   	<%= f.submit("Register",:class=>"waves-effect waves-light btn grey darken-4") %>
-</div>
-	<% end %>
+
+	
 </div><!-- card center-align white -->    
 </div><!-- form-card -->
 

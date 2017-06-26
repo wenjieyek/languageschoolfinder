@@ -14,15 +14,14 @@
 
 		<%=form_for(@manage_school,:url=>manage_school_path(@manage_school),:class=>"col s12") do |f| %>
 	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
-</div>	
 
 
-<div class="card-action">
+<div class="center">
    	<%= f.submit("Submit",:class=>"waves-effect waves-light btn grey darken-4") %>
 </div>
 	<% end %>
 		
-
+</div>	
 
 	</div>
 
