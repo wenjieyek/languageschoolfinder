@@ -39,12 +39,23 @@
 
 <!-- Dropdown Structure -->
 <ul id="schooldropdown" class="side-nav">
-<% school=SchoolUser.find(session[:schools_id]) %>
+
+
 
     <li>
     
       <div class="background">
-        <img class="responsive-img" src=<%= school.profilepicture  %>>
+
+      <% if session[:schools_id] !=0%>
+
+<% school=SchoolUser.find(session[:schools_id]) %>
+
+<img class="responsive-img" src=<%= school.profilepicture  %>>
+
+
+<% end %>
+
+        
       </div>
    
     </li>
@@ -52,7 +63,14 @@
     
     <li><a href="">
     <i class="material-icons teal-text text-lighten-2">account_circle</i>
-    <%=school.name %>
+
+     <% if session[:schools_id] !=0%>
+
+<%=school.name %>
+
+<% end %>
+
+    
     </a> 
     </li>
 

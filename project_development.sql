@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.18, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Linux (x86_64)
 --
 -- Host: localhost    Database: project_development
 -- ------------------------------------------------------
@@ -29,7 +29,7 @@ CREATE TABLE `admins` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'admin','$2a$10$o7yD4ovIVWYs20IDxFDP9u2BlYOXm1iU4StTWfVgPpXlwawObq9ie','2017-06-20 16:41:28','2017-06-20 16:41:28'),(2,'admin2','$2a$10$9Ae3RvcYiASdxj7x1gzhG.tfWjeNjVdZDw2KGMduDCpi8sULG60QS','2017-06-21 05:01:11','2017-06-21 05:01:11');
+INSERT INTO `admins` VALUES (1,'admin','$2a$10$pjQEt66irGoE052BFlRjy.CuLOQAwdCaMMZV0eg/.LwS7jKtJLK7m','2017-06-20 16:41:28','2017-06-26 14:07:23'),(2,'admin2','$2a$10$9Ae3RvcYiASdxj7x1gzhG.tfWjeNjVdZDw2KGMduDCpi8sULG60QS','2017-06-21 05:01:11','2017-06-21 05:01:11'),(3,'admin3','$2a$10$IVpBtD.T8QQy2rXXDu2b3.FqRuX1bLQ5ergJxE.ro1CAZnWH739OC','2017-06-26 14:06:42','2017-06-26 14:06:42');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,7 @@ CREATE TABLE `certificates` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_certificates_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `certificates` (
 
 LOCK TABLES `certificates` WRITE;
 /*!40000 ALTER TABLE `certificates` DISABLE KEYS */;
-INSERT INTO `certificates` VALUES (2,'AAAAAAAAAAAA','AAAAAAAAAAAAAAA','23jk580.jpg',1,'2017-06-21 12:24:37','2017-06-21 12:24:37');
+INSERT INTO `certificates` VALUES (2,'AAAAAAAAAAAA','AAAAAAAAAAAAAAA','23jk580.jpg',1,'2017-06-21 12:24:37','2017-06-21 12:24:37'),(3,'','',NULL,3,'2017-06-26 11:41:10','2017-06-26 11:41:10');
 /*!40000 ALTER TABLE `certificates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,7 +176,7 @@ CREATE TABLE `feedbacks` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +185,7 @@ CREATE TABLE `feedbacks` (
 
 LOCK TABLES `feedbacks` WRITE;
 /*!40000 ALTER TABLE `feedbacks` DISABLE KEYS */;
-INSERT INTO `feedbacks` VALUES (1,'Yek Boon Keat','dx3152@hotmail.com','+60167193152','AAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:25:35','2017-06-21 05:25:35'),(2,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:25:57','2017-06-21 05:25:57'),(3,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:26:55','2017-06-21 05:26:55'),(4,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','2017-06-21 05:27:26','2017-06-21 05:27:26');
+INSERT INTO `feedbacks` VALUES (1,'Yek Boon Keat','dx3152@hotmail.com','+60167193152','AAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:25:35','2017-06-21 05:25:35'),(2,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:25:57','2017-06-21 05:25:57'),(3,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:26:55','2017-06-21 05:26:55'),(4,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','2017-06-21 05:27:26','2017-06-21 05:27:26'),(5,'a','a@hotmail.com','a','a','a','2017-06-26 14:27:03','2017-06-26 14:27:03');
 /*!40000 ALTER TABLE `feedbacks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +231,7 @@ CREATE TABLE `newsfeeds` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_newsfeeds_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,7 +240,7 @@ CREATE TABLE `newsfeeds` (
 
 LOCK TABLES `newsfeeds` WRITE;
 /*!40000 ALTER TABLE `newsfeeds` DISABLE KEYS */;
-INSERT INTO `newsfeeds` VALUES (2,'AAA','AAA',1,'2017-06-21 12:33:50','2017-06-21 12:33:50');
+INSERT INTO `newsfeeds` VALUES (2,'AAA','AAA',1,'2017-06-21 12:33:50','2017-06-21 12:33:50'),(3,'aaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',3,'2017-06-26 11:38:41','2017-06-26 11:38:41');
 /*!40000 ALTER TABLE `newsfeeds` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,7 +262,7 @@ CREATE TABLE `promotions` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_promotions_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -271,6 +271,7 @@ CREATE TABLE `promotions` (
 
 LOCK TABLES `promotions` WRITE;
 /*!40000 ALTER TABLE `promotions` DISABLE KEYS */;
+INSERT INTO `promotions` VALUES (1,'AAa','aaa',NULL,'aaa',3,'2017-06-26 11:46:43','2017-06-26 11:46:43');
 /*!40000 ALTER TABLE `promotions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -361,7 +362,7 @@ CREATE TABLE `school_users` (
 
 LOCK TABLES `school_users` WRITE;
 /*!40000 ALTER TABLE `school_users` DISABLE KEYS */;
-INSERT INTO `school_users` VALUES (1,'Wenjie Language School','$2a$10$1VK/a1q/.7cPt5Ea9QjGn.ZFb2JnZlSMs3nDfZHLNs6REk4L6FMrC','dx3152@hotmail.com','0167193152','www.wenjieyek.com','Block 5, No 03-11, Jalan Kemuning\r\nTaman Sri Plentong','Masai','Johor','81750','Best Language School','No','IMG_0970.jpg',1,'2017-06-21 05:06:17','2017-06-21 10:23:45'),(2,'testdeactive','$2a$10$T2pzEqxcHOcpIIKW9MK8xu93n4rJ6lWe4NakmZzU90vL2/n2WlKCm','testdeactive@hotmail.com','11111','testdeactive','testdeactive','Masai','Johor','81750','testdeactivetestdeactive','testdeactivetestdeactive','IMG_0970.jpg',1,'2017-06-21 08:29:08','2017-06-21 10:03:14'),(3,'ELEC Language Center','$2a$10$4XWcatDjdEUarmIxVGrgMOyCpHiZB3peGUfTrzje2SoDTaYaR0ELO','elec@hotmail.com','0321669827','http://www.elec.edu.my','Unit B-1-8 & B-1-9 & B-1-10\r\nBlock B Megan Avenue II\r\nNo 12 Jalan Yap Kwan Seng\r\n50450 Kuala Lumpur, MALAYSIA','Bukit Bintang','Kuala Lumpur','50450','ELEC Education Group is a Malaysia based company and was founded in 2010. Its goal is to provide local and international students with the highest standards of education and facilities. ELEC Education Group includes two sub-groups namely: ELEC Language Center and ELEC Training Center.\r\n\r\nELEC Language Center offers language learning programs in English, Mandarin and Malay.\r\n\r\nELEC Training Center offers programs in Tourism, Accounting, Business Administration and ICT with an internationally recognised certificate (LCCI) awarded at the end of each term.\r\n\r\nOur programs will be student centered and focus on guiding you by making use of our experienced staff and expertise. Your success is our priority.','no','elec-logo2.png',1,'2017-06-23 05:35:26','2017-06-24 10:25:54');
+INSERT INTO `school_users` VALUES (1,'Wenjie Language School','$2a$10$1VK/a1q/.7cPt5Ea9QjGn.ZFb2JnZlSMs3nDfZHLNs6REk4L6FMrC','dx3152@hotmail.com','0167193152','www.wenjieyek.com','Block 5, No 03-11, Jalan Kemuning\r\nTaman Sri Plentong','Masai','Johor','81750','Best Language School','No','IMG_0970.jpg',1,'2017-06-21 05:06:17','2017-06-26 14:19:59'),(2,'testdeactive','$2a$10$T2pzEqxcHOcpIIKW9MK8xu93n4rJ6lWe4NakmZzU90vL2/n2WlKCm','testdeactive@hotmail.com','11111','testdeactive','testdeactive','Masai','Johor','81750','testdeactivetestdeactive','testdeactivetestdeactive','IMG_0970.jpg',1,'2017-06-21 08:29:08','2017-06-21 10:03:14'),(3,'ELEC Language Center','$2a$10$4XWcatDjdEUarmIxVGrgMOyCpHiZB3peGUfTrzje2SoDTaYaR0ELO','elec@hotmail.com','0321669827','http://www.elec.edu.my','Unit B-1-8 & B-1-9 & B-1-10\r\nBlock B Megan Avenue II\r\nNo 12 Jalan Yap Kwan Seng\r\n50450 Kuala Lumpur, MALAYSIA','Bukit Bintang','Kuala Lumpur','50450','ELEC Education Group is a Malaysia based company and was founded in 2010. Its goal is to provide local and international students with the highest standards of education and facilities. ELEC Education Group includes two sub-groups namely: ELEC Language Center and ELEC Training Center.\r\n\r\nELEC Language Center offers language learning programs in English, Mandarin and Malay.\r\n\r\nELEC Training Center offers programs in Tourism, Accounting, Business Administration and ICT with an internationally recognised certificate (LCCI) awarded at the end of each term.\r\n\r\nOur programs will be student centered and focus on guiding you by making use of our experienced staff and expertise. Your success is our priority.','no','elec-logo2.png',1,'2017-06-23 05:35:26','2017-06-24 10:25:54');
 /*!40000 ALTER TABLE `school_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -410,7 +411,7 @@ CREATE TABLE `teachers` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_teachers_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -419,6 +420,7 @@ CREATE TABLE `teachers` (
 
 LOCK TABLES `teachers` WRITE;
 /*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
+INSERT INTO `teachers` VALUES (1,'AAa','1','aaa','23jk580.jpg','att_o_sr_serebro.jpg',3,'2017-06-26 11:45:20','2017-06-26 11:45:20');
 /*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -439,7 +441,7 @@ CREATE TABLE `users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -448,7 +450,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'testdeactive@hotmail.com','$2a$10$uFK2zevJmd.iymaNGwnqmOLmtC/LS2Q7Q8d10576vG7iKLz/1SKGO','testdeactive@hotmail.com','11111111',1,'2017-06-21 08:32:26','2017-06-21 10:23:15');
+INSERT INTO `users` VALUES (1,'testdeactive@hotmail.com','$2a$10$uFK2zevJmd.iymaNGwnqmOLmtC/LS2Q7Q8d10576vG7iKLz/1SKGO','testdeactive@hotmail.com','11111111',1,'2017-06-21 08:32:26','2017-06-26 14:23:13'),(2,'dx3152@hotmail.com','$2a$10$B1VtbRPjKfH9HHYYOLeuuuger3A7smg3fMgDHB4eh6GltZ.0ebXnS','dx3152@hotmail.com','Block 5, No 03-11, Jalan Kemuning\r\nTaman Sri Plentong',1,'2017-06-26 14:38:22','2017-06-26 14:38:22');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -461,4 +463,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-25 13:53:59
+-- Dump completed on 2017-06-27 18:25:43
