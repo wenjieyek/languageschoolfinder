@@ -2,7 +2,7 @@
 <html>
 <head>
 <title> Language School Finder <%="| #{@page_title}" if @page_title %></title>
-<%= favicon_link_tag 'icon2.png' %>
+<%= favicon_link_tag 'icon.png' %>
 <%= csrf_meta_tags %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -57,11 +57,12 @@
 
 
 <!--Navigation Bar-->
-<nav class="white z-depth-0">
+<div class="navbar-fixed">
+<nav class="white">
 <div class="nav-wrapper">
 <div class="container">
-      <a href="../" class="brand-logo left" style="color:black;">
-      Logo
+      <a href="../" class="brand-logo center"">
+      <%=image_tag("icon.png",:size=>"110x110",:style=>"padding:10px;") %>
       </a>
 
    
@@ -123,8 +124,13 @@
 </div>
 
 </nav>
+</div>
 
 <main>
+
+
+
+
 <div class="container">
       <%if !flash[:notice].blank? %>
       <%= javascript_tag "Materialize.toast('#{notice}', 4000)" %>
@@ -137,7 +143,7 @@
 </main>
 
 
-<footer class="page-footer grey darken-4  " >
+<footer class="page-footer teal darken-1  " >
           <div class="container">
             <div class="row">
               <div class="col l6 s12">

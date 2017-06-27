@@ -3,7 +3,7 @@
 
 body {
 	
-	color: black;
+	
   /*font-family: 'Roboto Condensed', sans-serif;*/
 
   /* footer setting*/ 
@@ -35,23 +35,27 @@ nav ul li a{
   color: red;
 }
 
-.dropdown-content li a{
+/*.dropdown-content li a{
     color: black;
-}
+}*/
 
 .page-footer li a{
     color: white;
 }
 
 .tabs .indicator {
-    background-color:black !important; 
+    background-color:#4db6ac; 
 }
 
 .tabs li a {
-    color:black !important; 
+    color:teal !important; 
 }
 
-ul.dropdown-content.select-dropdown li span {
-    color: black; /* no need for !important :) */
+/*ul.dropdown-content.select-dropdown li span {
+    color: black; 
+}*/
+
+label {
+  color:teal;
 }
 

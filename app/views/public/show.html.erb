@@ -1,10 +1,29 @@
-<% @page_title="School Details" %>
-
-<div class="center">
-<img class="circle responsive-img z-depth-4" style="height: 200px; " src=<%= @school_user.profilepicture %> >
 </div>
 
-<h1 class="center"><%= @school_user.name %> </h1>
+<% @page_title="School Details" %>
+
+<div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+
+     <img class="circle responsive-img z-depth-4" style="height: 200px; " src=<%= @school_user.profilepicture %> >
+
+      <h4 class="center" style="color:white;"><%= @school_user.name %> </h4>
+     
+    </div>
+    <div class="carousel-item teal lighten-2" href="#one!">
+
+
+      
+    </div>
+  
+  </div>
+
+
+
+
+<div class="container">
+
+
 
 <div class="card">
 <div class="card-content">
