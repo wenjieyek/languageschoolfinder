@@ -6,19 +6,10 @@
 <div class="card ">
 <div class="card-image ">
 
-		<% if session[:schools_id] != 0%>
-
 		<%school_user=SchoolUser.find(session[:schools_id]) %>
 
 
 		<%=image_tag(school_user.profilepicture.url())%>
-
-		
-
-		<% end %>
-
-
-		
 
 
 		
@@ -33,7 +24,7 @@
 	
 
 	<ul>
-		<li><%=link_to("Edit Data",edit_school_user_path(school_user.id) %></li>
+		<li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
 		<li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
 		<li><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
 		<li><%=link_to("Manage Certificate",certificates_path) %></li>
