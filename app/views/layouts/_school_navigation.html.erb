@@ -6,6 +6,11 @@
 <div class="card ">
 <div class="card-image ">
 
+		<%school_user=SchoolUser.find(session[:schools_id]) %>
+
+
+		<%=image_tag(school_user.profilepicture.url())%>
+
 
 		
 		

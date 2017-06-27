@@ -1,53 +1,6 @@
 <% @page_title="School Menu" %>
 
-
-
-<div class="form-card"> <!-- margin top 5% -->
-<div class="row">
-<div class="col s12 m3 l3"><!-- Grey navigation panel -->
-
-
-<div class="card ">
-<div class="card-image ">
-		<%=image_tag(@school_user.profilepicture.url())%>
-		
-		
-</div>
-
-
-<div class="card-content">
-		<p>Logged in as: <%=session[:schools_name] %></p>
-		<ul>
-		<li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
-		
-  
-		<li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
-		<li><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
-		<li><%=link_to("Manage Certificate",certificates_path) %></li>
-		<li><%=link_to("Manage Courses",courses_path) %></li>
-		<li><%=link_to("Manage Teachers",teachers_path) %></li>
-		<li><%=link_to("Manage Promotions",promotions_path) %></li>
-		<li><%=link_to("Manage Applications") %></li>
-		<li><%=link_to("Manage Inquiry") %></li>
-	</ul>
-
-
-<div class="center">
-    	<%=link_to("Logout",access_logout_path, :class=>"waves-effect waves-light btn red darken-4") %> 
-  		</div> 
-	
-	
-</div>
-
-
-	
-
-    	
-
-
-</div>
-
-</div>
+<%= render(:partial=>'layouts/school_navigation') %>
 
 
 
