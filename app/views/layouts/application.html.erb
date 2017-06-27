@@ -46,10 +46,10 @@
     
       <div class="background">
 
-      <% if session[:schools_id] !=0%>
-      <% school=SchoolUser.find(session[:schools_id]) %>
-      <img class="responsive-img" src=<%= school.profilepicture  %>>
-      <% end %>
+     <!--  <% #if session[:schools_id] !=0%>
+      <% #school=SchoolUser.find(session[:schools_id]) %>
+      <img class="responsive-img" src=<%= school.profilepicture  %>> -->
+      <%# end %>
 
         
       </div>
@@ -60,9 +60,9 @@
     <li><a href="">
     <i class="material-icons teal-text text-lighten-2">account_circle</i>
 
-     <% if session[:schools_id] !=0%>
-      <%=school.name %>
-      <% end %>
+     <%# if session[:schools_id] !=0%>
+      <%#=school.name %>
+      <%# end %>
 
     
     </a> 
