@@ -22,15 +22,40 @@
 <body>
 
 <!-- Dropdown Structure -->
-<ul id="userdropdown" class="dropdown-content">
+<ul id="userdropdown" class="side-nav">
+  <li><a href="">
+    <i class="material-icons teal-text text-lighten-2">account_circle</i>
+    <%=session[:user_name] %>
+    </a> 
+    </li>
+
+
   <li><%=link_to("Manage Account",users_menu_path) %></li>
   <li><%=link_to("View Bookmarks") %></li>
-  <li><%=link_to("Logout",users_logout_path) %></li>
+
+  <li><%=link_to('<i class="material-icons teal-text text-lighten-2">exit_to_app</i> Logout'.html_safe,users_logout_path) %></li>
  
 </ul>
 
 <!-- Dropdown Structure -->
-<ul id="schooldropdown" class="dropdown-content">
+<ul id="schooldropdown" class="side-nav">
+<% school=SchoolUser.find(session[:schools_id]) %>
+
+    <li>
+    
+      <div class="background">
+        <img class="responsive-img" src=<%= school.profilepicture  %>>
+      </div>
+   
+    </li>
+
+    
+    <li><a href="">
+    <i class="material-icons teal-text text-lighten-2">account_circle</i>
+    <%=school.name %>
+    </a> 
+    </li>
+
     <li><%=link_to("Manage Account",access_menu_path) %></li>
     <li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
     <li><%=link_to("Manage Courses",courses_path) %></li>
@@ -38,11 +63,15 @@
     <li><%=link_to("Manage Promotions",promotions_path) %></li>
     <li><%=link_to("Manage Applications") %></li>
     <li><%=link_to("Manage Inquiry") %></li>
-    <li><%=link_to("Logout",access_logout_path) %></li>
+    
+    <li><%=link_to('<i class="material-icons teal-text text-lighten-2">exit_to_app</i> Logout'.html_safe,access_logout_path) %></li>
+
+
+     
 </ul>
 
 <!-- Dropdown Structure -->
-<ul id="admindropdown" class="dropdown-content">
+<ul id="admindropdown" class="side-nav">
     <li><%=link_to("Edit Data",admins_menu_path) %></li>
     <li><%=link_to("Manage Admins",admins_path) %></li>
     <li><%=link_to("Manage States",states_path) %></li>
@@ -65,6 +94,12 @@
       <%=image_tag("icon.png",:size=>"110x110",:style=>"padding:10px;") %>
       </a>
 
+
+      
+      
+
+    
+
    
 
 
@@ -77,7 +112,7 @@
 
         <% else %>
 
-        <li><a class="dropdown-button" href="access/menu" data-activates="userdropdown"><%=session[:user_name] %><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="#" data-activates="userdropdown" class="button-collapse show-on-large"><i class="material-icons teal-text text-lighten-2 ">menu</i></a></li>
         <% end %>
 <% end %>
 
@@ -90,7 +125,7 @@
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>
-        <li><a class="dropdown-button" href="access/menu" data-activates="schooldropdown"><%=session[:schools_name] %><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="#" data-activates="schooldropdown" class="button-collapse show-on-large"><i class="material-icons teal-text text-lighten-2 ">menu</i></a></li>
         <% end %>
 <% end %>
 
@@ -101,7 +136,7 @@
         <% if session[:admin_name]==nil %>
         <li><%=link_to("Admin Login",admins_login_path) %></li>
         <% else %>
-        <li><a class="dropdown-button" href="access/menu" data-activates="admindropdown"><%=session[:admin_name] %><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="#" data-activates="admindropdown" class="button-collapse show-on-large"><i class="material-icons teal-text text-lighten-2 ">menu</i></a></li>
         <% end %>
 <% end %>
 
@@ -153,55 +188,7 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                  <% if controller_name=="users" %>
-        <% if session[:user_name]==nil %>
-        <li><%=link_to("User Login",users_login_path) %></li>
-
-        <% else %>
-
-       <li><%=link_to("Manage Account",users_menu_path) %></li>
-      <li><%=link_to("Logout",users_logout_path) %></li>
-        <% end %>
-<% end %>
-
-
-
-
-  
-
-<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments"%>
-
-        <% if session[:schools_name]==nil %>
-        <li><%=link_to("School Login",access_login_path) %></li>
-        <% else %>
-    <li><%=link_to("Manage Account",access_menu_path) %></li>
-    <li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
-    <li><%=link_to("Manage Courses",courses_path) %></li>
-    <li><%=link_to("Manage Teachers",teachers_path) %></li>
-    <li><%=link_to("Manage Promotions",promotions_path) %></li>
-    <li><%=link_to("Manage Applications") %></li>
-    <li><%=link_to("Manage Inquiry") %></li>
-    
-        <% end %>
-<% end %>
-
-
-
-
-<% if controller_name=="admins" || controller_name=="areas" || controller_name=="states" || controller_name=="languages" || controller_name=="manage_schools" || controller_name=="manage_users"%>
-        <% if session[:admin_name]==nil %>
-        <li><%=link_to("Admin Login",admins_login_path) %></li>
-        <% else %>
-        <li><%=link_to("Edit Data",admins_menu_path) %></li>
-    <li><%=link_to("Manage Admins",admins_path) %></li>
-    <li><%=link_to("Manage States",states_path) %></li>
-    <li><%=link_to("Manage Areas",areas_path) %></li>
-    <li><%=link_to("Manage Languages",languages_path) %></li>
-    <li><%=link_to("Manage Schools",manage_schools_path) %></li>
-    <li><%=link_to("Manage Users",manage_users_path) %></li>
-    <li><%=link_to("Manage Feedback",feedbacks_path) %></li>
-        <% end %>
-<% end %>
+                 
                 </ul>
               </div>
             </div>
