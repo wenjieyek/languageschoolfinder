@@ -42,20 +42,12 @@
 
 
 
-    <li>
-    
-      <div class="background">
-
-     
-        
-      </div>
    
-    </li>
 
     
     <li><a href="">
     <i class="material-icons teal-text text-lighten-2">account_circle</i>
-
+    <%=session[:schools_name] %>
 
     
     </a> 
@@ -111,7 +103,7 @@
 
 <ul id="nav-mobile" class="right ">
 
-<% if controller_name=="users" %>
+<% if controller_name=="users" || controller_name=="public" %>
         <% if session[:user_name]==nil %>
         <li><%=link_to("User Login",users_login_path) %></li>
 
@@ -193,6 +185,10 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
+
+                <li><%=link_to("School User",school_users_path) %> </li>
+
+                <li><%=link_to("Admin User",admins_path) %> </li>
                  
                 </ul>
               </div>
