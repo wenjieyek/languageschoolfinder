@@ -6,6 +6,7 @@ class SchoolUser < ApplicationRecord
 	has_many :promotions
 	has_many :newsfeeds
 	has_many :certificates
+	has_many :school_attachments
 
 
 	# Tells rails to use this uploader for this model.

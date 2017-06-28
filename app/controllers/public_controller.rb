@@ -17,7 +17,13 @@ class PublicController < ApplicationController
 
     @school_user=SchoolUser.find(params[:id])
 
+
+    @newsfeeds=@school_user.newsfeeds.all
+    @school_attachments=@school_user.school_attachments.all
     @courses=@school_user.courses.all
+    @teachers=@school_user.teachers.all
+    @promotions=@school_user.promotions.all
+    @certificates=@school_user.certificates.all
     
   end
 

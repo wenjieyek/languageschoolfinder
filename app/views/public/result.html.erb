@@ -1,12 +1,20 @@
-<h1>Public#result</h1>
-<p>Find me in app/views/public/result.html.erb</p>
 
+
+
+<div class="form-card">
+<div class="card center-align white " >
+<span class="card-title">Results</span>
+
+
+
+
+<div class="card-content">
 
 <table class="responsive-table">
 		<thead>
 			<tr>
 			<td>School Name</td>
-			<td>Address</td>
+			<td>Area</td>
 			<td>Action</td>
 			</tr>
 		</thead>
@@ -16,7 +24,7 @@
 		<% @results.each do |results| %>
 			<tr>
 			<td><%= results.name %></td>
-			<td><%= results.address %></td>
+			<td><%= results.city %>, <%= results.state %></td>
 			<td><%= link_to("Show",public_path(results.id)) %></td>
 			</tr>
 
@@ -27,3 +35,13 @@
 		</tbody>
 
 	</table>
+	 
+
+
+</div>
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+

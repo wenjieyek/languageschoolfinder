@@ -118,7 +118,7 @@
 
   
 
-<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments" %>
+<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments" || controller_name== "newsfeeds"%>
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>

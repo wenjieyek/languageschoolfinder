@@ -15,7 +15,7 @@
 			<tr>
 			<td>Name</td>
 			<td>Language</td>
-			<td>School ID</td>
+			
 			<td>Action</td>
 			</tr>
 		</thead>
@@ -26,7 +26,7 @@
 			<tr>
 			<td><%= teacher.name %></td>
 			<td><%= teacher.languagetype %></td>
-			<td><%= teacher.school_user_id %></td>
+			
 			<td><%= link_to("Show", teacher_path(teacher.id)) %></td>
 			<td><%= link_to("Edit", edit_teacher_path(teacher.id)) %></td>
 			<td><%= link_to("Delete", delete_teacher_path(teacher.id)) %></td>

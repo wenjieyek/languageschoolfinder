@@ -35,7 +35,12 @@ document.addEventListener("turbolinks:load", function() {
 				      onOpen: function(el) {  }, // A function to be called when sideNav is opened
 				      onClose: function(el) {  }, // A function to be called when sideNav is closed
     }
+
+   
   );
+
+
+     $('.parallax').parallax();
 
   });
 });
