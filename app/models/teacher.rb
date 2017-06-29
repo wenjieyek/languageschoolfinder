@@ -9,5 +9,5 @@ class Teacher < ApplicationRecord
 	validates :languagetype,:presence=>true
 	validates :details,:presence=>true
 	validates :profilepicture,:presence=>true
-	validates :resumes,:presence=>true
+	#validates :resumes,:presence=>true
 end

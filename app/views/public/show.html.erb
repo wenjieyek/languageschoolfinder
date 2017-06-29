@@ -201,16 +201,16 @@
 
 
 
-        
+        <% end %>
              
              
             </div>
 
-       <% end %>
+       
 
 
 
-      </div>
+     
 
       <div id="promotions">
 
@@ -219,7 +219,8 @@
 
       <ul class="collapsible" data-collapsible="accordion">
       <li>
-      <div class="collapsible-header"><i class="material-icons teal-text text-lighten-2">grade</i><%= promotions.name %></div>
+      <div class="collapsible-header"><i class="material-icons teal-text text-lighten-2">grade</i><%= promotions.name %>
+      </div>
 
       <div class="collapsible-body">
 
@@ -238,14 +239,10 @@
       </li>
     
       </ul>
-
-
-    
-      
-
+       <% end %>
     
 
-    <% end %>
+   
 
       </div>
 
@@ -253,45 +250,35 @@
 
 
       <% @certificates.each do |certificates| %>
-
       <ul class="collapsible" data-collapsible="accordion">
       <li>
       <div class="collapsible-header"><i class="material-icons teal-text text-lighten-2">bookmark_border</i><%= certificates.title %></div>
 
       <div class="collapsible-body">
-
       <label>Details: </label>
       <p><%= certificates.details %></p>
-
-
       <label>Attachment: </label>
-
       <p><img src=<%= certificates.attachment %> class="responsive-img" style="height:300px;"></p>
-     
+     </div>
 
-
-
-      </div>
       </li>
     
       </ul>
 
-
-    
-      
-
-    
-
     <% end %>
 
-
-
       </div>
+
+
+
+
 
       <div id="inquiry">
 
       </div>
    
+
+    </div>
 
 
 
