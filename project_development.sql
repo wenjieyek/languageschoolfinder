@@ -29,7 +29,7 @@ CREATE TABLE `admins` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'admin','$2a$10$pjQEt66irGoE052BFlRjy.CuLOQAwdCaMMZV0eg/.LwS7jKtJLK7m','2017-06-20 16:41:28','2017-06-26 14:07:23'),(2,'admin2','$2a$10$9Ae3RvcYiASdxj7x1gzhG.tfWjeNjVdZDw2KGMduDCpi8sULG60QS','2017-06-21 05:01:11','2017-06-21 05:01:11'),(3,'admin3','$2a$10$IVpBtD.T8QQy2rXXDu2b3.FqRuX1bLQ5ergJxE.ro1CAZnWH739OC','2017-06-26 14:06:42','2017-06-26 14:06:42');
+INSERT INTO `admins` VALUES (1,'admin','$2a$10$d7EIkIHBliY9Wh1I6kK45uJ1o02ulMN4ngqtod8Gp6a9Ogp0dJiHK','2017-06-29 03:44:30','2017-06-29 03:44:30'),(2,'admin2','$2a$10$JqTcTbXtR7Uxc43lzwGiheuutbGZ5iu0i5Lt7.xatpigYO9aOCB2u','2017-06-29 03:44:47','2017-06-29 03:44:47');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +83,7 @@ CREATE TABLE `areas` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_areas_on_state_id` (`state_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +92,7 @@ CREATE TABLE `areas` (
 
 LOCK TABLES `areas` WRITE;
 /*!40000 ALTER TABLE `areas` DISABLE KEYS */;
-INSERT INTO `areas` VALUES (1,'Masai',1,'2017-06-20 16:38:52','2017-06-20 16:38:52'),(2,'Bukit Bintang',14,'2017-06-20 16:40:59','2017-06-20 16:40:59'),(3,'Johor Bahru',1,'2017-06-20 16:41:05','2017-06-20 16:41:05'),(4,'Kulai',1,'2017-06-20 16:41:10','2017-06-20 16:41:10');
+INSERT INTO `areas` VALUES (1,'Johor Bahru',1,'2017-06-29 03:50:26','2017-06-29 03:50:26'),(2,'Kulai',1,'2017-06-29 03:50:31','2017-06-29 03:50:31'),(3,'Masai',1,'2017-06-29 03:50:36','2017-06-29 03:50:36'),(4,'Plentong',1,'2017-06-29 03:50:42','2017-06-29 03:50:42'),(5,'Bukit Bintang',13,'2017-06-29 03:50:55','2017-06-29 03:50:55');
 /*!40000 ALTER TABLE `areas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,7 @@ CREATE TABLE `certificates` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_certificates_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `certificates` (
 
 LOCK TABLES `certificates` WRITE;
 /*!40000 ALTER TABLE `certificates` DISABLE KEYS */;
-INSERT INTO `certificates` VALUES (2,'AAAAAAAAAAAA','AAAAAAAAAAAAAAA','23jk580.jpg',1,'2017-06-21 12:24:37','2017-06-21 12:24:37'),(3,'','',NULL,3,'2017-06-26 11:41:10','2017-06-26 11:41:10');
+INSERT INTO `certificates` VALUES (1,'English Certificate','The top of our logo depicts the sun which shines the light of education over our students. The tree at the bottom of the logo represents our students who are growing towards the sun. It essentially means that ELEC’s students develop all the components that make for successful and well-rounded individuals. ELEC will support your academic, professional, social and interpersonal success. ','att_o_sr_serebro.jpg',1,'2017-06-29 04:04:13','2017-06-29 04:04:13'),(2,'Chinese Language Certificate','The top of our logo depicts the sun which shines the light of education over our students. The tree at the bottom of the logo represents our students who are growing towards the sun. It essentially means that ELEC’s students develop all the components that make for successful and well-rounded individuals. ELEC will support your academic, professional, social and interpersonal success. ','att_o_sr_serebro.jpg',1,'2017-06-29 04:04:34','2017-06-29 04:04:34');
 /*!40000 ALTER TABLE `certificates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +146,7 @@ CREATE TABLE `courses` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_courses_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +155,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (1,'Intensive English Program','English','This 18-lesson per week program is ELEC\'s most popular and covers all of the major language skills including: grammar, vocabulary, conversation, pronunciation, reading, writing and listening comprehension. Students in Intensive English Program (IEP) study Monday through Friday.','-','23jk580.jpg','9:00 - 10:30	Speaking - Listening - Grammar 10:30 - 10:45	Break 10:45 - 12:15	Reading - Writing - Grammar 12:25 - 1:00	Lunch  1:00 - 2:00	 Communicate with Confidence 1 2:00 - 2:15	Break  2:15 - 3:15	Communicate with Confidence 2',3,'2017-06-23 05:36:53','2017-06-23 05:43:30'),(2,'Semi- Intensive English Program','English','The semi-Intensive Program at ELEC is designed to promote communicative competence in English. These classes are designed for those who have a busy lifestyle but need to improve their English language skills. Students who register for this program participate in 3 days classes, either in the morning or afternoon. Students study 6 hours per week.\r\n\r\nSemi- Intensive English Program Highlights:\r\n\r\n3 days a week classes (Mon, Wed, Fri)\r\nOpen to students at any level, beginner through advanced\r\n2 hours per session\r\n12 Lessons a month','',NULL,'3 days a week classes (Mon, Wed, Fri)',3,'2017-06-23 05:46:15','2017-06-23 05:46:15'),(3,'IELTS Test Registration and Examination Center','English','Having an IELTS (International English Language Testing System) certificate has been one of the necessities for students who are willing to study in a foreign university or people who want to migrate to other countries.\r\n\r\nHence, ELEC offers IELTS course . The students who have limited time with an almost good proficiency of English can join a 1-Month IELTS Preparation Course and those who have an average knowledge of English are recommended to attend a 2-month Course which includes IELTS Foundation and Preparation. Our center\'s IELTS Preparation Course guarantees students to achieve band 6 out of 9 either in General or Academic IELTS Test; provided that there English proficiency when they join the course is upper-Intermediate (Level 9 and above).\r\n\r\nStudents who are studying in general English classes can also join IELTS preparation courses provided that they have passed Intermediate level (L8) successfully.','',NULL,'',3,'2017-06-23 05:47:48','2017-06-23 05:47:48');
+INSERT INTO `courses` VALUES (1,'Intensive English Program','English','This 18-lesson per week program is ELEC\'s most popular and covers all of the major language skills including: grammar, vocabulary, conversation, pronunciation, reading, writing and listening comprehension. Students in Intensive English Program (IEP) study Monday through Friday.','RM 1200','All_Program_Academic_Calendar_2017__Std__Chinese.pdf','9:00 - 10:30	Speaking - Listening - Grammar 10:30 - 10:45	Break 10:45 - 12:15	Reading - Writing - Grammar 12:25 - 1:00	Lunch  1:00 - 2:00	 Communicate with Confidence 1 2:00 - 2:15	Break  2:15 - 3:15	Communicate with Confidence 2',1,'2017-06-29 03:56:15','2017-06-29 03:56:15'),(2,'Semi- Intensive English Program','English','The semi-Intensive Program at ELEC is designed to promote communicative competence in English. These classes are designed for those who have a busy lifestyle but need to improve their English language skills. Students who register for this program participate in 3 days classes, either in the morning or afternoon. Students study 6 hours per week.','RM 1200','学科修习记录_Student_Lesson_Record.pdf','English Program	3:30Pm to 5:40	   Mon /Wed /Fri',1,'2017-06-29 03:56:59','2017-06-29 03:56:59'),(3,'English for Business','English','EB is designed to teach English to corporate and other professionals who need custom-made English classes to suit their needs and scheduling demands. The course is structured on the target of enhancing grammar, vocabulary, listening, reading, pronunciation, writing and other communication skills. ','RM 1200','学科修习记录_Student_Lesson_Record.pdf','6 levels of instruction: Beginner, Elementary, Pre-Intermediate, Intermediate, Upper Intermediate, Advanced. 80 hours per level of instruction over 2 months.',1,'2017-06-29 03:58:12','2017-06-29 03:58:12'),(4,'IELTS Test Registration and Examination Center','English','Having an IELTS (International English Language Testing System) certificate has been one of the necessities for students who are willing to study in a foreign university or people who want to migrate to other countries.\r\n\r\nHence, ELEC offers IELTS course . The students who have limited time with an almost good proficiency of English can join a 1-Month IELTS Preparation Course and those who have an average knowledge of English are recommended to attend a 2-month Course which includes IELTS Foundation and Preparation. Our center\'s IELTS Preparation Course guarantees students to achieve band 6 out of 9 either in General or Academic IELTS Test; provided that there English proficiency when they join the course is upper-Intermediate (Level 9 and above).\r\n\r\nStudents who are studying in general English classes can also join IELTS preparation courses provided that they have passed Intermediate level (L8) successfully.','RM 1200','学科修习记录_Student_Lesson_Record.pdf','Every Monday 1 to 5',1,'2017-06-29 04:00:15','2017-06-29 04:00:15'),(5,'Kids English Program (KEP)','English','ELEC provides a very fun and interesting environment for kids aged 4-8 to learn English. Being well-equipped with Audio-Visual system, ELEC makes a pleasant place for kids to get involved with everyday English use and facilitate their learning procedure. Kids would be given a lot of chances to improve their conversation, writing and reading skills. Students study 15 hours per week.','RM 1200','学科修习记录_Student_Lesson_Record.pdf','Every Monday 1 to 5',1,'2017-06-29 04:00:43','2017-06-29 04:00:43'),(6,'Individual English Program (IEP)','English','ELEC provides language courses on an individual (one-on-one) basis. The Individual English Program is designed to suit the student’s specific needs in terms of course length and content. In the Individual English Program (IEP), students can request a special emphasis on a particular language skill or area of expertise.\r\n\r\nIn addition to being an excellent alternative for students requiring a great deal of personal attention, the Individual English Program (IEP) is also appropriate for young students (under 17 years of age) and pre-beginner students who have not yet learned the alphabet in English.','RM 1200','学科修习记录_Student_Lesson_Record.pdf','Every Monday 1 to 5',1,'2017-06-29 04:02:11','2017-06-29 04:02:11');
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,7 +176,7 @@ CREATE TABLE `feedbacks` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +185,7 @@ CREATE TABLE `feedbacks` (
 
 LOCK TABLES `feedbacks` WRITE;
 /*!40000 ALTER TABLE `feedbacks` DISABLE KEYS */;
-INSERT INTO `feedbacks` VALUES (1,'Yek Boon Keat','dx3152@hotmail.com','+60167193152','AAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:25:35','2017-06-21 05:25:35'),(2,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:25:57','2017-06-21 05:25:57'),(3,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','2017-06-21 05:26:55','2017-06-21 05:26:55'),(4,'Yek Wenjie','dx3152@hotmail.com','+60167193152','AAAAAAaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','2017-06-21 05:27:26','2017-06-21 05:27:26'),(5,'a','a@hotmail.com','a','a','a','2017-06-26 14:27:03','2017-06-26 14:27:03');
+INSERT INTO `feedbacks` VALUES (1,'Yek Boon Keat','dx3152@hotmail.com','+60167193152','Website is not function','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2017-06-29 04:26:09','2017-06-29 04:26:09');
 /*!40000 ALTER TABLE `feedbacks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +211,7 @@ CREATE TABLE `languages` (
 
 LOCK TABLES `languages` WRITE;
 /*!40000 ALTER TABLE `languages` DISABLE KEYS */;
-INSERT INTO `languages` VALUES (1,'English','2017-06-21 05:01:24','2017-06-21 05:01:24'),(2,'Korea','2017-06-21 05:01:28','2017-06-21 05:01:28'),(3,'Mandarin','2017-06-21 05:01:33','2017-06-21 05:01:33'),(4,'Bahasa Melayu','2017-06-21 05:01:41','2017-06-21 05:01:41'),(5,'India','2017-06-21 05:01:48','2017-06-21 05:01:48');
+INSERT INTO `languages` VALUES (1,'English','2017-06-29 03:51:02','2017-06-29 03:51:02'),(2,'Mandarin','2017-06-29 03:51:05','2017-06-29 03:51:05'),(3,'Bahasa Melayu','2017-06-29 03:51:11','2017-06-29 03:51:11'),(4,'Korean','2017-06-29 03:51:16','2017-06-29 03:51:16'),(5,'French','2017-06-29 03:51:34','2017-06-29 03:51:34');
 /*!40000 ALTER TABLE `languages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +231,7 @@ CREATE TABLE `newsfeeds` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_newsfeeds_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,7 +240,7 @@ CREATE TABLE `newsfeeds` (
 
 LOCK TABLES `newsfeeds` WRITE;
 /*!40000 ALTER TABLE `newsfeeds` DISABLE KEYS */;
-INSERT INTO `newsfeeds` VALUES (2,'AAA','AAA',1,'2017-06-21 12:33:50','2017-06-21 12:33:50'),(3,'aaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',3,'2017-06-26 11:38:41','2017-06-26 11:38:41');
+INSERT INTO `newsfeeds` VALUES (1,'Mission and Vision','Our Vision\r\n\r\nTo be the best language center by providing both local and international students with world class educational services that will enhance their abilities in their personal and professional life.\r\n\r\nOur Mission\r\n\r\nTo be committed to the delivery of education of the highest quality.\r\nTo employ diverse and highly skilled instructors.\r\nTo provide  up-to-date facilities to ensure delivering the highest standards in education.\r\nTo be internationally recognized as one of the best language and training centers in Malaysia.',1,'2017-06-29 04:03:00','2017-06-29 04:03:00'),(2,'Our Logo','The top of our logo depicts the sun which shines the light of education over our students. The tree at the bottom of the logo represents our students who are growing towards the sun. It essentially means that ELEC’s students develop all the components that make for successful and well-rounded individuals. ELEC will support your academic, professional, social and interpersonal success. ',1,'2017-06-29 04:03:38','2017-06-29 04:03:38');
 /*!40000 ALTER TABLE `newsfeeds` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +271,7 @@ CREATE TABLE `promotions` (
 
 LOCK TABLES `promotions` WRITE;
 /*!40000 ALTER TABLE `promotions` DISABLE KEYS */;
-INSERT INTO `promotions` VALUES (1,'AAa','aaa',NULL,'aaa',3,'2017-06-26 11:46:43','2017-06-26 11:46:43');
+INSERT INTO `promotions` VALUES (1,'All Courses 20% Discount on Early Bird','All Courses 20% Discount on Early Bird, All Courses 20% Discount on Early Bird, All Courses 20% Discount on Early Bird, All Courses 20% Discount on Early Bird,All Courses 20% Discount on Early Bird, All Courses 20% Discount on Early Bird','att_o_sr_serebro.jpg','21 Jun 2017 to 21 August 2017',1,'2017-06-29 04:23:46','2017-06-29 04:23:46');
 /*!40000 ALTER TABLE `promotions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -315,7 +315,7 @@ CREATE TABLE `school_attachments` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_school_attachments_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,7 +324,6 @@ CREATE TABLE `school_attachments` (
 
 LOCK TABLES `school_attachments` WRITE;
 /*!40000 ALTER TABLE `school_attachments` DISABLE KEYS */;
-INSERT INTO `school_attachments` VALUES (1,'IMG_0970.jpg','Picture','AAAAAAAAAAAA',1,'2017-06-21 05:07:39','2017-06-21 05:07:39'),(2,'elec-logo2.png','Picture','',3,'2017-06-23 05:48:08','2017-06-23 05:48:08');
 /*!40000 ALTER TABLE `school_attachments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,7 +352,7 @@ CREATE TABLE `school_users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +361,7 @@ CREATE TABLE `school_users` (
 
 LOCK TABLES `school_users` WRITE;
 /*!40000 ALTER TABLE `school_users` DISABLE KEYS */;
-INSERT INTO `school_users` VALUES (1,'Wenjie Language School','$2a$10$1VK/a1q/.7cPt5Ea9QjGn.ZFb2JnZlSMs3nDfZHLNs6REk4L6FMrC','dx3152@hotmail.com','0167193152','www.wenjieyek.com','Block 5, No 03-11, Jalan Kemuning\r\nTaman Sri Plentong','Masai','Johor','81750','Best Language School','No','IMG_0970.jpg',1,'2017-06-21 05:06:17','2017-06-26 14:19:59'),(2,'testdeactive','$2a$10$T2pzEqxcHOcpIIKW9MK8xu93n4rJ6lWe4NakmZzU90vL2/n2WlKCm','testdeactive@hotmail.com','11111','testdeactive','testdeactive','Masai','Johor','81750','testdeactivetestdeactive','testdeactivetestdeactive','IMG_0970.jpg',1,'2017-06-21 08:29:08','2017-06-21 10:03:14'),(3,'ELEC Language Center','$2a$10$4XWcatDjdEUarmIxVGrgMOyCpHiZB3peGUfTrzje2SoDTaYaR0ELO','elec@hotmail.com','0321669827','http://www.elec.edu.my','Unit B-1-8 & B-1-9 & B-1-10\r\nBlock B Megan Avenue II\r\nNo 12 Jalan Yap Kwan Seng\r\n50450 Kuala Lumpur, MALAYSIA','Bukit Bintang','Kuala Lumpur','50450','ELEC Education Group is a Malaysia based company and was founded in 2010. Its goal is to provide local and international students with the highest standards of education and facilities. ELEC Education Group includes two sub-groups namely: ELEC Language Center and ELEC Training Center.\r\n\r\nELEC Language Center offers language learning programs in English, Mandarin and Malay.\r\n\r\nELEC Training Center offers programs in Tourism, Accounting, Business Administration and ICT with an internationally recognised certificate (LCCI) awarded at the end of each term.\r\n\r\nOur programs will be student centered and focus on guiding you by making use of our experienced staff and expertise. Your success is our priority.','no','elec-logo2.png',1,'2017-06-23 05:35:26','2017-06-24 10:25:54');
+INSERT INTO `school_users` VALUES (1,'ELEC Education Group','$2a$10$j4Cb6M/fbdDnsrjra0e0A.itNF6k5/VVsR4MShibpNyPgeTO24kIe','elec@hotmail.com','+603 2166 9827','http://www.elec.edu.my','Unit B-1-8 & B-1-9 & B-1-10\r\nBlock B Megan Avenue II\r\nNo 12 Jalan Yap Kwan Seng\r\n50450 Kuala Lumpur, MALAYSIA','Bukit Bintang','Selangor','50450','ELEC Education Group is a Malaysia based company and was founded in 2010. Its goal is to provide local and international students with the highest standards of education and facilities. ELEC Education Group includes two sub-groups namely: ELEC Language Center and ELEC Training Center.\r\n\r\nELEC Language Center offers language learning programs in English, Mandarin and Malay.\r\n\r\nELEC Training Center offers programs in Tourism, Accounting, Business Administration and ICT with an internationally recognised certificate (LCCI) awarded at the end of each term.\r\n\r\nOur programs will be student centered and focus on guiding you by making use of our experienced staff and expertise. Your success is our priority.','No','elec-logo2.png',1,'2017-06-29 03:54:05','2017-06-29 03:54:05');
 /*!40000 ALTER TABLE `school_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -388,7 +387,7 @@ CREATE TABLE `states` (
 
 LOCK TABLES `states` WRITE;
 /*!40000 ALTER TABLE `states` DISABLE KEYS */;
-INSERT INTO `states` VALUES (1,'Johor','2017-06-20 16:33:40','2017-06-20 16:33:40'),(2,'Kedah','2017-06-20 16:33:46','2017-06-20 16:33:46'),(3,'Kelantan','2017-06-20 16:33:55','2017-06-20 16:33:55'),(4,'Melaka','2017-06-20 16:34:00','2017-06-20 16:34:00'),(5,'Sembilan','2017-06-20 16:34:10','2017-06-20 16:34:10'),(6,'Pahang','2017-06-20 16:34:17','2017-06-20 16:34:17'),(7,'Perak','2017-06-20 16:34:22','2017-06-20 16:34:22'),(8,'Perlis','2017-06-20 16:34:29','2017-06-20 16:34:29'),(9,'Penang','2017-06-20 16:34:40','2017-06-20 16:34:40'),(10,'Sabah','2017-06-20 16:34:44','2017-06-20 16:34:44'),(11,'Sarawak','2017-06-20 16:34:49','2017-06-20 16:34:49'),(12,'Selangor','2017-06-20 16:34:55','2017-06-20 16:34:55'),(13,'Terengganu','2017-06-20 16:35:01','2017-06-20 16:35:01'),(14,'Kuala Lumpur','2017-06-20 16:35:07','2017-06-20 16:35:07');
+INSERT INTO `states` VALUES (1,'Johor','2017-06-29 03:46:38','2017-06-29 03:46:38'),(2,'Kedah','2017-06-29 03:46:41','2017-06-29 03:46:46'),(3,'Kelantan','2017-06-29 03:46:53','2017-06-29 03:46:53'),(4,'Melaka','2017-06-29 03:46:59','2017-06-29 03:46:59'),(5,'Sembilan','2017-06-29 03:47:06','2017-06-29 03:47:59'),(6,'Kuantan','2017-06-29 03:47:42','2017-06-29 03:47:42'),(7,'Pahang','2017-06-29 03:48:07','2017-06-29 03:48:07'),(8,'Perak','2017-06-29 03:49:05','2017-06-29 03:49:05'),(9,'Perlis','2017-06-29 03:49:13','2017-06-29 03:49:13'),(10,'Penang','2017-06-29 03:49:21','2017-06-29 03:49:21'),(11,'Sabah','2017-06-29 03:49:26','2017-06-29 03:49:26'),(12,'Sarawak','2017-06-29 03:49:32','2017-06-29 03:49:32'),(13,'Selangor','2017-06-29 03:49:41','2017-06-29 03:49:41'),(14,'Terengganu ','2017-06-29 03:49:51','2017-06-29 03:49:51');
 /*!40000 ALTER TABLE `states` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -411,7 +410,7 @@ CREATE TABLE `teachers` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_teachers_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -420,7 +419,7 @@ CREATE TABLE `teachers` (
 
 LOCK TABLES `teachers` WRITE;
 /*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
-INSERT INTO `teachers` VALUES (1,'AAa','1','aaa','23jk580.jpg','att_o_sr_serebro.jpg',3,'2017-06-26 11:45:20','2017-06-26 11:45:20');
+INSERT INTO `teachers` VALUES (1,'Jackie ','English','Imagine gaining confidence in speaking, reading, and writing!\r\nAreas of Expertise:\r\n- Accent Reduction & Modification\r\n- Pronunciation, Intonation, Articulation\r\n- Professional Development\r\n- Job Coaching, Interviewing, Resumes, Cover Letters, Recommendation Letters\r\n- Doctorate Defense Preparation\r\n- Academic Support (Writing, Reading, & Speaking)\r\n- Graduate & Postgraduate Support\r\n- Life Coaching\r\n- Holistic & Spiritual Counseling\r\n- Meditation\r\nI\'ve been teaching students since 1997 of all ages. Together we create the an exact plan that works for you! I can\'t wait to be your teacher, coach, and so much more!! I\'m an open and affirming teacher. I welcome everyone regardless of nationality, race, religion, sexual orientation, gender identity, age, etc.\r\n\"We all have our own life to pursue, our own kind of dream to be weaving, and we all have the power to make wishes come true, as long as we keep believing.\" Louisa May Alcott\r\nI look forward to hearing from you very soon.\r\nSincerely,\r\nJackie\r\nEnglish Teacher | Professional Coach | Speaker\r\nhttps://www.linkedin.com/in/jackiejohnson16','1.png',NULL,1,'2017-06-29 04:06:45','2017-06-29 04:06:45'),(2,'Erica','English','Hello! My name is Erica, and I am an experienced and qualified ESL professional. I have two degrees in teaching English (BA English, Education; MA TEFL), and I have been a classroom ESL teacher for the past 11 years, teaching English at an Egyptian K12 school, the American University of Cairo, and Ohio University. I\'ve completed graduate coursework in teaching and learning online and have presented frequently at international conferences on the topic of CALL-Computer Assisted Language Learning. My approach to learning is student-centered, skill-oriented, and task-based, targeting fluency and accuracy in production (and comprehension!) of English. I strive to create and facilitate a comfortable online learning classroom where my students\' language needs are met.','1.png',NULL,1,'2017-06-29 04:07:37','2017-06-29 04:07:37'),(3,'Kelsey','English','My name is Kelsey and I am a native English speaker from Ohio, USA. Currently, I am located in Seattle, Washington bringing my love of teaching to elementary youth in the local schools. I have been teaching for 5 years within Washington State. I have experience teaching non native English speakers as well as children with language delays. Teaching English to students with language delays has taught me to break down the English language into simplified terms so that the speaker has more success in their learning of how to speak and understand English.\r\nI have experience teaching conversational English as well as English that you will need while traveling or just in daily life. We can work on pronunciation, intonation, idioms, and colloquials as they are all a bonus specialty of mine.\r\nWhen you book a lesson, let me know your level of English (beginner, intermediate) and also how you prefer to learn.\r\nAs a teacher, I am accommodating to your goals and learning style. Let\'s have a conversation and figure out the best way for you to learn English!','1.png',NULL,1,'2017-06-29 04:08:36','2017-06-29 04:08:36');
 /*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -441,7 +440,7 @@ CREATE TABLE `users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -450,7 +449,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'testdeactive@hotmail.com','$2a$10$uFK2zevJmd.iymaNGwnqmOLmtC/LS2Q7Q8d10576vG7iKLz/1SKGO','testdeactive@hotmail.com','11111111',1,'2017-06-21 08:32:26','2017-06-26 14:23:13'),(2,'dx3152@hotmail.com','$2a$10$B1VtbRPjKfH9HHYYOLeuuuger3A7smg3fMgDHB4eh6GltZ.0ebXnS','dx3152@hotmail.com','Block 5, No 03-11, Jalan Kemuning\r\nTaman Sri Plentong',1,'2017-06-26 14:38:22','2017-06-26 14:38:22');
+INSERT INTO `users` VALUES (1,'wenjieyek','$2a$10$Pk8hoDqLEWDKlT5bWwcXLe7YBGz0eZ9Kh9Cz.0yTpLhV7.NTNErYO','dx3152@hotmail.com','Block 5, No 03-11, Jalan Kemuning\r\nTaman Sri Plentong',1,'2017-06-29 04:25:10','2017-06-29 04:25:10');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -463,4 +462,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-27 18:25:43
+-- Dump completed on 2017-06-29 15:58:17
