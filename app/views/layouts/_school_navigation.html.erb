@@ -21,18 +21,25 @@
 <div class="card-content">
 		<h5>School Control Panel</h5>
 		<p>Logged in as: <%=session[:schools_name] %></p>
+
+		
+
 	
 
-	<ul>
-		<li><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
-		<li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
-		<li><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
-		<li><%=link_to("Manage Certificate",certificates_path) %></li>
-		<li><%=link_to("Manage Courses",courses_path) %></li>
-		<li><%=link_to("Manage Teachers",teachers_path) %></li>
-		<li><%=link_to("Manage Promotions",promotions_path) %></li>
-		<li><%=link_to("Manage Applications") %></li>
-		<li><%=link_to("Manage Inquiry") %></li>
+	<ul class="collection center">
+		<li class="collection-item"><%=link_to("Edit Data",edit_school_user_path(session[:schools_id])) %></li>
+		<li class="collection-item"><%=link_to("Manage School Attachments",school_attachments_path) %></li>
+		<li class="collection-item"><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
+		<li class="collection-item"><%=link_to("Manage Certificate",certificates_path) %></li>
+		<li class="collection-item"><%=link_to("Manage Courses",courses_path) %></li>
+		<li class="collection-item"><%=link_to("Manage Teachers",teachers_path) %></li>
+		<li class="collection-item"><%=link_to("Manage Promotions",promotions_path) %></li>
+		
+	</ul>
+
+	<ul class="collection center">
+		<li class="collection-item"><%=link_to("Manage Applications") %></li>
+		<li class="collection-item"><%=link_to("Manage Inquiry") %></li>
 	</ul>
 
     	<div class="center-align">
