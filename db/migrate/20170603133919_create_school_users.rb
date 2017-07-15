@@ -14,6 +14,9 @@ class CreateSchoolUsers < ActiveRecord::Migration[5.1]
     	t.text "description"
     	t.text "transportation"
     	t.text "profilepicture"
+        
+        t.text "location"
+        
     	t.integer "status",:default=>1
 
       t.timestamps

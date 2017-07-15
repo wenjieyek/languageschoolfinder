@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
 
 
+  
+
  root 'public#index'
  
   
@@ -194,6 +196,13 @@ resources :inquiries do
       get :delete
 
     end
+
+  end
+
+
+  resources :online_applications do
+
+   
 
   end
 

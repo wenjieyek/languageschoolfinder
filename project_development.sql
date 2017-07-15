@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: project_development
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.17.04.1
+-- Server version	5.7.18-0ubuntu0.16.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,23 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admins`
---
-
-DROP TABLE IF EXISTS `admins`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admins` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `password_digest` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `admins`
 --
 
@@ -43,48 +26,14 @@ INSERT INTO `admins` VALUES (1,'admin','$2a$10$d7EIkIHBliY9Wh1I6kK45uJ1o02ulMN4n
 UNLOCK TABLES;
 
 --
--- Table structure for table `ar_internal_metadata`
---
-
-DROP TABLE IF EXISTS `ar_internal_metadata`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ar_internal_metadata` (
-  `key` varchar(255) NOT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `ar_internal_metadata`
 --
 
 LOCK TABLES `ar_internal_metadata` WRITE;
 /*!40000 ALTER TABLE `ar_internal_metadata` DISABLE KEYS */;
-INSERT INTO `ar_internal_metadata` VALUES ('environment','development','2017-06-05 13:26:57','2017-06-05 13:26:57');
+INSERT INTO `ar_internal_metadata` VALUES ('environment','development','2017-07-15 11:11:39','2017-07-15 11:11:39');
 /*!40000 ALTER TABLE `ar_internal_metadata` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `areas`
---
-
-DROP TABLE IF EXISTS `areas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `areas` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `areaname` varchar(255) DEFAULT NULL,
-  `state_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_areas_on_state_id` (`state_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `areas`
@@ -97,26 +46,6 @@ INSERT INTO `areas` VALUES (1,'Johor Bahru',1,'2017-06-29 03:50:26','2017-06-29 
 UNLOCK TABLES;
 
 --
--- Table structure for table `certificates`
---
-
-DROP TABLE IF EXISTS `certificates`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `certificates` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `details` text,
-  `attachment` varchar(255) DEFAULT NULL,
-  `school_user_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_certificates_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `certificates`
 --
 
@@ -125,29 +54,6 @@ LOCK TABLES `certificates` WRITE;
 INSERT INTO `certificates` VALUES (1,'English Certificate','The top of our logo depicts the sun which shines the light of education over our students. The tree at the bottom of the logo represents our students who are growing towards the sun. It essentially means that ELEC’s students develop all the components that make for successful and well-rounded individuals. ELEC will support your academic, professional, social and interpersonal success. ','att_o_sr_serebro.jpg',1,'2017-06-29 04:04:13','2017-06-29 04:04:13'),(2,'Chinese Language Certificate','The top of our logo depicts the sun which shines the light of education over our students. The tree at the bottom of the logo represents our students who are growing towards the sun. It essentially means that ELEC’s students develop all the components that make for successful and well-rounded individuals. ELEC will support your academic, professional, social and interpersonal success. ','att_o_sr_serebro.jpg',1,'2017-06-29 04:04:34','2017-06-29 04:04:34');
 /*!40000 ALTER TABLE `certificates` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `courses`
---
-
-DROP TABLE IF EXISTS `courses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `courses` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `languagetype` varchar(255) DEFAULT NULL,
-  `details` text,
-  `price` varchar(255) DEFAULT NULL,
-  `attachments` varchar(255) DEFAULT NULL,
-  `time` varchar(255) DEFAULT NULL,
-  `school_user_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_courses_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `courses`
@@ -160,26 +66,6 @@ INSERT INTO `courses` VALUES (1,'Intensive English Program','English','This 18-l
 UNLOCK TABLES;
 
 --
--- Table structure for table `feedbacks`
---
-
-DROP TABLE IF EXISTS `feedbacks`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `feedbacks` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phonenumber` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `details` text,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `feedbacks`
 --
 
@@ -190,20 +76,13 @@ INSERT INTO `feedbacks` VALUES (1,'Yek Boon Keat','dx3152@hotmail.com','+6016719
 UNLOCK TABLES;
 
 --
--- Table structure for table `languages`
+-- Dumping data for table `inquiries`
 --
 
-DROP TABLE IF EXISTS `languages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `languages` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `language` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `inquiries` WRITE;
+/*!40000 ALTER TABLE `inquiries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inquiries` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Dumping data for table `languages`
@@ -216,25 +95,6 @@ INSERT INTO `languages` VALUES (1,'English','2017-06-29 03:51:02','2017-06-29 03
 UNLOCK TABLES;
 
 --
--- Table structure for table `newsfeeds`
---
-
-DROP TABLE IF EXISTS `newsfeeds`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `newsfeeds` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `details` text,
-  `school_user_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_newsfeeds_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `newsfeeds`
 --
 
@@ -245,25 +105,13 @@ INSERT INTO `newsfeeds` VALUES (1,'Mission and Vision','Our Vision\r\n\r\nTo be 
 UNLOCK TABLES;
 
 --
--- Table structure for table `promotions`
+-- Dumping data for table `online_applications`
 --
 
-DROP TABLE IF EXISTS `promotions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `promotions` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `details` text,
-  `attachments` varchar(255) DEFAULT NULL,
-  `period` varchar(255) DEFAULT NULL,
-  `school_user_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_promotions_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `online_applications` WRITE;
+/*!40000 ALTER TABLE `online_applications` DISABLE KEYS */;
+/*!40000 ALTER TABLE `online_applications` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Dumping data for table `promotions`
@@ -276,47 +124,14 @@ INSERT INTO `promotions` VALUES (1,'All Courses 20% Discount on Early Bird','All
 UNLOCK TABLES;
 
 --
--- Table structure for table `schema_migrations`
---
-
-DROP TABLE IF EXISTS `schema_migrations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `schema_migrations` (
-  `version` varchar(255) NOT NULL,
-  PRIMARY KEY (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `schema_migrations`
 --
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20170603133919'),('20170610073847'),('20170610122808'),('20170610133406'),('20170611005158'),('20170611115201'),('20170611125625'),('20170619120448'),('20170620071859'),('20170620155222'),('20170620155411'),('20170621044851'),('20170621115856'),('20170621115919');
+INSERT INTO `schema_migrations` VALUES ('20170603133919'),('20170610073847'),('20170610122808'),('20170610133406'),('20170611005158'),('20170611115201'),('20170611125625'),('20170619120448'),('20170620071859'),('20170620155222'),('20170620155411'),('20170621044851'),('20170621115856'),('20170621115919'),('20170715062916'),('20170715102816');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `school_attachments`
---
-
-DROP TABLE IF EXISTS `school_attachments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `school_attachments` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `directory` varchar(255) DEFAULT NULL,
-  `attachmenttype` varchar(255) DEFAULT NULL,
-  `description` text,
-  `school_user_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_school_attachments_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `school_attachments`
@@ -326,34 +141,6 @@ LOCK TABLES `school_attachments` WRITE;
 /*!40000 ALTER TABLE `school_attachments` DISABLE KEYS */;
 /*!40000 ALTER TABLE `school_attachments` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `school_users`
---
-
-DROP TABLE IF EXISTS `school_users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `school_users` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `password_digest` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phonenumber` varchar(255) DEFAULT NULL,
-  `website` varchar(255) DEFAULT NULL,
-  `address` text,
-  `city` text,
-  `state` text,
-  `postcode` text,
-  `description` text,
-  `transportation` text,
-  `profilepicture` text,
-  `status` int(11) DEFAULT '1',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `school_users`
@@ -366,22 +153,6 @@ INSERT INTO `school_users` VALUES (1,'ELEC Education Group','$2a$10$j4Cb6M/fbdDn
 UNLOCK TABLES;
 
 --
--- Table structure for table `states`
---
-
-DROP TABLE IF EXISTS `states`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `states` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `state` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `states`
 --
 
@@ -392,28 +163,6 @@ INSERT INTO `states` VALUES (1,'Johor','2017-06-29 03:46:38','2017-06-29 03:46:3
 UNLOCK TABLES;
 
 --
--- Table structure for table `teachers`
---
-
-DROP TABLE IF EXISTS `teachers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `teachers` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `languagetype` varchar(255) DEFAULT NULL,
-  `details` text,
-  `profilepicture` varchar(255) DEFAULT NULL,
-  `resumes` varchar(255) DEFAULT NULL,
-  `school_user_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_teachers_on_school_user_id` (`school_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `teachers`
 --
 
@@ -422,26 +171,6 @@ LOCK TABLES `teachers` WRITE;
 INSERT INTO `teachers` VALUES (1,'Jackie ','English','Imagine gaining confidence in speaking, reading, and writing!\r\nAreas of Expertise:\r\n- Accent Reduction & Modification\r\n- Pronunciation, Intonation, Articulation\r\n- Professional Development\r\n- Job Coaching, Interviewing, Resumes, Cover Letters, Recommendation Letters\r\n- Doctorate Defense Preparation\r\n- Academic Support (Writing, Reading, & Speaking)\r\n- Graduate & Postgraduate Support\r\n- Life Coaching\r\n- Holistic & Spiritual Counseling\r\n- Meditation\r\nI\'ve been teaching students since 1997 of all ages. Together we create the an exact plan that works for you! I can\'t wait to be your teacher, coach, and so much more!! I\'m an open and affirming teacher. I welcome everyone regardless of nationality, race, religion, sexual orientation, gender identity, age, etc.\r\n\"We all have our own life to pursue, our own kind of dream to be weaving, and we all have the power to make wishes come true, as long as we keep believing.\" Louisa May Alcott\r\nI look forward to hearing from you very soon.\r\nSincerely,\r\nJackie\r\nEnglish Teacher | Professional Coach | Speaker\r\nhttps://www.linkedin.com/in/jackiejohnson16','1.png',NULL,1,'2017-06-29 04:06:45','2017-06-29 04:06:45'),(2,'Erica','English','Hello! My name is Erica, and I am an experienced and qualified ESL professional. I have two degrees in teaching English (BA English, Education; MA TEFL), and I have been a classroom ESL teacher for the past 11 years, teaching English at an Egyptian K12 school, the American University of Cairo, and Ohio University. I\'ve completed graduate coursework in teaching and learning online and have presented frequently at international conferences on the topic of CALL-Computer Assisted Language Learning. My approach to learning is student-centered, skill-oriented, and task-based, targeting fluency and accuracy in production (and comprehension!) of English. I strive to create and facilitate a comfortable online learning classroom where my students\' language needs are met.','1.png',NULL,1,'2017-06-29 04:07:37','2017-06-29 04:07:37'),(3,'Kelsey','English','My name is Kelsey and I am a native English speaker from Ohio, USA. Currently, I am located in Seattle, Washington bringing my love of teaching to elementary youth in the local schools. I have been teaching for 5 years within Washington State. I have experience teaching non native English speakers as well as children with language delays. Teaching English to students with language delays has taught me to break down the English language into simplified terms so that the speaker has more success in their learning of how to speak and understand English.\r\nI have experience teaching conversational English as well as English that you will need while traveling or just in daily life. We can work on pronunciation, intonation, idioms, and colloquials as they are all a bonus specialty of mine.\r\nWhen you book a lesson, let me know your level of English (beginner, intermediate) and also how you prefer to learn.\r\nAs a teacher, I am accommodating to your goals and learning style. Let\'s have a conversation and figure out the best way for you to learn English!','1.png',NULL,1,'2017-06-29 04:08:36','2017-06-29 04:08:36');
 /*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `password_digest` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `status` int(11) DEFAULT '1',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
@@ -462,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-29 15:58:17
+-- Dump completed on 2017-07-15 19:13:25

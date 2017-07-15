@@ -8,6 +8,8 @@ class CreateInquiries < ActiveRecord::Migration[5.1]
     	t.text "title"
     	t.text "details"
 
+      t.integer "status",:default=>0
+
 
 
 

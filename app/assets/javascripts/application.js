@@ -42,6 +42,8 @@ document.addEventListener("turbolinks:load", function() {
 
      $('.parallax').parallax();
 
+     $('.datepicker').pickadate();
+
 
     
 

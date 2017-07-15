@@ -1,0 +1,70 @@
+<% @page_title="Online Applications List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Online Application List </h5>
+
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Courses</td>
+			<td>Submit Date</td>
+			
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @onlineapplications.each do |onlineapplication| %>
+			<tr>
+			<td><%= onlineapplication.name %></td>
+			<td><%= onlineapplication.course %></td>
+			<td><%= onlineapplication.created_at %></td>
+			
+			<td><%= link_to("Show", online_application_path(onlineapplication.id)) %></td>
+			
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
