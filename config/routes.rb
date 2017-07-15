@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
   
+
+
  root 'public#index'
  
   
@@ -184,6 +186,16 @@ resources :admins do
 
   end
 
+
+resources :inquiries do
+
+    member do
+
+      get :delete
+
+    end
+
+  end
 
 
 

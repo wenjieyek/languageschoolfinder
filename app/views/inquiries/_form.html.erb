@@ -1,0 +1,44 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Name")%>
+    <%=f.text_field(:name)%>
+</div>
+</div>
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Email")%>
+    <%=f.text_field(:email)%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+   
+     <%=select_tag(:course,options_from_collection_for_select(Course.where(:school_user_id=>session[:inquiry_id]), :name, :name),:prompt=>"Select Interesting Course") %>
+
+     <label>Course</label>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Title")%>
+    <%=f.text_field(:title)%>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Details")%>
+    <%=f.text_area(:details,:area=>'40x10',:class=>"materialize-textarea")%>
+</div>
+</div>
+
+
+

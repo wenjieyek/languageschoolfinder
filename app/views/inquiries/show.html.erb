@@ -1,0 +1,67 @@
+<% @page_title="Inquiry Details" %>
+
+
+
+<div class="form-card"> <!-- margin top 5% -->
+<div class="row">
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+	<div class="card-content">
+
+	<h5>Inquiry Details </h5>
+
+	<label>Inquiry Name: </label>
+		
+			
+			<p><%= @inquiry.name %></p>
+
+			<label>Email: </label>
+
+			<p><%= @inquiry.email %></p>
+
+			<label>Course: </label>
+
+			<p><%= @inquiry.course %></p>
+
+			<label>Title: </label>
+
+			<p><%= @inquiry.title %></p>
+
+			<label>Details: </label>
+			<p><%= @inquiry.details %></p>
+
+			
+
+
+	
+
+	<div class="center">
+
+		
+		<%= link_to("Read",:class=>"waves-effect waves-light btn teal lighten-2") %>
+		
+	</div>
+
+
+	</div>
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
