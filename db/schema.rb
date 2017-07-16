@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715102816) do
+ActiveRecord::Schema.define(version: 20170715135419) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "username"
@@ -118,6 +118,23 @@ ActiveRecord::Schema.define(version: 20170715102816) do
     t.index ["school_user_id"], name: "index_promotions_on_school_user_id"
   end
 
+  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "courses"
+    t.integer "value"
+    t.integer "facilities"
+    t.integer "service"
+    t.integer "activities"
+    t.string "coursename"
+    t.string "title"
+    t.text "comments"
+    t.integer "school_user_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_user_id"], name: "index_ratings_on_school_user_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
   create_table "school_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "directory"
     t.string "attachmenttype"
@@ -170,6 +187,7 @@ ActiveRecord::Schema.define(version: 20170715102816) do
     t.string "password_digest"
     t.string "email"
     t.string "address"
+    t.string "profilepicture"
     t.integer "status", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

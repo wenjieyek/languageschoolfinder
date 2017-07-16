@@ -102,6 +102,7 @@ class UsersController < ApplicationController
                                         :password_confirmation,
                                         :email,
                                         :address,
+                                        :profilepicture
                                        )
 
   end

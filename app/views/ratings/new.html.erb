@@ -1,0 +1,27 @@
+<% @page_title="Leave Rating" %>
+
+<div class="form-card">
+<div class="card center-align white" >
+<span class="card-title">Leave Rating</span>
+
+<div class="card-content">
+	<%=form_for(@rating,:class=>"col s12") do |f| %>
+	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+
+
+<div class="center">
+   	<%= f.submit("Submit",:class=>"waves-effect waves-light btn teal lighten-2") %>
+   	<% end %>
+</div>
+
+
+</div>	
+
+	
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+
+
+
+

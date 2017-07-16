@@ -5,6 +5,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     	t.string "password_digest",:limit=>255
     	t.string "email",:limit=>255
     	t.string "address",:limit=>255
+
+      t.string "profilepicture"
+
     	t.integer "status",:default=>1
 
 

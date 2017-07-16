@@ -9,6 +9,7 @@ class SchoolUser < ApplicationRecord
 	has_many :school_attachments
 	has_many :inquiries
 	has_many :online_applications
+	has_many :ratings
 
 
 	# Tells rails to use this uploader for this model.

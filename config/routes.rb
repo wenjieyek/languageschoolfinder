@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   
 
+
  root 'public#index'
  
   
@@ -201,6 +202,13 @@ resources :inquiries do
 
 
   resources :online_applications do
+
+   
+
+  end
+
+
+  resources :ratings do
 
    
 

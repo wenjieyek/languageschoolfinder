@@ -44,6 +44,10 @@ document.addEventListener("turbolinks:load", function() {
 
      $('.datepicker').pickadate();
 
+      $('.slider').slider();
+
+      $('.materialboxed').materialbox();
+
 
     
 

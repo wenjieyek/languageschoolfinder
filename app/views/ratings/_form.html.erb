@@ -1,0 +1,94 @@
+<%= error_messages_for(f.object) %>
+
+
+<div class="row">
+
+<div class="input-field col s12">
+
+<%=f.select(:coursename,options_from_collection_for_select(Course.where(:school_user_id=>@rating.school_user_id), :name, :name),:prompt=>"Select Your Course") %>
+    
+
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="input-field col s12 m4">
+
+<p>Courses</p>
+
+
+<%=f.range_field(:courses,:min=>"1",:max=>"5")%>
+    
+   
+    
+
+     
+
+</div>
+
+<div class="input-field col s12 m4">
+
+<p>Value</p>
+   
+    <%=f.range_field(:value,:min=>"1",:max=>"5")%>
+
+    
+
+</div>
+
+<div class="input-field col s12 m4">
+
+<p>Facilities</p>
+   
+    <%=f.range_field(:facilities,:min=>"1",:max=>"5")%>
+
+    
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="input-field col s12 m4">
+
+<p>Service</p>
+
+<%=f.range_field(:service,:min=>"1",:max=>"5")%>
+
+    
+</div>
+
+
+<div class="input-field col s12 m4">
+
+<p>Activities</p>
+
+<%=f.range_field(:activities,:min=>"1",:max=>"5")%>
+
+
+    
+</div>
+</div>
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Title")%>
+    <%=f.text_field(:title)%>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Comments")%>
+    <%=f.text_area(:comments,:area=>'40x10',:class=>"materialize-textarea")%>
+</div>
+</div>
+
+
+

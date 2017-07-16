@@ -24,6 +24,7 @@ class PublicController < ApplicationController
     @teachers=@school_user.teachers.all
     @promotions=@school_user.promotions.all
     @certificates=@school_user.certificates.all
+    @ratings=@school_user.ratings.all
     
   end
 
