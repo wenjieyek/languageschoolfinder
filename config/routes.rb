@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
 
 
+
  root 'public#index'
  
   
@@ -209,6 +210,18 @@ resources :inquiries do
 
 
   resources :ratings do
+
+   
+
+  end
+
+    resources :bookmarks do
+
+       member do
+
+      get :delete
+
+    end
 
    
 

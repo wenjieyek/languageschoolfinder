@@ -1,0 +1,67 @@
+<% @page_title="Bookmarks List" %>
+
+<%= render(:partial=>'layouts/user_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Bookmarks List </h5>
+
+
+	<table class="responsive-table">
+		<thead>
+			<tr>
+			<td>School Name</td>
+			<td>Bookmarked Time</td>
+			<td>Action</td>
+			</tr>
+		</thead>
+
+		<tbody>
+	
+		<% @bookmarks.each do |bookmarks| %>
+			<tr>
+			<td><%= bookmarks.school_name %></td>
+			<td><%= bookmarks.created_at %></td>
+			
+			<td><%= link_to("View", public_path(bookmarks.school_user_id)) %></td>
+			<td><%= link_to("Delete", bookmark_path(bookmarks.id),:method=>"delete") %></td>
+			</tr>
+
+
+		<% end %>
+
+
+		</tbody>
+
+	</table>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
