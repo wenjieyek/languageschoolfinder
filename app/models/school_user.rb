@@ -10,7 +10,7 @@ class SchoolUser < ApplicationRecord
 	has_many :inquiries
 	has_many :online_applications
 	has_many :ratings
-	belongs_to :bookmark
+	#belongs_to :bookmark
 
 
 
