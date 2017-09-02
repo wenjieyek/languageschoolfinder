@@ -8,6 +8,6 @@ class SchoolAttachment < ApplicationRecord
 	validates :directory,:presence=>true
 	validates :attachmenttype,:presence=>true
 	
-
+	
 
 end

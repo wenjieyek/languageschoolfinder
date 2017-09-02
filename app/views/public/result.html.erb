@@ -5,6 +5,8 @@
 <div class="card center-align white " >
 <span class="card-title">Results</span>
 
+<div class="center"><span>Search Results 9 of 9 Results</span></div>
+
 
 
 
@@ -13,8 +15,10 @@
 <table class="responsive-table">
 		<thead>
 			<tr>
+			<td></td>
 			<td>School Name</td>
 			<td>Area</td>
+			<td>Ratings</td>
 			<td>Action</td>
 			</tr>
 		</thead>
@@ -23,8 +27,10 @@
 	
 		<% @results.each do |results| %>
 			<tr>
+			<td><i class="material-icons teal-text text-lighten-2">school</i></td>
 			<td><%= results.name %></td>
 			<td><%= results.city %>, <%= results.state %></td>
+			<td></td>
 			<td><%= link_to("Show",public_path(results.id)) %></td>
 			</tr>
 
@@ -32,9 +38,13 @@
 		<% end %>
 
 
+
+
 		</tbody>
 
 	</table>
+
+	
 	 
 
 

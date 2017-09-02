@@ -18,7 +18,7 @@
 <div class="row">
 <div class="input-field col s12">
    
-     <%=select_tag(:course,options_from_collection_for_select(Course.where(:school_user_id=>session[:inquiry_id]), :name, :name),:prompt=>"Select Interesting Course") %>
+     <%=f.select(:course,options_from_collection_for_select(Course.where(:school_user_id=>session[:inquiry_id]), :name, :name),:prompt=>"Select Interesting Course") %>
 
      <label>Course</label>
 </div>
