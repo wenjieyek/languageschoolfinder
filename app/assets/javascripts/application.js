@@ -15,7 +15,12 @@
 //= require_tree .
 
 //= require jquery
+//= require jquery-ui
+
+
 //= require materialize-sprockets
+//= require wice_grid
+
 
 
 document.addEventListener("turbolinks:load", function() {

@@ -8,7 +8,8 @@ class PublicController < ApplicationController
   def result
 
 
-  	@results=SchoolUser.where(:city=>params[:city],:status=>1)
+  	#@results=SchoolUser.where(:city=>params[:city],:status=>1)
+    @results_grid = initialize_grid(SchoolUser.where(:city=>params[:city],:status=>1))
   	#@language=@results.courses.where(:languagetype=>params[:languagetype])  	
 
   end

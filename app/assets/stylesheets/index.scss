@@ -1,5 +1,8 @@
 @import "materialize";
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import "wice_grid";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .turbolinks-progress-bar {
   height: 5px;
@@ -68,4 +71,13 @@ label {
 
 a {
   color: #4db6ac; 
+}
+
+.pagination li.active a {
+    background: #009688;
+    
+}
+
+th {
+  color: #009688;
 }

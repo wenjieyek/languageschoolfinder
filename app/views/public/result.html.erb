@@ -1,50 +1,30 @@
-
-
-
 <div class="form-card">
 <div class="card center-align white " >
 <span class="card-title">Results</span>
 
-<div class="center"><span>Search Results 9 of 9 Results</span></div>
-
-
-
-
 <div class="card-content">
+<%= grid(@results_grid, show_filters: :when_filtered) do |g| 
 
-<table class="responsive-table">
-		<thead>
-			<tr>
-			<td></td>
-			<td>School Name</td>
-			<td>Area</td>
-			<td>Ratings</td>
-			<td>Action</td>
-			</tr>
-		</thead>
+			g.column name: '' do |result|
+			"<i class='material-icons teal-text text-lighten-2'>school</i>".html_safe
+			end
 
-		<tbody>
-	
-		<% @results.each do |results| %>
-			<tr>
-			<td><i class="material-icons teal-text text-lighten-2">school</i></td>
-			<td><%= results.name %></td>
-			<td><%= results.city %>, <%= results.state %></td>
-			<td></td>
-			<td><%= link_to("Show",public_path(results.id)) %></td>
-			</tr>
+			g.column name: 'School Name' , attribute: 'name' do |result|
+			result.name
+			end
 
+			g.column name: 'Area'  , attribute: 'city' do |result|
+			result.city
+			end
 
-		<% end %>
+			g.column name: 'Rating' do |result|
+			end
 
+			g.column name: 'Action' do |result|
+			link_to("Show",public_path(result.id))
+			end
 
-
-
-		</tbody>
-
-	</table>
-
-	
+end -%>
 	 
 
 

@@ -12,6 +12,13 @@ module ApplicationHelper
 		
 	end
 
+	#used for wice_grid
+	def tag_options(options, escape = true)
+    
+    tag_builder.tag_options(options, escape)
+  	
+  	end
+
 
 	
 
