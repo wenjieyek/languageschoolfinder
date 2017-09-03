@@ -12,37 +12,22 @@
 
 
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>School Name</td>
-			<td>E-mail</td>
-			<td>Action</td>
-			
-			</tr>
-		</thead>
-
-		<tbody>
-	
-		<% @manage_schools.each do |manage_schools| %>
-			<tr>
-			<td><%= manage_schools.name %></td>
-			<td><%= manage_schools.email %></td>
-			<td><%= link_to("Show", manage_school_path(manage_schools.id)) %></td>
-			
-			
-	
-			
-			
-			</tr>
+	<%= grid(@manage_schools, show_filters: :when_filtered) do |g| 
 
 
-		<% end %>
+			g.column name: 'School Name' , attribute: 'name' do |school|
+			school.name
+			end
 
+			g.column name: 'Email'  , attribute: 'email' do |school|
+			school.email
+			end
 
-		</tbody>
+			g.column name: 'Action' do |school|
+			link_to("Show", manage_school_path(school.id))
+			end
 
-	</table>
+end -%>
 
 
 		

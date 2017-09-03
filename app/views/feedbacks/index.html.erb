@@ -10,37 +10,27 @@
 <h5>Feedbacks List </h5>
 
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Title</td>
+
+	<%= grid(@feedbacks, show_filters: :when_filtered) do |g| 
+
 			
-			<td>Action</td>
-			</tr>
-		</thead>
+			g.column name: 'Name' , attribute: 'name' do |feedback|
+			feedback.name
+			end
 
-		<tbody>
-	
-		<% @feedbacks.each do |feedback| %>
-			<tr>
-			<td><%= feedback.name %></td>
-			<td><%= feedback.email %></td>
-			<td><%= feedback.title %></td>
-	
-			<td><%= link_to("Show", feedback_path(feedback.id)) %></td>
-			
-			
-			</tr>
+			g.column name: 'Email'  , attribute: 'email' do |feedback|
+			feedback.email
+			end
 
+			g.column name: 'Title' , attribute: 'title' do |feedback|
+			feedback.title
+			end
 
-		<% end %>
+			g.column name: 'Action' do |feedback|
+			link_to("Show",feedback_path(feedback.id))
+			end
 
-
-		</tbody>
-
-	</table>
+end -%>
 
 
 		

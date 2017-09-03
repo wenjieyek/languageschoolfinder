@@ -10,31 +10,23 @@
 <h5>Attachments List </h5>
 <p><%=link_to("Add Attachments",new_school_attachment_path) %></p>
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Media</td>
-			<td>Action</td>
-			</tr>
-		</thead>
 
-		<tbody>
-	
-		<% @school_attachments.each do |school_attachment| %>
-			<tr>
-			<td><img class="responsive-img" style="height:100px;" src=<%= school_attachment.directory %> ></td>
-			<td><%= link_to("Show", school_attachment_path(school_attachment.id)) %></td>
-			<td><%= link_to("Edit", edit_school_attachment_path(school_attachment.id)) %></td>
-			<td><%= link_to("Delete", delete_school_attachment_path(school_attachment.id)) %></td>
-			</tr>
+		<%= grid(@school_attachments, show_filters: :when_filtered) do |g| 
 
+			
+			g.column name: 'Picture'  do |school_attachment|
+			image_tag(school_attachment.directory,:height=>"100px")
+			end
 
-		<% end %>
+			g.column name: 'Uploaded Date'  , attribute: 'created_at' do |school_attachment|
+			school_attachment.created_at
+			end 
 
+			g.column name: 'Action' do |school_attachment|
+			link_to("Show",school_attachment_path(school_attachment.id))+"<td>".html_safe+link_to("Edit", edit_school_attachment_path(school_attachment.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_school_attachment_path(school_attachment.id))+"</td>".html_safe
+			end
 
-		</tbody>
-
-	</table>
+end -%>
 
 	
 

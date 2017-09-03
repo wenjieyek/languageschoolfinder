@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
 
 
   def index
-  	@bookmarks=Bookmark.where(:user_id=>session[:user_id])
+  	@bookmarks=initialize_grid(Bookmark.where(:user_id=>session[:user_id]))
   end
 
 

@@ -10,34 +10,24 @@
 <h5>Promotions List </h5>
 <p><%=link_to("Add Promotion",new_promotion_path) %></p>
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Name</td>
-			<td>Period</td>
-			<td>Action</td>
-			</tr>
-		</thead>
 
-		<tbody>
-	
-		<% @promotions.each do |promotion| %>
-			<tr>
-			<td><%= promotion.name %></td>
-			<td><%= promotion.period %></td>
+
+<%= grid(@promotions, show_filters: :when_filtered) do |g| 
+
 			
-			<td><%= link_to("Show", promotion_path(promotion.id)) %></td>
-			<td><%= link_to("Edit", edit_promotion_path(promotion.id)) %></td>
-			<td><%= link_to("Delete", delete_promotion_path(promotion.id)) %></td>
-			</tr>
+			g.column name: 'Name' , attribute: "name"  do |promotion|
+			promotion.name
+			end
 
+			g.column name: 'Period'  , attribute: 'period' do |promotion|
+			promotion.period
+			end 
 
-		<% end %>
+			g.column name: 'Action' do |promotion|
+			link_to("Show",promotion_path(promotion.id))+"<td>".html_safe+link_to("Edit", edit_promotion_path(promotion.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_promotion_path(promotion.id))+"</td>".html_safe
+			end
 
-
-		</tbody>
-
-	</table>
+end -%>
 
 
 		

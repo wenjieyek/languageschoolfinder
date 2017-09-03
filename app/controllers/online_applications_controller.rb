@@ -5,7 +5,7 @@ class OnlineApplicationsController < ApplicationController
 
 
  def index
-    @onlineapplications=OnlineApplication.where(:school_user_id=>session[:schools_id])
+    @onlineapplications=initialize_grid(OnlineApplication.where(:school_user_id=>session[:schools_id]))
 
    
   end

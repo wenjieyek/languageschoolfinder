@@ -10,33 +10,25 @@
 <h5>Bookmarks List </h5>
 
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>School Name</td>
-			<td>Bookmarked Time</td>
-			<td>Action</td>
-			</tr>
-		</thead>
-
-		<tbody>
 	
-		<% @bookmarks.each do |bookmarks| %>
-			<tr>
-			<td><%= bookmarks.school_name %></td>
-			<td><%= bookmarks.created_at %></td>
+	<%= grid(@bookmarks, show_filters: :when_filtered) do |g| 
+
 			
-			<td><%= link_to("View", public_path(bookmarks.school_user_id)) %></td>
-			<td><%= link_to("Delete", bookmark_path(bookmarks.id),:method=>"delete") %></td>
-			</tr>
+			g.column name: 'Name' , attribute: 'school_name' do |bookmark|
+			bookmark.school_name
+			end
 
+			g.column name: 'Date'  , attribute: 'created_at' do |bookmark|
+			bookmark.created_at
+			end
 
-		<% end %>
+			g.column name: 'Action' do |bookmark|
+			link_to("View", public_path(bookmark.school_user_id)) + " " +
+			link_to("Delete", bookmark_path(bookmark.id),:method=>"delete") 
+			end
 
+end -%>
 
-		</tbody>
-
-	</table>
 
 
 		

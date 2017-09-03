@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
 
   
   def index
-    @courses=Course.where(:school_user_id=>session[:schools_id])
+    @courses=initialize_grid(Course.where(:school_user_id=>session[:schools_id]))
 
     #@courses=Course.all
   end

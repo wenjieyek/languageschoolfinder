@@ -10,34 +10,29 @@
 <h5>Inquiries List </h5>
 
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Title</td>
-			<td>Course</td>
+
+
+			<%= grid(@inquiries, show_filters: :when_filtered) do |g| 
+
 			
-			<td>Action</td>
-			</tr>
-		</thead>
+			g.column name: 'Title' , attribute: "title"  do |inquiry|
+			inquiry.title
+			end
 
-		<tbody>
-	
-		<% @inquiries.each do |inquiries| %>
-			<tr>
-			<td><%= inquiries.title %></td>
-			<td><%= inquiries.course %></td>
-			
-			<td><%= link_to("Show", inquiry_path(inquiries.id)) %></td>
-			
-			</tr>
+			g.column name: 'Course' , attribute: "course"  do |inquiry|
+			inquiry.course
+			end
 
+			g.column name: 'Submit Date'  , attribute: 'created_at' do |inquiry|
+			inquiry.created_at
+			end 
 
-		<% end %>
+			g.column name: 'Action' do |inquiry|
+			link_to("Show",inquiry_path(inquiry.id))
+			end
 
+end -%>
 
-		</tbody>
-
-	</table>
 
 
 		

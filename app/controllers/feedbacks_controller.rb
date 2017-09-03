@@ -5,7 +5,7 @@ class FeedbacksController < ApplicationController
 
 
   def index
-    @feedbacks=Feedback.all
+    @feedbacks=initialize_grid(Feedback)
 
     #@feedbacks=Feedback.all
   end

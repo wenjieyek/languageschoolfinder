@@ -3,7 +3,7 @@ class ManageUsersController < ApplicationController
 
  
   def index
-    @manage_users=User.all
+    @manage_users=initialize_grid(User)
   end
 
   def show

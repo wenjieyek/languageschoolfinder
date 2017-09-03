@@ -10,31 +10,24 @@
 <h5>Newsfeeds List </h5>
 <p><%=link_to("Add Newsfeed",new_newsfeed_path) %></p>
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Title</td>
-			<td>Action</td>
-			</tr>
-		</thead>
-
-		<tbody>
 	
-		<% @newsfeeds.each do |newsfeeds| %>
-			<tr>
-			<td><%= newsfeeds.title %></td>
-			<td><%= link_to("Show", newsfeed_path(newsfeeds.id)) %></td>
-			<td><%= link_to("Edit", edit_newsfeed_path(newsfeeds.id)) %></td>
-			<td><%= link_to("Delete", delete_newsfeed_path(newsfeeds.id)) %></td>
-			</tr>
 
+		<%= grid(@newsfeeds, show_filters: :when_filtered) do |g| 
 
-		<% end %>
+			
+			g.column name: 'title' , attribute: 'title'  do |newsfeed|
+			newsfeed.title
+			end
 
+			g.column name: 'Uploaded Date'  , attribute: 'created_at' do |newsfeed|
+			newsfeed.created_at
+			end 
 
-		</tbody>
+			g.column name: 'Action' do |newsfeed|
+			link_to("Show",newsfeed_path(newsfeed.id))+"<td>".html_safe+link_to("Edit", edit_newsfeed_path(newsfeed.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_newsfeed_path(newsfeed.id))+"</td>".html_safe
+			end
 
-	</table>
+end -%>
 
 
 		

@@ -10,36 +10,27 @@
 <h5>Online Application List </h5>
 
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Name</td>
-			<td>Courses</td>
-			<td>Submit Date</td>
+
+		<%= grid(@onlineapplications, show_filters: :when_filtered) do |g| 
+
+			g.column name: 'Name' , attribute: "name"  do |onlineapplication|
+			onlineapplication.name
+			end
+
 			
-			<td>Action</td>
-			</tr>
-		</thead>
+			g.column name: 'Course' , attribute: "course"  do |onlineapplication|
+			onlineapplication.course
+			end
 
-		<tbody>
-	
-		<% @onlineapplications.each do |onlineapplication| %>
-			<tr>
-			<td><%= onlineapplication.name %></td>
-			<td><%= onlineapplication.course %></td>
-			<td><%= onlineapplication.created_at %></td>
-			
-			<td><%= link_to("Show", online_application_path(onlineapplication.id)) %></td>
-			
-			</tr>
+			g.column name: 'Submit Date'  , attribute: 'created_at' do |onlineapplication|
+			onlineapplication.created_at
+			end 
 
+			g.column name: 'Action' do |onlineapplication|
+			link_to("Show",online_application_path(onlineapplication.id))
+			end
 
-		<% end %>
-
-
-		</tbody>
-
-	</table>
+end -%>
 
 
 		

@@ -12,37 +12,22 @@
 
 
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Userame</td>
-			<td>E-mail</td>
-			<td>Action</td>
+	<%= grid(@manage_users, show_filters: :when_filtered) do |g| 
+
 			
-			</tr>
-		</thead>
+			g.column name: 'Username' , attribute: 'username' do |user|
+			user.username
+			end
 
-		<tbody>
-	
-		<% @manage_users.each do |manage_users| %>
-			<tr>
-			<td><%= manage_users.username %></td>
-			<td><%= manage_users.email %></td>
-			<td><%= link_to("Show", manage_user_path(manage_users.id)) %></td>
-			
-			
-	
-			
-			
-			</tr>
+			g.column name: 'Email'  , attribute: 'email' do |user|
+			user.email
+			end
 
+			g.column name: 'Action' do |user|
+			link_to("Show", manage_user_path(user.id))
+			end
 
-		<% end %>
-
-
-		</tbody>
-
-	</table>
+end -%>
 
 
 		

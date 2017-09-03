@@ -3,7 +3,7 @@ class SchoolAttachmentsController < ApplicationController
 
   
   def index
-    @school_attachments=SchoolAttachment.where(:school_user_id=>session[:schools_id])
+    @school_attachments=initialize_grid(SchoolAttachment.where(:school_user_id=>session[:schools_id]))
 
     
   end

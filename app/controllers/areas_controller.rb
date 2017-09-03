@@ -5,7 +5,7 @@ class AreasController < ApplicationController
 
   def index
 
-  	  @areas=Area.all
+      @areas = initialize_grid(Area, include: :state)
   end
 
   def new

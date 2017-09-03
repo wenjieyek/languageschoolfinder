@@ -4,7 +4,7 @@ class InquiriesController < ApplicationController
 
 
  def index
-    @inquiries=Inquiry.where(:school_user_id=>session[:schools_id])
+    @inquiries=initialize_grid(Inquiry.where(:school_user_id=>session[:schools_id]))
 
    
   end

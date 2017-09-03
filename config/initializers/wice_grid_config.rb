@@ -2,7 +2,7 @@
 if defined?(Wice::Defaults)
 
   # Default number of rows to show per page.
-  Wice::Defaults::PER_PAGE = 1
+  Wice::Defaults::PER_PAGE = 5
 
   # Default order direction
   Wice::Defaults::ORDER_DIRECTION = 'asc'
@@ -41,7 +41,7 @@ if defined?(Wice::Defaults)
   Wice::Defaults::SHOW_FILTER = :always
 
   # A boolean value specifying if a change in a filter triggers reloading of the grid.
-  Wice::Defaults::AUTO_RELOAD = false
+  Wice::Defaults::AUTO_RELOAD = true
 
   # SQL operator used for matching strings in string filters.
   Wice::Defaults::STRING_MATCHING_OPERATOR = 'LIKE'

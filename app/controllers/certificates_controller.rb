@@ -2,7 +2,7 @@ class CertificatesController < ApplicationController
   before_action :confirm_logged_in
    
    def index
-    @certificates=Certificate.where(:school_user_id=>session[:schools_id])
+    @certificates=initialize_grid(Certificate.where(:school_user_id=>session[:schools_id]))
 
     
   end

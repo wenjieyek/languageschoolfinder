@@ -10,35 +10,25 @@
 <h5>Courses List </h5>
 <p><%=link_to("Add Course",new_course_path) %></p>
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Name</td>
-			<td>Language</td>
+
+
+			<%= grid(@courses, show_filters: :when_filtered) do |g| 
+
 			
-			<td>Action</td>
-			</tr>
-		</thead>
+			g.column name: 'Name' , attribute: "name"  do |course|
+			course.name
+			end
 
-		<tbody>
-	
-		<% @courses.each do |course| %>
-			<tr>
-			<td><%= course.name %></td>
-			<td><%= course.languagetype %></td>
-			
-			<td><%= link_to("Show", course_path(course.id)) %></td>
-			<td><%= link_to("Edit", edit_course_path(course.id)) %></td>
-			<td><%= link_to("Delete", delete_course_path(course.id)) %></td>
-			</tr>
+			g.column name: 'Language'  , attribute: 'languagetype' do |course|
+			course.languagetype
+			end 
 
+			g.column name: 'Action' do |course|
+			link_to("Show",course_path(course.id))+"<td>".html_safe+link_to("Edit", edit_course_path(course.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_course_path(course.id))+"</td>".html_safe
+			end
 
-		<% end %>
+end -%>
 
-
-		</tbody>
-
-	</table>
 
 
 		

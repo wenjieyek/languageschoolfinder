@@ -1,7 +1,9 @@
 class ManageSchoolsController < ApplicationController
   
  def index
-    @manage_schools=SchoolUser.all
+    @manage_schools=initialize_grid(SchoolUser)
+   
+
   end
 
   def show

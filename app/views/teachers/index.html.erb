@@ -10,35 +10,23 @@
 <h5>Teachers List </h5>
 <p><%=link_to("Add Teacher",new_teacher_path) %></p>
 
-	<table class="responsive-table">
-		<thead>
-			<tr>
-			<td>Name</td>
-			<td>Language</td>
+
+			<%= grid(@teachers, show_filters: :when_filtered) do |g| 
+
 			
-			<td>Action</td>
-			</tr>
-		</thead>
+			g.column name: 'Name' , attribute: "name"  do |teacher|
+			teacher.name
+			end
 
-		<tbody>
-	
-		<% @teachers.each do |teacher| %>
-			<tr>
-			<td><%= teacher.name %></td>
-			<td><%= teacher.languagetype %></td>
-			
-			<td><%= link_to("Show", teacher_path(teacher.id)) %></td>
-			<td><%= link_to("Edit", edit_teacher_path(teacher.id)) %></td>
-			<td><%= link_to("Delete", delete_teacher_path(teacher.id)) %></td>
-			</tr>
+			g.column name: 'Language'  , attribute: 'languagetype' do |teacher|
+			teacher.languagetype
+			end 
 
+			g.column name: 'Action' do |teacher|
+			link_to("Show",teacher_path(teacher.id))+"<td>".html_safe+link_to("Edit", edit_teacher_path(teacher.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_teacher_path(teacher.id))+"</td>".html_safe
+			end
 
-		<% end %>
-
-
-		</tbody>
-
-	</table>
+end -%>
 
 
 		

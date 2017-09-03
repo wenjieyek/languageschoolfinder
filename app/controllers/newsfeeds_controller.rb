@@ -2,7 +2,7 @@ class NewsfeedsController < ApplicationController
   before_action :confirm_logged_in
    
    def index
-    @newsfeeds=Newsfeed.where(:school_user_id=>session[:schools_id])
+    @newsfeeds=initialize_grid(Newsfeed.where(:school_user_id=>session[:schools_id]))
 
     
   end
