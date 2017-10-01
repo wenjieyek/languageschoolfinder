@@ -1,2 +1,59 @@
-<h1>Ratings#index</h1>
-<p>Find me in app/views/ratings/index.html.erb</p>
+<% @page_title="Ratings List" %>
+
+<%= render(:partial=>'layouts/user_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Ratings List </h5>
+
+
+	
+	<%= grid(@ratings, show_filters: :when_filtered) do |g| 
+
+			
+			g.column name: 'Title' , attribute: 'title' do |rating|
+			rating.title
+			end
+
+			g.column name: 'Date'  , attribute: 'created_at' do |rating|
+			rating.created_at
+			end
+
+			g.column name: 'Action' do |rating|
+			link_to("Edit", edit_rating_path(rating.id)) + " " +
+			link_to("Delete", delete_rating_path(rating.id)) 
+			end
+
+end -%>
+
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

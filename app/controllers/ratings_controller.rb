@@ -4,6 +4,8 @@ class RatingsController < ApplicationController
 
 
   def index
+    @ratings=initialize_grid(Rating.where(:user_id=>session[:user_id]))
+
     
   end
 
@@ -45,13 +47,42 @@ class RatingsController < ApplicationController
   end
 
   def edit
+    @rating=Rating.find(params[:id])
     
   end
 
   def update
-   
+    @rating=Rating.find(params[:id])
+    if @rating.update_attributes(rating_params)
+      flash[:notice]='Rating Updated Successfully'
+      redirect_to(ratings_path)
+    else
+      render('edit')
+
+
+
+    end
+
+  
     
   end
+
+  def delete
+    @rating=Rating.find(params[:id])
+  end
+
+  def destroy
+    @rating=Rating.find(params[:id])
+    @rating.destroy
+    flash[:notice]='Rating Deleted Successfully'
+      redirect_to(ratings_path)
+
+    
+  end
+
+   
+    
+
 
   
 

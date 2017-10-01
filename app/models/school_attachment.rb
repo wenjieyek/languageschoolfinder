@@ -6,7 +6,7 @@ class SchoolAttachment < ApplicationRecord
 	mount_uploader :directory, SchoolAttachmentUploader
 
 	validates :directory,:presence=>true
-	validates :attachmenttype,:presence=>true
+	
 	
 	
 

@@ -1,2 +1,63 @@
-<h1>Ratings#edit</h1>
-<p>Find me in app/views/ratings/edit.html.erb</p>
+<%@page_title="Edit Rating" %>
+
+
+
+<%= render(:partial=>'layouts/user_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Edit Rating</h5>
+
+
+		<%=form_for(@rating,:class=>"col s12") do |f| %>
+	<%= render(:partial=>'form', :locals=>{:f=>f}) %>
+
+
+<div class="center">
+   	<%= f.submit("Edit",:class=>"waves-effect waves-light btn teal lighten-2") %>
+</div>
+	<% end %>
+
+	</div>	
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+

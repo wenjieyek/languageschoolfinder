@@ -128,7 +128,7 @@
       <div class="collapsible-body">
       <label>News: </label>
      
-      <p><%= newsfeeds.details %></p>
+      <p><%= newsfeeds.details.html_safe %></p>
 
 
 
@@ -316,7 +316,7 @@
       <p><%= promotions.start.strftime("%d %B %Y") %> to <%= promotions.end.strftime("%d %B %Y") %></p>
 
       <label>Attachment: </label>
-      <p><a href=<%= promotions.attachments %>></a> </p>
+      <p><a href=<%= promotions.attachments %>>Download</a> </p>
 
 
 

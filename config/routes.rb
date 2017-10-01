@@ -209,6 +209,13 @@ resources :inquiries do
 
   resources :ratings do
 
+     member do
+
+      get :delete
+
+    end
+    
+
    
 
   end

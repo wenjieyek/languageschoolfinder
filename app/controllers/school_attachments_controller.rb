@@ -72,8 +72,7 @@ class SchoolAttachmentsController < ApplicationController
 
     params.require(:school_attachment).permit(
                                         :directory,
-                                        :attachmenttype,
-                                        :description
+                                        
                                         
 
                                        )

@@ -1,2 +1,63 @@
-<h1>Ratings#delete</h1>
-<p>Find me in app/views/ratings/delete.html.erb</p>
+<%@page_title="Delete Rating" %>
+
+<%= render(:partial=>'layouts/user_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+
+
+	<%=form_for(@rating, :method => 'delete') do |f| %>
+	<h4>Delete <%=f.object.title %> </h4>
+
+	<p>Are you sure you want to permanently delete this rating?</p>
+
+	
+	
+
+	<div class="center">
+
+		
+		<%= f.submit("Delete",:class=>"waves-effect waves-light btn red darken-4") %>
+		<%=link_to("Back",ratings_path,:class=>'bwaves-effect waves-light btn teal lighten-2')%>
+	</div>
+
+
+
+
+	<% end %>
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
