@@ -80,7 +80,7 @@ class CoursesController < ApplicationController
                                         :languagetype,
                                         :details,
                                         :price,
-                                        :time,
+                                       
                                         :attachments,
 
                                        )

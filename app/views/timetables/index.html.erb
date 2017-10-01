@@ -1,0 +1,63 @@
+<% @page_title="Timetable List" %>
+
+<%= render(:partial=>'layouts/school_navigation') %>
+
+
+<div class="col s12 m9 l9">
+<!-- Teal page content  -->
+<div class="card">
+<div class="card-content">
+<h5>Timetable List </h5>
+
+<p><%=link_to("Add Timetable",new_timetable_path) %></p>
+
+
+			<%= grid(@timetables, show_filters: :when_filtered) do |g| 
+
+			
+			g.column name: 'Day' , attribute: "day"  do |timetable|
+			Date::DAYNAMES[timetable.day]
+			end
+
+			g.column name: 'Start'  , attribute: 'start' do |timetable|
+			timetable.start.strftime("%I:%M %p")
+			end
+
+			g.column name: 'End' , attribute: "end"  do |timetable|
+			timetable.end.strftime("%I:%M %p")
+			end
+
+
+			g.column name: 'Action' do |timetable|
+			link_to("Edit", edit_timetable_path(timetable.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_timetable_path(timetable.id))+"</td>".html_safe
+			end
+
+end -%>
+
+
+		
+
+
+	</div>
+
+	
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

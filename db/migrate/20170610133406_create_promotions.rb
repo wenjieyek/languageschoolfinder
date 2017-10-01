@@ -5,7 +5,9 @@ class CreatePromotions < ActiveRecord::Migration[5.1]
      	t.string "name",:limit=>255
       	t.text "details"
     	t.string "attachments",:limit=>255
-    	t.string "period",:limit=>255
+    	
+      t.date "start"
+      t.date "end"
     	
       	#t.integer "course_id"
       	t.integer "school_user_id"

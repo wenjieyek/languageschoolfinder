@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170716064538) do
+ActiveRecord::Schema.define(version: 20170914041955) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "username"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20170716064538) do
     t.text "details"
     t.string "price"
     t.string "attachments"
-    t.string "time"
     t.integer "school_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,7 +120,8 @@ ActiveRecord::Schema.define(version: 20170716064538) do
     t.string "name"
     t.text "details"
     t.string "attachments"
-    t.string "period"
+    t.date "start"
+    t.date "end"
     t.integer "school_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -190,6 +190,16 @@ ActiveRecord::Schema.define(version: 20170716064538) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_user_id"], name: "index_teachers_on_school_user_id"
+  end
+
+  create_table "timetables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "day"
+    t.time "start"
+    t.time "end"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_timetables_on_course_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

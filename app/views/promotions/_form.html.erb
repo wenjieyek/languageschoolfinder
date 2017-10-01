@@ -18,8 +18,15 @@
 
 <div class="row">
 <div class="input-field col s12">
-    <%=f.label("Promotion's Period")%>
-    <%=f.text_field(:period)%>
+    <%=f.label("Promotion's Start")%>
+    <%=f.text_field(:start,:type=>"date",:class=>"datepicker")%>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Promotion's End")%>
+    <%=f.text_field(:end,:type=>"date",:class=>"datepicker")%>
 </div>
 </div>
 

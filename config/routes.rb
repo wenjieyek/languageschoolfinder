@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   
 
-
-
  root 'public#index'
  
   
@@ -226,6 +224,19 @@ resources :inquiries do
    
 
   end
+
+      resources :timetables do
+
+       member do
+
+      get :delete
+
+    end
+
+   
+
+  end
+
 
 
 

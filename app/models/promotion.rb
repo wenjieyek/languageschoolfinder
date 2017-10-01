@@ -8,6 +8,7 @@ class Promotion < ApplicationRecord
 	validates :name,:presence=>true
 	validates :details,:presence=>true
 	#validates :attachments,:presence=>true
-	validates :period,:presence=>true
+	validates :start,:presence=>true
+	validates :end,:presence=>true
 	
 end

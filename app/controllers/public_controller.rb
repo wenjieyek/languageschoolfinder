@@ -23,7 +23,10 @@ class PublicController < ApplicationController
     @school_attachments=@school_user.school_attachments.all
     @courses=@school_user.courses.all
     @teachers=@school_user.teachers.all
-    @promotions=@school_user.promotions.all
+    
+
+    @promotions=@school_user.promotions.where('end > ?', Date.today)
+    
     @certificates=@school_user.certificates.all
     @ratings=@school_user.ratings.all
     

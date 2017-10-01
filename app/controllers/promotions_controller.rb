@@ -72,7 +72,8 @@ class PromotionsController < ApplicationController
 
     params.require(:promotion).permit(  :name,
                                         :details,
-                                        :period,
+                                        :start,
+                                        :end,
                                         :attachments,
                                        
                                         

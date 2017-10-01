@@ -28,7 +28,7 @@
 
 			<label>Period: </label>
 
-			<p><%= @promotion.period %></p>
+			<p><%= @promotion.start.strftime("%d %B %Y") %> to <%= @promotion.end.strftime("%d %B %Y") %> </p>
 
 			
 			<label>Attachment: </label>

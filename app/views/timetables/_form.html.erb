@@ -1,0 +1,52 @@
+<%= error_messages_for(f.object) %>
+
+<div class="row">
+<div class="input-field col s12">
+   
+    <%= f.select(:day,options_for_select([['Monday', 1],['Tuesday', 2],['Wednesday', 3],['Thursday', 4],['Friday', 5],['Saturday', 6],['Sunday', 0]])) %>
+
+     <%=f.label("Day")%>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="input-field col s12 m6">
+
+	
+    
+    <%=f.text_field(:start,:type=>"time")%>
+
+    <%=f.label("Start",:class=>"active")%>
+    
+</div>
+<div class="input-field col s12 m6">
+
+	
+
+    
+    <%=f.text_field(:end,:type=>"time")%>
+
+    <%=f.label("End",:class=>"active")%>
+    
+</div>
+</div>
+
+<div class="row">
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
