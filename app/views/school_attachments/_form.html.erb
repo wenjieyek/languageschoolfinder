@@ -15,6 +15,23 @@
 </div>
 </div>
 
+<div class="row">
+<div class="input-field col s12">
+    <%=f.label("Details")%>
+    <%=f.text_area(:details,:area=>'40x10',:class=>"materialize-textarea")%>
+
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s12">
+    
+    <%= f.select(:priority,options_for_select([['No', 2], ['Yes', 1]])) %>
+    <%=f.label("Priority")%>
+
+</div>
+</div>
+
 
 
 

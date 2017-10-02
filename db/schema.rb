@@ -147,8 +147,8 @@ ActiveRecord::Schema.define(version: 20170914041955) do
 
   create_table "school_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "directory"
-    t.string "attachmenttype"
-    t.text "description"
+    t.text "details"
+    t.integer "priority"
     t.integer "school_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

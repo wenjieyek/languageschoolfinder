@@ -20,7 +20,7 @@ class PublicController < ApplicationController
 
 
     @newsfeeds=@school_user.newsfeeds.all
-    @school_attachments=@school_user.school_attachments.all
+    @school_attachments=@school_user.school_attachments.all.order(:priority)
     @courses=@school_user.courses.all
     @teachers=@school_user.teachers.all
     

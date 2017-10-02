@@ -3,6 +3,8 @@ class CreateSchoolAttachments < ActiveRecord::Migration[5.1]
     create_table :school_attachments do |t|
 
     	t.string "directory",:limit=>255
+    	t.text "details"
+    	t.integer "priority"
     	t.integer "school_user_id"
 
       t.timestamps
