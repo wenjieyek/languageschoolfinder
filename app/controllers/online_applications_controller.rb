@@ -4,10 +4,8 @@ class OnlineApplicationsController < ApplicationController
   before_action :confirm_logged_in,:except=>[:new,:create]
 
 
- def index
+  def index
     @onlineapplications=initialize_grid(OnlineApplication.where(:school_user_id=>session[:schools_id]))
-
-   
   end
 
   def show
@@ -25,14 +23,10 @@ class OnlineApplicationsController < ApplicationController
 
     @onlineapplication.school_user_id=session[:inquiry_id]
     
-    
-
     if @onlineapplication.save
-    
     flash[:notice] = "Online application is submitted, school will reply soon"
     session.delete(:inquiry_id)
     redirect_to session.delete(:return_to)
-
     else
     render('new')
     end
@@ -51,13 +45,25 @@ class OnlineApplicationsController < ApplicationController
     else
       render('edit')
 
+    end
+  end
+
+    def reply
+      session[:return_to] ||= request.referer
+      @onlineapplication=OnlineApplication.find(params[:id])
+
+      SchoolMailer.reply_application(@onlineapplication).deliver
+
+      if @onlineapplication.update_attributes(:status=>"0")
+      flash[:notice]='The Application Has Been Replied'
+      redirect_to session.delete(:return_to)
 
 
     end
-
-  
     
   end
+
+
 
   
 

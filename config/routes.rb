@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   post 'admins/attempt_login'
   get 'admins/logout'
 
+  get 'online_applications/reply'
+
 
 
   resources :school_users  do

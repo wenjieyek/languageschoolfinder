@@ -26,6 +26,10 @@
 			onlineapplication.created_at
 			end 
 
+			g.column name: 'Status'  , attribute: 'status' do |onlineapplication|
+			onlineapplication.status
+			end 
+
 			g.column name: 'Action' do |onlineapplication|
 			link_to("Show",online_application_path(onlineapplication.id))
 			end
