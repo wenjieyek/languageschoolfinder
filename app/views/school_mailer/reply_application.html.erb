@@ -1,9 +1,130 @@
 <h1>Your Application Has Been Reviewed</h1>
 
 <p>
-	Dear <%=@online_application.name %>
+	Dear <%=@online_application.name %>,
 </p>
 
 <p>
   <%= @greeting %>
+</p>
+
+<hr>
+
+<table>
+
+	<tr>
+		<td>
+		<b>Course: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.course %>	
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+		<b>Intake Date: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.intakedate %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Name: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.name %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Phone Number: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.phonenumber %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Email: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.email %>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>IC: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.ic %>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Gender: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.gender %>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Age: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.age %>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Nationality: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.nationality %>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Address: </b>	
+		</td>
+
+		<td>
+		<%= @online_application.address %>	
+		</td>
+	</tr>
+	
+</table>
+
+
+
+		
+			
+
+			
+
+			
+
+			<hr>
+
+<p>
+	<%=@message %>
 </p>

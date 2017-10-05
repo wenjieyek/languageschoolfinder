@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   post 'admins/attempt_login'
   get 'admins/logout'
 
-  get 'online_applications/reply'
+  post 'online_applications/reply'
 
 
 

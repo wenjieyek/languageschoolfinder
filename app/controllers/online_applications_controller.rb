@@ -51,10 +51,11 @@ class OnlineApplicationsController < ApplicationController
     def reply
       session[:return_to] ||= request.referer
       @onlineapplication=OnlineApplication.find(params[:id])
+      @message=params[:message]
 
-      SchoolMailer.reply_application(@onlineapplication).deliver
+      SchoolMailer.reply_application(@onlineapplication,@message).deliver
 
-      if @onlineapplication.update_attributes(:status=>"0")
+      if @onlineapplication.update_attributes(:status=>"1")
       flash[:notice]='The Application Has Been Replied'
       redirect_to session.delete(:return_to)
 
@@ -73,8 +74,8 @@ class OnlineApplicationsController < ApplicationController
   def onlineapplication_params
 
     params.require(:online_application).permit(
-    										  :course,
-    										  :intakedate,
+                      										  :course,
+                      										  :intakedate,
                                         	  :profilepicture,
                                         	  :email,
                                         	  :name,

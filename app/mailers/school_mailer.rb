@@ -5,9 +5,10 @@ class SchoolMailer < ApplicationMailer
   #
   #   en.school_mailer.reply_application.subject
   #
-  def reply_application(online_application)
+  def reply_application(online_application,message)
     @online_application=online_application
-    @greeting = "Hi! Your Application Has Been Reviewed"
+    @message=message
+    @greeting = "Here is the information you submited to the school: "
 
     mail to: online_application.email,:subject=>"Your Application Has Been Reviewed"
   end

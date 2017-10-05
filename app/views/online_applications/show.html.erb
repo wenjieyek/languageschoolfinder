@@ -14,6 +14,8 @@
 
 	<h5>Application Details </h5>
 
+			<label>Picture: </label>
+
 			<p><img class="responsive-img" style="height:200px;" src=<%= @onlineapplication.profilepicture %> ></p>
 
 			<label>Course: </label>
@@ -63,6 +65,24 @@
 
 			<p><%= @onlineapplication.address %></p>
 
+			
+			
+
+			<br>
+
+
+
+			<%= form_tag(online_applications_reply_path(:id=>@onlineapplication.id)) do %>
+			  
+			  
+			  <p>
+			  <label>Reply Application:</label>
+			  <%= text_field_tag(:message) %>
+			  </p>
+			  
+
+			  
+
 
 			
 		
@@ -73,8 +93,10 @@
 
 	<div class="center">
 
+		<%= submit_tag("Reply",:id=>@onlineapplication.id,:class=>"waves-effect waves-light btn teal lighten-2") %>
+			<% end %>
+
 		
-		<%= link_to("Reply",online_applications_reply_path(:id=>@onlineapplication.id),:class=>"waves-effect waves-light btn teal lighten-2") %>
 		
 	</div>
 
