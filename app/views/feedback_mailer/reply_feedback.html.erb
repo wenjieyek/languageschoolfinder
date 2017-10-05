@@ -1,0 +1,73 @@
+<h1>Your Feedback Has Been Reviewed</h1>
+
+
+<p>
+	Dear <%=@feedback.name %>,
+</p>
+
+<p>
+  <%= @greeting %>
+</p>
+
+
+
+<table>
+
+	<tr>
+		<td>
+		<b>Name: </b>	
+		</td>
+
+		<td>
+		<%= @feedback.name %>	
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+		<b>Email: </b>	
+		</td>
+
+		<td>
+		<%= @feedback.email %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Phonenumber: </b>	
+		</td>
+
+		<td>
+		<%= @feedback.phonenumber %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>Title: </b>	
+		</td>
+
+		<td>
+		<%= @feedback.title %>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+		<b>Details: </b>	
+		</td>
+
+		<td>
+		<%= @feedback.details %>
+		</td>
+	</tr>
+	
+
+</table>
+
+<hr>
+
+<p>
+	<%=@message %>
+</p>

@@ -26,6 +26,16 @@
 			feedback.title
 			end
 
+			g.column name: 'Status'  , attribute: 'status' do |feedback|
+				if feedback.status==1
+					"<span style='color:green'>".html_safe + "Reviewed" + "</span>".html_safe 
+				else
+
+					"<span style='color:red'>".html_safe + "Haven't Reviewed Yet" + "</span>".html_safe 
+				end
+			
+			end  
+
 			g.column name: 'Action' do |feedback|
 			link_to("Show",feedback_path(feedback.id))
 			end

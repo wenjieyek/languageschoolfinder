@@ -29,34 +29,45 @@
 	<label>Details</label>
 	<p><%= @feedback.details %></p>
 
+	<label>Status</label>
+			<p><%= if @feedback.status==1
+					"<span style='color:green'>".html_safe + "Reviewed" + "</span>".html_safe 
+				else
+
+					"<span style='color:red'>".html_safe + "Haven't Reviewed Yet" + "</span>".html_safe 
+				end
+			
+			 %></p>
+
+
+	<br>
+			<br>
+
+	
+
+	<%= form_tag(feedbacks_reply_path(:id=>@feedback.id)) do %>
+			  
+			  
+			  <p>
+			  <label>Reply Feedback:</label>
+			  <%= text_field_tag(:message) %>
+			  </p>
+			  
+
+			  
+
 
 			
 		
 			
-			
-			
-			
-			
-			
-
-			
-
-			
-			
-
-			
-			
-
-
-		
 
 
 	
 
 	<div class="center">
 
-		<%= link_to("Reply") %>
-
+		<%= submit_tag("Reply",:class=>"waves-effect waves-light btn teal lighten-2") %>
+			<% end %>
 		
 	</div>
 

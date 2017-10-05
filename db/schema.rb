@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170914041955) do
     t.string "email"
     t.string "phonenumber"
     t.string "title"
+    t.integer "status", default: 0
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

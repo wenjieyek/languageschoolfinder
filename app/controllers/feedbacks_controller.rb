@@ -55,6 +55,22 @@ class FeedbacksController < ApplicationController
     
   end
 
+  def reply
+      session[:return_to] ||= request.referer
+      @feedback=Feedback.find(params[:id])
+      @message=params[:message]
+
+      FeedbackMailer.reply_feedback(@feedback,@message).deliver
+
+      if @feedback.update_attributes(:status=>"1")
+      flash[:notice]='The Feedback Has Been Replied'
+      redirect_to session.delete(:return_to)
+
+
+    end
+    
+  end
+
   
 
 

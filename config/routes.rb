@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   post 'online_applications/reply'
   post 'inquiries/reply'
+  post 'feedbacks/reply'
 
 
 
