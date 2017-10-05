@@ -25,7 +25,17 @@
 
 			g.column name: 'Submit Date'  , attribute: 'created_at' do |inquiry|
 			inquiry.created_at
-			end 
+			end
+
+			g.column name: 'Status'  , attribute: 'status' do |inquiry|
+				if inquiry.status==1
+					"<span style='color:green'>".html_safe + "Reviewed" + "</span>".html_safe 
+				else
+
+					"<span style='color:red'>".html_safe + "Haven't Reviewed Yet" + "</span>".html_safe 
+				end
+			
+			end  
 
 			g.column name: 'Action' do |inquiry|
 			link_to("Show",inquiry_path(inquiry.id))

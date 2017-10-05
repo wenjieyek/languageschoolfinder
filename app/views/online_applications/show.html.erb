@@ -65,6 +65,17 @@
 
 			<p><%= @onlineapplication.address %></p>
 
+			<label>Status: </label>
+
+			<p><%= if @onlineapplication.status==1
+					"<span style='color:green'>".html_safe + "Reviewed" + "</span>".html_safe 
+				else
+
+					"<span style='color:red'>".html_safe + "Haven't Reviewed Yet" + "</span>".html_safe 
+				end
+			
+			 %></p>
+
 			
 			
 

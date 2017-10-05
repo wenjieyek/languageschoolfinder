@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'admins/logout'
 
   post 'online_applications/reply'
+  post 'inquiries/reply'
 
 
 

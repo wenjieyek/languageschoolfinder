@@ -34,6 +34,36 @@
 			<label>Details: </label>
 			<p><%= @inquiry.details %></p>
 
+			<label>Status</label>
+			<p><%= if @inquiry.status==1
+					"<span style='color:green'>".html_safe + "Reviewed" + "</span>".html_safe 
+				else
+
+					"<span style='color:red'>".html_safe + "Haven't Reviewed Yet" + "</span>".html_safe 
+				end
+			
+			 %></p>
+
+			
+			<br>
+			<br>
+
+	
+
+	<%= form_tag(inquiries_reply_path(:id=>@inquiry.id)) do %>
+			  
+			  
+			  <p>
+			  <label>Reply Inquiry:</label>
+			  <%= text_field_tag(:message) %>
+			  </p>
+			  
+
+			  
+
+
+			
+		
 			
 
 
@@ -41,8 +71,8 @@
 
 	<div class="center">
 
-		
-		<%= link_to("Read",:class=>"waves-effect waves-light btn teal lighten-2") %>
+		<%= submit_tag("Reply",:class=>"waves-effect waves-light btn teal lighten-2") %>
+			<% end %>
 		
 	</div>
 

@@ -57,6 +57,22 @@ class InquiriesController < ApplicationController
     
   end
 
+   def reply
+      session[:return_to] ||= request.referer
+      @inquiry=Inquiry.find(params[:id])
+      @message=params[:message]
+
+      InquiryMailer.reply_inquiry(@inquiry,@message).deliver
+
+      if @inquiry.update_attributes(:status=>"1")
+      flash[:notice]='The Inquiry Has Been Replied'
+      redirect_to session.delete(:return_to)
+
+
+    end
+    
+  end
+
   
 
 
