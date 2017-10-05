@@ -48,6 +48,10 @@
     <li><a href="">
     <i class="material-icons teal-text text-lighten-2">account_circle</i>
     <%=session[:schools_name] %>
+    <%school_user=SchoolUser.find(session[:schools_id]) 
+      inquiry_count=Inquiry.where(:school_user_id=>session[:schools_id],:status=>0).count
+      online_application_count=OnlineApplication.where(:school_user_id=>session[:schools_id],:status=>0).count
+    %>
 
     
     </a> 
@@ -55,11 +59,13 @@
 
     <li><%=link_to("Manage Account",access_menu_path) %></li>
     <li><%=link_to("Manage School Attachments",school_attachments_path) %></li>
+    <li><%=link_to("Manage Newsfeeds",newsfeeds_path) %></li>
+    <li><%=link_to("Manage Certificate",certificates_path) %></li>
     <li><%=link_to("Manage Courses",courses_path) %></li>
     <li><%=link_to("Manage Teachers",teachers_path) %></li>
     <li><%=link_to("Manage Promotions",promotions_path) %></li>
-    <li><%=link_to("Manage Applications",online_applications_path) %></li>
-    <li><%=link_to("Manage Inquiry",inquiries_path) %></li>
+    <li><%=link_to("<span class='new badge'>#{online_application_count}</span>Manage Applications".html_safe,online_applications_path) %></li>
+    <li><%=link_to("<span class='new badge'>#{inquiry_count}</span>Manage Inquiry".html_safe,inquiries_path) %></li>
     
     <li><%=link_to('<i class="material-icons teal-text text-lighten-2">exit_to_app</i> Logout'.html_safe,access_logout_path) %></li>
 
@@ -103,7 +109,7 @@
 
 <ul id="nav-mobile" class="right ">
 
-<% if controller_name=="users" || controller_name=="public"  || controller_name== "inquiries"   || controller_name== "bookmarks" %>
+<% if controller_name=="users" || controller_name=="public" || controller_name== "bookmarks" %>
         <% if session[:user_name]==nil %>
         <li><%=link_to("User Login",users_login_path) %></li>
 
@@ -118,7 +124,7 @@
 
   
 
-<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments" || controller_name== "newsfeeds"  || controller_name== "online_applications"%>
+<% if controller_name=="school_users" || controller_name== "access" || controller_name== "courses" || controller_name== "promotions" || controller_name== "teachers" || controller_name== "school_attachments" || controller_name== "newsfeeds"  || controller_name== "online_applications"  || controller_name== "inquiries"    || controller_name== "newsfeeds"    || controller_name== "certificates"   %>
         <% if session[:schools_name]==nil %>
         <li><%=link_to("School Login",access_login_path) %></li>
         <% else %>

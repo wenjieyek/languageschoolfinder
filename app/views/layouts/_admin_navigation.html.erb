@@ -11,6 +11,8 @@
 		<h5>Admin Control Panel</h5>
 		<p>Logged in as: <%=session[:admin_name] %></p>
 
+		<%feedback_count=Feedback.where(:status=>0).count %>
+
 		<ul class="collection center">
 		
 
@@ -21,7 +23,7 @@
 		<li class="collection-item"><%=link_to("Manage Languages",languages_path) %></li>
 		<li class="collection-item"><%=link_to("Manage Schools",manage_schools_path) %></li>
 		<li class="collection-item"><%=link_to("Manage Users",manage_users_path) %></li>
-		<li class="collection-item"><%=link_to("Manage Feedback",feedbacks_path) %></li>
+		<li class="collection-item"><%=link_to("<span class='new badge'>#{feedback_count}</span>Manage Feedback".html_safe,feedbacks_path) %></li>
 		
 		</ul>
 
