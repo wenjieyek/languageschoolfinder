@@ -48,9 +48,16 @@
     <li><a href="">
     <i class="material-icons teal-text text-lighten-2">account_circle</i>
     <%=session[:schools_name] %>
-    <%school_user=SchoolUser.find(session[:schools_id]) 
+    <%
+      if session[:schools_id] != 0
+
+      school_user=SchoolUser.find(session[:schools_id]) 
       inquiry_count=Inquiry.where(:school_user_id=>session[:schools_id],:status=>0).count
       online_application_count=OnlineApplication.where(:school_user_id=>session[:schools_id],:status=>0).count
+        
+      end
+
+      
     %>
 
     
