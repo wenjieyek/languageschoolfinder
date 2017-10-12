@@ -3,6 +3,9 @@
 <span class="card-title">Results</span>
 
 <div class="card-content">
+
+<p><%= @results.count%> <%=@languagetype %> Language Schools in <%=@area %></p>
+
 <%= grid(@results_grid, show_filters: :when_filtered) do |g| 
 
 			g.column name: '' do |result|

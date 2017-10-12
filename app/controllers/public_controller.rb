@@ -8,7 +8,12 @@ class PublicController < ApplicationController
 
   def result
 
-   
+    @area=params[:city]
+    @languagetype=params[:languagetype]
+    @results=SchoolUser.joins("LEFT JOIN courses 
+                                                      ON school_users.id=courses.school_user_id 
+                                                      AND courses.languagetype='#{params[:languagetype]}'")
+                                                      .where(:city=>params[:city],:status=>1).distinct
 
   	
     @results_grid = initialize_grid(SchoolUser.joins("LEFT JOIN courses 

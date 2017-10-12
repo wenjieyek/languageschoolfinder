@@ -22,6 +22,15 @@
 //= require wice_grid
 
 
+function filterarea(){
+
+
+  document.getElementById("autocomplete-input").value=document.getElementById("autocomplete-input").value.substring(0, document.getElementById("autocomplete-input").value.indexOf(','));
+
+
+  }
+  
+
 
 document.addEventListener("turbolinks:load", function() {
   $(document).ready(function() {

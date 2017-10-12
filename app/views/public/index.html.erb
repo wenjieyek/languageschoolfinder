@@ -21,7 +21,12 @@ document.addEventListener("turbolinks:load", function() {
 
 	  });
 
+
+
 	 });
+
+
+
 
 </script>
 
@@ -63,7 +68,7 @@ document.addEventListener("turbolinks:load", function() {
 
 
       
-      <%=submit_tag("Search!",:class=>"waves-effect waves-light btn teal lighten-2") %>
+      <%=submit_tag("Search!",:class=>"waves-effect waves-light btn teal lighten-2",:onclick=>"filterarea()") %>
 
       <% end %>
 
@@ -71,9 +76,6 @@ document.addEventListener("turbolinks:load", function() {
 </div>
 </div><!-- card center-align white -->    
 </div><!-- form-card -->
-
-
-
 
 
 
