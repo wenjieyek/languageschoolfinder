@@ -1,5 +1,30 @@
 <% @page_title="Index" %>
 
+<script type="text/javascript">
+
+document.addEventListener("turbolinks:load", function() {
+	$(document).ready(function() {
+	$('input.autocomplete').autocomplete({
+    data: {
+
+      <% @areas.each do |area| %>
+      "<%=area.areaname %>, <%=area.state.state %>": null,
+	  <% end %>
+
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function(val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+  });
+
+	  });
+
+	 });
+
+</script>
+
 
 
 <div class="form-card">
@@ -9,27 +34,31 @@
 
 
 
+
+
 <div class="card-content">
 	 <%=form_tag(public_result_path,:method=>:get, :class=>"col s12") do %>
 
 <div class="row">
 <div class="input-field col s12 m6">
-
+<%=label_tag ("Area ")%>
 	
-
-     <%=select_tag(:city,options_from_collection_for_select(Area.all, :areaname, :areaname),:prompt=>"Select Your Area") %>
-
-    <%=label_tag ("Area ")%>
+  <%=text_field_tag(:city,"",:id=>'autocomplete-input',:class=>'autocomplete') %>
+	
 </div>
             
 <div class="input-field col s12 m6">
-       <%=select_tag(:languagetype,options_from_collection_for_select(Language.all, :language, :language),:prompt=>"Select Your Language") %>
+       <%=select_tag(:languagetype,options_from_collection_for_select(Language.all, :language, :language)) %>
 
 
     <%=label_tag("Language")%>             
 </div>
 </div>
 
+
+     
+
+		
 
 
 
@@ -42,6 +71,8 @@
 </div>
 </div><!-- card center-align white -->    
 </div><!-- form-card -->
+
+
 
 
 

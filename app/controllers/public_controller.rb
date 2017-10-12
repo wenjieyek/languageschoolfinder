@@ -1,5 +1,6 @@
 class PublicController < ApplicationController
   def index
+    @areas=Area.joins("INNER JOIN states ON areas.state_id=states.id")
   end
 
 
@@ -7,9 +8,17 @@ class PublicController < ApplicationController
 
   def result
 
+   
 
-  	#@results=SchoolUser.where(:city=>params[:city],:status=>1)
-    @results_grid = initialize_grid(SchoolUser.where(:city=>params[:city],:status=>1))
+  	
+    @results_grid = initialize_grid(SchoolUser.joins("LEFT JOIN courses 
+                                                      ON school_users.id=courses.school_user_id 
+                                                      AND courses.languagetype='#{params[:languagetype]}'")
+                                                      .where(:city=>params[:city],:status=>1).distinct)
+
+    
+    #@results_grid = initialize_grid(SchoolUser.where(:city=>params[:city],:status=>1))
+    #@results=SchoolUser.where(:city=>params[:city],:status=>1)
   	#@language=@results.courses.where(:languagetype=>params[:languagetype])  	
 
   end
