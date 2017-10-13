@@ -6,7 +6,7 @@
 
 <p><%= @results.count%> <%=@languagetype %> Language Schools in <%=@area %></p>
 
-<%= grid(@results_grid, show_filters: :when_filtered) do |g| 
+<%= grid(@results_grid) do |g| 
 
 			g.column name: '' do |result|
 			"<i class='material-icons teal-text text-lighten-2'>school</i>".html_safe
