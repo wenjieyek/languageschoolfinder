@@ -49,7 +49,8 @@ class UsersController < ApplicationController
   end
 
   def menu
-    @newsfeeds=Newsfeed.all
+    
+    @newsfeeds=Newsfeed.where("school_user_id IN (select school_user_id from bookmarks where user_id=#{session[:user_id]})").order(created_at: :desc)
   end
 
 

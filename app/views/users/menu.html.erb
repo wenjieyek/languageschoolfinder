@@ -19,6 +19,12 @@
       <div class="collapsible-header active"><i class="material-icons teal-text text-lighten-2" >label</i><%= newsfeeds.title %></div>
 
       <div class="collapsible-body">
+
+      <%school_name=SchoolUser.find(newsfeeds.school_user_id) %>
+      
+      <label>Posted By: </label>
+      <p><%=link_to "#{school_name.name}",public_path(newsfeeds.school_user_id) %></p>
+
       <label>News: </label>
      
       <p><%= newsfeeds.details.html_safe %></p>
