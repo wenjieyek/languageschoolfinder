@@ -30,7 +30,11 @@ class PublicController < ApplicationController
 
     def show
 
+    
+
     @school_user=SchoolUser.find(params[:id])
+
+    ahoy.track "Get Current View and ID", id: @school_user.id
 
 
     @newsfeeds=@school_user.newsfeeds.all

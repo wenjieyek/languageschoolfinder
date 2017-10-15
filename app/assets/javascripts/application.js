@@ -12,14 +12,18 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
-
 //= require jquery
+//= require ahoy
 //= require jquery-ui
-
-
 //= require materialize-sprockets
 //= require wice_grid
+
+//= require_tree .
+
+
+
+
+
 
 
 function filterarea(){

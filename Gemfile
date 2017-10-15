@@ -37,11 +37,10 @@ gem 'materialize-sass'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'material_icons'
 gem 'carrierwave'
-
 gem "wice_grid", '3.6.0.pre4'
 gem 'font-awesome-sass',  '~> 4.3'
 gem 'jquery-ui-rails', '5.0.5'
-
+gem 'ahoy_matey'
 
 
 group :development, :test do
