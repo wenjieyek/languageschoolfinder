@@ -41,6 +41,8 @@ gem "wice_grid", '3.6.0.pre4'
 gem 'font-awesome-sass',  '~> 4.3'
 gem 'jquery-ui-rails', '5.0.5'
 gem 'ahoy_matey'
+gem "chartkick"
+gem 'groupdate'
 
 
 group :development, :test do

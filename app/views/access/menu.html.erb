@@ -8,6 +8,87 @@
 <!-- Teal page content  -->
 <div class="card">
 	<div class="card-content">
+
+	<div class="center"><span class="card-title">School Dashbroad</span></div>
+
+	<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab"><a href="#view">Views</a></li>
+        <li class="tab"><a href="#registration">Registration</a></li>
+        <li class="tab"><a href="#bookmark">Bookmark</a></li>
+      </ul>
+    </div>
+
+
+     
+
+
+
+    <div id="view" class="col s12">
+    
+   	<br>
+    	
+    	
+    	<label>Views By Hours: </label>
+		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_hour(:time).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Days: </label>
+		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_day(:time).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Weeks: </label>
+		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_week(:time).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Years: </label>
+		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_year(:time).count,colors: ["#4db6ac"] %>
+	
+    </div>
+
+    <div id="registration" class="col s12">
+
+    <br>
+
+    	<label>Group By Course: </label>
+    	<%= pie_chart OnlineApplication.group(:course).count %>
+
+
+
+    	<label>Views By Hours: </label>
+		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_hour(:created_at).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Days: </label>
+		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_day(:created_at).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Weeks: </label>
+		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_week(:created_at).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Years: </label>
+		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_year(:created_at).count,colors: ["#4db6ac"] %>
+    	
+    </div>
+
+    <div id="bookmark" class="col s12">
+
+    <br>
+
+        <label>Views By Hours: </label>
+		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_hour(:created_at).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Days: </label>
+		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_day(:created_at).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Weeks: </label>
+		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_week(:created_at).count,colors: ["#4db6ac"] %>
+
+		<label>Views By Years: </label>
+		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_year(:created_at).count,colors: ["#4db6ac"] %>
+    	
+    </div>
+    
+  </div>
+
+
+
 	
 
 	</div>

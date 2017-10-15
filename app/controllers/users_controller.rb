@@ -49,6 +49,7 @@ class UsersController < ApplicationController
   end
 
   def menu
+    @newsfeeds=Newsfeed.all
   end
 
 

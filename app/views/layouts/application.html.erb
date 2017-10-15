@@ -4,6 +4,9 @@
 <title> Language School Finder <%="| #{@page_title}" if @page_title %></title>
 <%= favicon_link_tag 'icon.png' %>
 <%= csrf_meta_tags %>
+
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 

@@ -34,7 +34,7 @@ class PublicController < ApplicationController
 
     @school_user=SchoolUser.find(params[:id])
 
-    ahoy.track "Get Current View and ID", id: @school_user.id
+    ahoy.track "Get Current View and ID", @school_user.id
 
 
     @newsfeeds=@school_user.newsfeeds.all

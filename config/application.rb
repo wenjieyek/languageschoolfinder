@@ -14,7 +14,7 @@ module Project
     config.action_controller.permit_all_parameters = true
 
     config.time_zone = 'Kuala Lumpur'
- 	config.active_record.default_timezone = :local # Or :utc
+ 	config.active_record.default_timezone = :utc # Or :utc
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

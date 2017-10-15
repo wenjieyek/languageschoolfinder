@@ -18,6 +18,8 @@
 //= require materialize-sprockets
 //= require wice_grid
 
+//= require chartkick
+
 //= require_tree .
 
 
