@@ -25,6 +25,7 @@ class RatingsController < ApplicationController
     
 
     @rating=Rating.new(rating_params)
+    @rating.marks=(@rating.courses+@rating.value+@rating.facilities+@rating.service+@rating.activities)/5.to_f
 
     @rating.school_user_id=session[:inquiry_id]
     @rating.user_id=session[:user_id]
@@ -53,6 +54,7 @@ class RatingsController < ApplicationController
 
   def update
     @rating=Rating.find(params[:id])
+    #@rating.marks=(@rating.courses+@rating.value+@rating.facilities+@rating.service+@rating.activities)/5.to_f
     if @rating.update_attributes(rating_params)
       flash[:notice]='Rating Updated Successfully'
       redirect_to(ratings_path)

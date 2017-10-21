@@ -141,11 +141,12 @@ ActiveRecord::Schema.define(version: 20171015051336) do
   end
 
   create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "courses"
-    t.integer "value"
-    t.integer "facilities"
-    t.integer "service"
-    t.integer "activities"
+    t.float "marks", limit: 24
+    t.float "courses", limit: 24
+    t.float "value", limit: 24
+    t.float "facilities", limit: 24
+    t.float "service", limit: 24
+    t.float "activities", limit: 24
     t.string "coursename"
     t.string "title"
     t.text "comments"

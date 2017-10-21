@@ -21,10 +21,8 @@ class PublicController < ApplicationController
                                                       AND courses.languagetype='#{params[:languagetype]}'")
                                                       .where(:city=>params[:city],:status=>1).distinct)
 
-    
-    #@results_grid = initialize_grid(SchoolUser.where(:city=>params[:city],:status=>1))
-    #@results=SchoolUser.where(:city=>params[:city],:status=>1)
-  	#@language=@results.courses.where(:languagetype=>params[:languagetype])  	
+
+   
 
   end
 

@@ -16,12 +16,17 @@
 			result.name
 			end
 
-			g.column name: 'Area'  , attribute: 'city' do |result|
-			result.city+", "+result.state
-			end
+			
 
 			g.column name: 'Rating' do |result|
+
+			"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i>".html_safe+number_with_precision(@ratings=Rating.where(:school_user_id=>result.id).average(:marks), :precision => 1)+"</div>".html_safe
 			end
+
+			g.column name: 'Compare' do |result|
+					"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>".html_safe+link_to("Compare",public_path(result.id))+"</div>".html_safe
+			end
+
 
 			g.column name: 'Action' do |result|
 			link_to("Show",public_path(result.id))
