@@ -1,0 +1,114 @@
+<div class="form-card">
+<div class="card white " >
+<div class="center">
+	<span class="card-title">Compare School</span>
+</div>
+
+<div class="card-content">
+
+<div class="row">
+
+<% session[:compare].each do |p| %>
+	<div class="col s12 m4 l4">
+		<div class="card">
+
+		<br>
+		<br>
+		<% school=SchoolUser.find(p)
+		   course=Course.where(:school_user_id=>p)
+		   teacher=Teacher.where(:school_user_id=>p)
+		   ratings=school.ratings.all %>
+			
+				<div class="center">
+					<img class="circle z-depth-4" height="140px" src=<%=school.profilepicture %>>
+				</div>
+
+			
+			<div class="card-content">
+				<span class="card-title"><%=school.name %></span>
+				<span class="card-title">
+				<div class='chip'>
+				<i class='material-icons teal-text text-lighten-2 left'>star_rate</i>
+				<%=number_with_precision(ratings=Rating.where(:school_user_id=>p).average(:marks),:precision=>1)%>
+				</div>	
+				</span>
+				
+				<label>Address: </label>
+				<p><%=school.address %></p>
+
+				<label>Phonenumber: </label>
+				<p><%=school.phonenumber %></p>
+
+				<label>Email: </label>
+				<p><%=school.email %></p>
+
+				<label>Course: </label>
+				<% course.each do |courses| %>
+				<ul class="collapsible" data-collapsible="accordion">
+			    <li>
+			    <div class="collapsible-header" ><i class="material-icons teal-text text-lighten-2">book</i><%= courses.name %></div>
+				<div class="collapsible-body">
+				<label>Language: </label>
+			    <p><%= courses.languagetype %></p>
+				<label>Details: </label>
+			    <p><%= courses.details %></p>
+				<label>Price: </label>
+			 	<p><%= courses.price %></p>
+				</div>
+				</li>
+				</ul>
+				<% end %>
+
+				<label>Teacher: </label>
+				<% teacher.each do |teachers| %>
+				<ul class="collapsible" data-collapsible="accordion">
+      			<li>
+      			<div class="collapsible-header"><i class="material-icons teal-text text-lighten-2">book</i><%=teachers.name %></div>
+				<div class="collapsible-body">
+				<div class="center">
+        		<p><img class="circle responsive-img center"  style="height:200px" src=<%=teachers.profilepicture %>></p>
+        		</div>
+				<label>Details: </label>
+              	<p><%=teachers.details %></p>
+				</div>
+				</li>
+				</ul>
+				<% end %>
+
+      		</div>
+
+      		<div class="card-action center">
+          	<%=link_to("Show",public_path(p),:class=>"waves-effect waves-light btn") %>
+        	</div>
+      
+    
+  
+
+
+    
+      
+
+    
+
+    
+			
+		
+			
+			
+		</div>
+	</div>
+  
+<% end %>
+
+</div>
+
+
+
+</div>
+</div><!-- card center-align white -->    
+</div><!-- form-card -->
+
+<%session[:compare]=nil %>
+
+
+

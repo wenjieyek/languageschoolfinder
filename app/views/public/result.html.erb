@@ -24,7 +24,25 @@
 			end
 
 			g.column name: 'Compare' do |result|
-					"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>".html_safe+link_to("Compare",public_path(result.id))+"</div>".html_safe
+				if session[:compare]!=nil
+				if session[:compare].include?(result.id)
+				"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>".html_safe+link_to("Compare",compare_new_path(:school_user_id=>result.id))+"</div>".html_safe
+					
+				else
+				"<div class='chip'>
+				<i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>
+				Compared
+				</div>".html_safe
+
+				end
+
+				else
+				"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>".html_safe+link_to("Compare",compare_new_path(:school_user_id=>result.id))+"</div>".html_safe
+					
+					
+				end
+
+
 			end
 
 

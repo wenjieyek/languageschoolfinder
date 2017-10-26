@@ -35,6 +35,21 @@
 
 <body>
 
+
+
+
+
+
+
+<!-- Floating Button -->
+<div class="fixed-action-btn">
+
+    <%=link_to("<i class='large material-icons'>compare</i>".html_safe,compare_index_path,:class=>"btn-floating btn-large teal") %>
+
+</div>
+
+
+
 <!-- Dropdown Structure -->
 <ul id="userdropdown" class="side-nav">
   <li><a href="">
@@ -198,7 +213,9 @@
 <%= yield %>
 
 
-</div>  
+</div>
+
+
 </main>
 
 

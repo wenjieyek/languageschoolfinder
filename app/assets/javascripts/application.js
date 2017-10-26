@@ -70,6 +70,7 @@ document.addEventListener("turbolinks:load", function() {
 
       $('.materialboxed').materialbox();
 
+  
 
     
 

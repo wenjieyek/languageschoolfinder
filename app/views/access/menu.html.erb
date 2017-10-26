@@ -39,8 +39,8 @@
 		<label>Views By Weeks: </label>
 		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_week(:time).count,colors: ["#4db6ac"] %>
 
-		<label>Views By Years: </label>
-		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_year(:time).count,colors: ["#4db6ac"] %>
+		<label>Views By Months: </label>
+		<%= line_chart Ahoy::Event.where(:properties=>@school_user.id).group_by_month(:time).count,colors: ["#4db6ac"] %>
 	
     </div>
 
@@ -62,8 +62,8 @@
 		<label>Views By Weeks: </label>
 		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_week(:created_at).count,colors: ["#4db6ac"] %>
 
-		<label>Views By Years: </label>
-		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_year(:created_at).count,colors: ["#4db6ac"] %>
+		<label>Views By Months: </label>
+		<%= line_chart OnlineApplication.where(:school_user_id=>@school_user.id).group_by_month(:created_at).count,colors: ["#4db6ac"] %>
     	
     </div>
 
@@ -80,8 +80,8 @@
 		<label>Views By Weeks: </label>
 		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_week(:created_at).count,colors: ["#4db6ac"] %>
 
-		<label>Views By Years: </label>
-		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_year(:created_at).count,colors: ["#4db6ac"] %>
+		<label>Views By Months: </label>
+		<%= line_chart Bookmark.where(:school_user_id=>@school_user.id).group_by_month(:created_at).count,colors: ["#4db6ac"] %>
     	
     </div>
     
