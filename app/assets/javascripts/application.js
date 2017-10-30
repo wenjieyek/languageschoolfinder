@@ -70,6 +70,8 @@ document.addEventListener("turbolinks:load", function() {
 
       $('.materialboxed').materialbox();
 
+      $('.tooltipped').tooltip({delay: 50});
+
   
 
     

@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   
 
 
+
   
 
-  get 'compare/index'
 
-  get 'compare/new'
 
  root 'public#index'
+
+  get 'compare/delete'
+  get 'compare/index'
+  get 'compare/new'
  
   
 

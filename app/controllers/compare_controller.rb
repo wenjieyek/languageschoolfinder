@@ -44,4 +44,13 @@ class CompareController < ApplicationController
   	
     redirect_to session.delete(:return_to)
   end
+
+  def delete
+
+
+    session[:compare].delete(params[:compare_id])
+
+    redirect_to(compare_index_path)
+    
+  end
 end

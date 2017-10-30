@@ -9,11 +9,11 @@
 <%= grid(@results_grid) do |g| 
 
 			g.column name: '' do |result|
-			"<i class='material-icons teal-text text-lighten-2'>school</i>".html_safe
+			"<img class='circle z-depth-4' height='50px' src=#{result.profilepicture}>".html_safe
 			end
 
 			g.column name: 'School Name' , attribute: 'name' do |result|
-			result.name
+			"<p class='tooltipped' data-position='bottom' data-delay='50' data-tooltip='#{result.address}'>#{result.name}</p>".html_safe
 			end
 
 			
@@ -24,23 +24,9 @@
 			end
 
 			g.column name: 'Compare' do |result|
-				if session[:compare]!=nil
-				if session[:compare].include?(result.id)
+				
 				"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>".html_safe+link_to("Compare",compare_new_path(:school_user_id=>result.id))+"</div>".html_safe
-					
-				else
-				"<div class='chip'>
-				<i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>
-				Compared
-				</div>".html_safe
-
-				end
-
-				else
-				"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>&#xE3B9;</i>".html_safe+link_to("Compare",compare_new_path(:school_user_id=>result.id))+"</div>".html_safe
-					
-					
-				end
+			
 
 
 			end

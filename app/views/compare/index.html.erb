@@ -8,6 +8,8 @@
 
 <div class="row">
 
+
+
 <% session[:compare].each do |p| %>
 	<div class="col s12 m4 l4">
 		<div class="card">
@@ -52,7 +54,7 @@
 			    <p><%= courses.languagetype %></p>
 				<label>Details: </label>
 			    <p><%= courses.details %></p>
-				<label>Price: </label>
+				<label>Price (Malaysia Ringgit): </label>
 			 	<p><%= courses.price %></p>
 				</div>
 				</li>
@@ -78,7 +80,9 @@
       		</div>
 
       		<div class="card-action center">
+      		<%=link_to("Delete",compare_delete_path(:compare_id=>p),:class=>"red waves-effect waves-light btn") %>
           	<%=link_to("Show",public_path(p),:class=>"waves-effect waves-light btn") %>
+
         	</div>
       
     
@@ -108,7 +112,6 @@
 </div><!-- card center-align white -->    
 </div><!-- form-card -->
 
-<%session[:compare]=nil %>
 
 
 

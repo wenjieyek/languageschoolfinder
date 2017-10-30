@@ -98,8 +98,8 @@
 
 <div class="row">
 <div class="input-field col s12">
-    <%=f.label("Transportation Area")%>
-    <%=f.text_area(:transportation,:area=>'40x10',:class=>"materialize-textarea")%>
+    <%=f.label("Transportation")%>
+    <%= f.select(:transportation,options_for_select([['Yes','Yes'], ['No','No']])) %>
 </div>
 </div>
 
