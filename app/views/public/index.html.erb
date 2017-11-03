@@ -1,16 +1,13 @@
 <% @page_title="Index" %>
 
 <script type="text/javascript">
-
 document.addEventListener("turbolinks:load", function() {
 	$(document).ready(function() {
 	$('input.autocomplete').autocomplete({
     data: {
-
       <% @areas.each do |area| %>
       "<%=area.areaname %>, <%=area.state.state %>": null,
 	  <% end %>
-
     },
     limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
     onAutocomplete: function(val) {
@@ -18,64 +15,256 @@ document.addEventListener("turbolinks:load", function() {
     },
     minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
   });
-
 	  });
-
-
-
 	 });
-
-
-
-
 </script>
 
 
 
-<div class="form-card">
-<div class="card center-align white " >
-<span class="card-title">Search Your Language School</span>
-
-
-
-
-
-
-<div class="card-content">
-	 <%=form_tag(public_result_path,:method=>:get, :class=>"col s12") do %>
-
-<div class="row">
-<div class="input-field col s12 m6">
-<%=label_tag ("Area ")%>
-	
-  <%=text_field_tag(:city,"",:id=>'autocomplete-input',:class=>'autocomplete') %>
-	
-</div>
-            
-<div class="input-field col s12 m6">
-       <%=select_tag(:languagetype,options_from_collection_for_select(Language.all, :language, :language)) %>
-
-
-    <%=label_tag("Language")%>             
-</div>
 </div>
 
+
+
+<div class="parallax-container" style="height:400px;">
+    <div class="parallax"><%=image_tag("1") %></div>
+    <div class="container">
+        <br>
+        <br>
+        
+        <div class="card center-align white " >
+        <span class="card-title">Search Your Language School</span>
+        <div class="card-content">
+        <%=form_tag(public_result_path,:method=>:get, :class=>"col s12") do %>
+        <div class="row">
+        <div class="input-field col s12 m6">
+        <%=label_tag ("Area ")%>
+        <%=text_field_tag(:city,"",:id=>'autocomplete-input',:class=>'autocomplete') %>
+        </div>
+        <div class="input-field col s12 m6">
+        <%=select_tag(:languagetype,options_from_collection_for_select(Language.all, :language, :language)) %>
+        <%=label_tag("Language")%>             
+        </div>
+        </div>
+        <%=submit_tag("Search!",:class=>"waves-effect waves-light btn teal lighten-2",:onclick=>"filterarea()") %>
+        <% end %>
+        </div>
+        </div><!-- card center-align white -->  
+   
+    </div>
+  </div>
+  
+    
+ 
+
+   
+<div class="container">
+
+
+<br>
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#views">Most Views</a></li>
+        <li class="tab col s3"><a href="#ratings">Most Ratings</a></li>
+        <li class="tab col s3"><a href="#new">New Schools</a></li>
+        <li class="tab col s3"><a href="#user">School Around You</a></li>
+      </ul>
+    </div>
+
+
+    <div id="views" class="col s12">
+
+    <div class="col s12 m4">
+          <div class="card hoverable">
+            <div class="card-image">
+              <%=image_tag("1") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("2") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("3") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+    <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("1") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("2") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("3") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+
+<div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("1") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("2") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%=image_tag("3") %>
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+
+
+    </div>
+
+    <div id="ratings" class="col s12">
+    Test 2
+    </div>
+
+    <div id="new" class="col s12">
+    Test 3
+    </div>
+    
+    <div id="user" class="col s12">
+    Test 4
+    </div>
+
+  </div>
+
+
+    
+        
+  
+</div>
+
+
+
+
+
+<div class="parallax-container" style="height:300px;">
+<div class="container">
+   <div class="center" >
+
+  
+   <br>
+   <br>
+   <br>
+    <div class="parallax"><%=image_tag("1") %></div>
+    <h4 style="color:white;">School? Join Us Now</h4>
 
      
 
-		
+      <%=link_to('<i class="material-icons left">comment</i> Register'.html_safe,new_school_user_path,:class=>"waves-effect waves-light btn-large") %>
+  </div>
+  </div>
+  </div>
 
 
-
-      
-      <%=submit_tag("Search!",:class=>"waves-effect waves-light btn teal lighten-2",:onclick=>"filterarea()") %>
-
-      <% end %>
-
-
-</div>
-</div><!-- card center-align white -->    
-</div><!-- form-card -->
 
 
 
