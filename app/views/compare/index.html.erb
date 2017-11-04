@@ -31,7 +31,7 @@
 				<span class="card-title">
 				<div class='chip'>
 				<i class='material-icons teal-text text-lighten-2 left'>star_rate</i>
-				<%=number_with_precision(ratings=Rating.where(:school_user_id=>p).average(:marks),:precision=>1)%>
+				<%=number_with_precision(ratings=Rating.where(:school_user_id=>p).average(:marks),:precision=>2)%>
 				</div>	
 				</span>
 				

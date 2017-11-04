@@ -1,6 +1,47 @@
 class PublicController < ApplicationController
   def index
     @areas=Area.joins("INNER JOIN states ON areas.state_id=states.id")
+
+    @most_views_schools=SchoolUser.find_by_sql("SELECT school_users.id,
+                                                       school_users.profilepicture,
+                                                       school_users.name,
+                                                       school_users.city,
+                                                       school_users.state,
+                                                       COUNT(ahoy_events.properties)
+                                                FROM school_users
+                                                INNER JOIN ahoy_events 
+                                                ON school_users.id = ahoy_events.properties 
+                                                GROUP BY properties 
+                                                ORDER BY COUNT(ahoy_events.properties) DESC;")
+
+
+    @most_ratings_schools=SchoolUser.find_by_sql("SELECT school_users.id,
+                                                         school_users.profilepicture,
+                                                         school_users.name,
+                                                         school_users.city,
+                                                         school_users.state,
+                                                         AVG(ratings.marks)
+                                                    FROM ratings
+                                                    INNER JOIN school_users 
+                                                    ON ratings.school_user_id = school_users.id 
+                                                    GROUP BY school_user_id
+                                                    ORDER BY AVG(ratings.marks) DESC;")
+
+
+    @most_bookmarks_schools=SchoolUser.find_by_sql("SELECT school_users.id,
+                                                           school_users.profilepicture,
+                                                           school_users.name,
+                                                           school_users.city,
+                                                           school_users.state,
+                                                           COUNT(bookmarks.school_user_id)
+                                                FROM school_users
+                                                INNER JOIN bookmarks 
+                                                ON school_users.id = bookmarks.school_user_id 
+                                                GROUP BY school_user_id 
+                                                ORDER BY COUNT(bookmarks.school_user_id ) DESC;")
+
+
+    @new_schools=SchoolUser.order(created_at: :desc).limit(25)
   end
 
 

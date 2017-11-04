@@ -66,173 +66,116 @@ document.addEventListener("turbolinks:load", function() {
       <ul class="tabs">
         <li class="tab col s3"><a href="#views">Most Views</a></li>
         <li class="tab col s3"><a href="#ratings">Most Ratings</a></li>
+        <li class="tab col s3"><a href="#bookmark">Most Bootmarks</a></li>
         <li class="tab col s3"><a href="#new">New Schools</a></li>
-        <li class="tab col s3"><a href="#user">School Around You</a></li>
+       
       </ul>
     </div>
 
 
     <div id="views" class="col s12">
+<% @most_views_schools.each do |new_school| %>
 
-    <div class="col s12 m4">
-          <div class="card hoverable">
+    <div class="col s12 m3">
+          <div class="card hoverable center">
             <div class="card-image">
-              <%=image_tag("1") %>
-              <span class="card-title">Card Title</span>
+              <%=image_tag("#{new_school.profilepicture}") %>
+              
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <span class="card-title"><%=new_school.name %></span>
+              <div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i><%=number_with_precision(@ratings=Rating.where(:school_user_id=>new_school.id).average(:marks), :precision => 2)%>
+              </div>
+              <p><%=new_school.city %>, <%=new_school.city %></p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <%=link_to "View",public_path(new_school.id) %>
             </div>
           </div>
     </div>
+  
 
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("2") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("3") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-    <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("1") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("2") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("3") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-
-<div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("1") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("2") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <%=image_tag("3") %>
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-    </div>
-
+    <% end %>
 
     </div>
 
     <div id="ratings" class="col s12">
-    Test 2
+    <% @most_ratings_schools.each do |new_school| %>
+
+    <div class="col s12 m3">
+          <div class="card hoverable center">
+            <div class="card-image">
+              <%=image_tag("#{new_school.profilepicture}") %>
+              
+            </div>
+            <div class="card-content">
+              <span class="card-title"><%=new_school.name %></span>
+              <div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i><%=number_with_precision(@ratings=Rating.where(:school_user_id=>new_school.id).average(:marks), :precision => 2)%>
+              </div>
+              <p><%=new_school.city %>, <%=new_school.city %></p>
+            </div>
+            <div class="card-action">
+              <%=link_to "View",public_path(new_school.id) %>
+            </div>
+          </div>
+    </div>
+  
+
+    <% end %>
+
+    </div>
+
+    <div id="bookmark" class="col s12">
+    <% @most_bookmarks_schools.each do |new_school| %>
+
+    <div class="col s12 m3">
+          <div class="card hoverable center">
+            <div class="card-image">
+              <%=image_tag("#{new_school.profilepicture}") %>
+              
+            </div>
+            <div class="card-content">
+              <span class="card-title"><%=new_school.name %></span>
+              <div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i><%=number_with_precision(@ratings=Rating.where(:school_user_id=>new_school.id).average(:marks), :precision => 2)%>
+              </div>
+              <p><%=new_school.city %>, <%=new_school.city %></p>
+            </div>
+            <div class="card-action">
+              <%=link_to "View",public_path(new_school.id) %>
+            </div>
+          </div>
+    </div>
+  
+
+    <% end %>
     </div>
 
     <div id="new" class="col s12">
-    Test 3
+    <% @new_schools.each do |new_school| %>
+
+    <div class="col s12 m3">
+          <div class="card hoverable center">
+            <div class="card-image">
+              <%=image_tag("#{new_school.profilepicture}") %>
+              
+            </div>
+            <div class="card-content">
+              <span class="card-title"><%=new_school.name %></span>
+              <div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i><%=number_with_precision(@ratings=Rating.where(:school_user_id=>new_school.id).average(:marks), :precision => 1)%>
+              </div>
+              <p><%=new_school.city %>, <%=new_school.city %></p>
+            </div>
+            <div class="card-action">
+              <%=link_to "View",public_path(new_school.id) %>
+            </div>
+          </div>
+    </div>
+  
+
+    <% end %>
     </div>
     
-    <div id="user" class="col s12">
-    Test 4
-    </div>
+
 
   </div>
 

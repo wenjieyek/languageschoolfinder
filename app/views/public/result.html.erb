@@ -20,7 +20,7 @@
 
 			g.column name: 'Rating' do |result|
 
-			"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i>".html_safe+number_with_precision(@ratings=Rating.where(:school_user_id=>result.id).average(:marks), :precision => 1)+"</div>".html_safe
+			"<div class='chip'><i class='material-icons teal-text text-lighten-2 left'>star_rate</i>".html_safe+number_with_precision(@ratings=Rating.where(:school_user_id=>result.id).average(:marks), :precision => 2)+"</div>".html_safe
 			end
 
 			g.column name: 'Compare' do |result|
