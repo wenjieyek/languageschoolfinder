@@ -78,7 +78,13 @@
     <i class="material-icons teal-text text-lighten-2">account_circle</i>
     <%=session[:schools_name] %>
     <%
-      if session[:schools_id] != 0
+
+    if session[:schools_id] == nil
+          session[:schools_id] =0
+        end
+
+    if session[:schools_id] != 0
+        
 
       school_user=SchoolUser.find(session[:schools_id]) 
       inquiry_count=Inquiry.where(:school_user_id=>session[:schools_id],:status=>0).count

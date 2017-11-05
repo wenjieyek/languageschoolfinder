@@ -12,7 +12,7 @@ class PublicController < ApplicationController
                                                 INNER JOIN ahoy_events 
                                                 ON school_users.id = ahoy_events.properties 
                                                 GROUP BY properties 
-                                                ORDER BY COUNT(ahoy_events.properties) DESC;")
+                                                ORDER BY COUNT(ahoy_events.properties) DESC LIMIT 25;")
 
 
     @most_ratings_schools=SchoolUser.find_by_sql("SELECT school_users.id,
@@ -25,7 +25,7 @@ class PublicController < ApplicationController
                                                     INNER JOIN school_users 
                                                     ON ratings.school_user_id = school_users.id 
                                                     GROUP BY school_user_id
-                                                    ORDER BY AVG(ratings.marks) DESC;")
+                                                    ORDER BY AVG(ratings.marks) DESC LIMIT 25;")
 
 
     @most_bookmarks_schools=SchoolUser.find_by_sql("SELECT school_users.id,
@@ -38,7 +38,7 @@ class PublicController < ApplicationController
                                                 INNER JOIN bookmarks 
                                                 ON school_users.id = bookmarks.school_user_id 
                                                 GROUP BY school_user_id 
-                                                ORDER BY COUNT(bookmarks.school_user_id ) DESC;")
+                                                ORDER BY COUNT(bookmarks.school_user_id ) DESC LIMIT 25;")
 
 
     @new_schools=SchoolUser.order(created_at: :desc).limit(25)
