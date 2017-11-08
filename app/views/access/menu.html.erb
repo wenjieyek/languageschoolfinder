@@ -49,7 +49,7 @@
     <br>
 
     	<label>Group By Course: </label>
-    	<%= pie_chart OnlineApplication.group(:course).count %>
+    	<%= pie_chart OnlineApplication.where(:school_user_id=>@school_user.id).group(:course).count %>
 
 
 
