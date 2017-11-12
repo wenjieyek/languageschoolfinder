@@ -24,7 +24,7 @@ end
 
 
   def admin_confirm_logged_in
-      if session[:admin_id]==0
+      if session[:admin_id]==0 or session[:admin_id]==nil
       flash[:notice]="Please log in"
       redirect_to(admins_login_path)
     end
