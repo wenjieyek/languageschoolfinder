@@ -8,5 +8,5 @@ class Rating < ApplicationRecord
 	validates :title,:presence=>true
 	validates :comments,:presence=>true
 
-	validates :user_id,:uniqueness=>true
+	
 end

@@ -22,6 +22,17 @@
 			school_attachment.created_at
 			end 
 
+			g.column name: 'Priority'  , attribute: 'priority' do |school_attachment|
+			if school_attachment.priority==1
+				"<span style='color:green'>".html_safe + "Yes" + "</span>".html_safe 
+			else
+				"<span style='color:red'>".html_safe + "Not" + "</span>".html_safe 
+				
+			end
+
+			
+			end 
+
 			g.column name: 'Action' do |school_attachment|
 			link_to("Show",school_attachment_path(school_attachment.id))+"<td>".html_safe+link_to("Edit", edit_school_attachment_path(school_attachment.id))+"</td>".html_safe+"<td>".html_safe+ link_to("Delete", delete_school_attachment_path(school_attachment.id))+"</td>".html_safe
 			end
