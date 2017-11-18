@@ -52,8 +52,9 @@ class OnlineApplicationsController < ApplicationController
       session[:return_to] ||= request.referer
       @onlineapplication=OnlineApplication.find(params[:id])
       @message=params[:message]
+      @school=SchoolUser.find(session[:schools_id])
 
-      SchoolMailer.reply_application(@onlineapplication,@message).deliver
+      SchoolMailer.reply_application(@onlineapplication,@message,@school).deliver
 
       if @onlineapplication.update_attributes(:status=>"1")
       flash[:notice]='The Application Has Been Replied'

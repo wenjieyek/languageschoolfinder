@@ -5,11 +5,14 @@ class InquiryMailer < ApplicationMailer
   #
   #   en.inquiry_mailer.reply_inquiry.subject
   #
-  def reply_inquiry(inquiry,message)
+  def reply_inquiry(inquiry,message,school)
     @inquiry=inquiry
     @message=message
+    @school=school
     @greeting = "Here is the inquiry you submited to the school: "
 
-    mail to: inquiry.email,:subject=>"Your Inquiry Has Been Reviewed"
+    mail to: inquiry.email,
+         subject: "Your Inquiry Has Been Reviewed",
+         reply_to: school.email
   end
 end

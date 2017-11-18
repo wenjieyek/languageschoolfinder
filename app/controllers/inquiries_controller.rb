@@ -61,8 +61,9 @@ class InquiriesController < ApplicationController
       session[:return_to] ||= request.referer
       @inquiry=Inquiry.find(params[:id])
       @message=params[:message]
+      @school=SchoolUser.find(session[:schools_id])
 
-      InquiryMailer.reply_inquiry(@inquiry,@message).deliver
+      InquiryMailer.reply_inquiry(@inquiry,@message,@school).deliver
 
       if @inquiry.update_attributes(:status=>"1")
       flash[:notice]='The Inquiry Has Been Replied'
