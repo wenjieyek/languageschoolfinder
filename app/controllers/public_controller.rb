@@ -11,6 +11,7 @@ class PublicController < ApplicationController
                                                 FROM school_users
                                                 INNER JOIN ahoy_events 
                                                 ON school_users.id = ahoy_events.properties 
+                                                WHERE school_users.status=1
                                                 GROUP BY properties 
                                                 ORDER BY COUNT(ahoy_events.properties) DESC LIMIT 25;")
 
@@ -24,6 +25,7 @@ class PublicController < ApplicationController
                                                     FROM ratings
                                                     INNER JOIN school_users 
                                                     ON ratings.school_user_id = school_users.id 
+                                                    WHERE school_users.status=1
                                                     GROUP BY school_user_id
                                                     ORDER BY AVG(ratings.marks) DESC LIMIT 25;")
 
@@ -37,6 +39,7 @@ class PublicController < ApplicationController
                                                 FROM school_users
                                                 INNER JOIN bookmarks 
                                                 ON school_users.id = bookmarks.school_user_id 
+                                                WHERE school_users.status=1
                                                 GROUP BY school_user_id 
                                                 ORDER BY COUNT(bookmarks.school_user_id ) DESC LIMIT 25;")
 
